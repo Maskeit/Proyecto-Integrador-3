@@ -41,8 +41,6 @@ require 'header.php';
               <p class="pt-4">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere iure adipisci harum ducimus accusantium, repudiandae aperiam
                 voluptatum, id ex ratione omnis reiciendis possimus officiis.
-                Hola como estan todo aqui hare un commit
-                Otra linea de codigo que me falto
               </p>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi vitae, tenetur quidem eum aliquid vel labore sint placeat
