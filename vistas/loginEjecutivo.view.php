@@ -20,6 +20,9 @@
 				<i class="icono izquierda fa fa-user"></i><input class="usuario" type="text" name="usuarioEjecutivo" placeholder="Usuario">
 			</div>
 
+			<div class="form-group">
+				<i class="icono izquierda fa fa-user"></i><input class="usuario" type="text" name="sucursal" placeholder="Sucursal">
+			</div>
 
 			<div class="form-group">
 				<i class="icono izquierda fa fa-lock"></i><input class="password_btn" type="password" name="password" placeholder="Contraseña">
@@ -35,11 +38,6 @@
 				</div>
 			<?php endif; ?>
 		</form>
-
-		<p class="texto-registrate">
-			¿ No tienes cuenta ?
-			<a href="adminUser.php">Registrate</a> <?php //registroEjecutivo?>
-		</p>
 			<p class="texto-registrate">
 
 				<a href="index.php">Regresar. </a>

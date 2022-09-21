@@ -6,6 +6,7 @@ comprobar_sesion_ejecutivo();
 // Comprobamos si ya han sido enviado los datos
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { //comprobamos si los datos se han enviado
 	$usuarioEjecutivo = filter_var(strtolower($_POST['usuarioEjecutivo']), FILTER_SANITIZE_STRING);
+	$sucursal = $_POST['sucursal'];
 	$password = $_POST['password'];
 	$password = hash('sha512', $password);
 
@@ -16,10 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //comprobamos si los datos se han en
 		echo "Error:" . $e->getMessage();
 	}
 												//tabla de la db    //el usuario ingresado              //contrasena ingresada coincida con la tabla
-	$statement = $conexion->prepare('SELECT * FROM ejecutivos WHERE usuarioEjecutivo = :usuarioEjecutivo AND pass = :password');
+	$statement = $conexion->prepare('SELECT * FROM ejecutivos WHERE usuarioEjecutivo = :usuarioEjecutivo AND sucursal = :sucursal AND pass = :password');
 	$statement->execute(array(
-			':usuarioEjecutivo' => $usuarioEjecutivo,//placeholder usuarioEjecutivo
-			':password' => $password 				//placeholder password
+			':usuarioEjecutivo' => $usuarioEjecutivo, //placeholder usuarioEjecutivo
+			':sucursal' => $sucursal, //placeholder de Sucursal
+			':password' => $password //placeholder password
 		));
 
 	$resultado = $statement->fetch(); //fetch devuelve el resultado

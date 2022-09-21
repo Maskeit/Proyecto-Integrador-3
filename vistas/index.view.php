@@ -19,7 +19,7 @@ require 'header.php';
           </button>
         </div>
         <div class="col-md-5 col-sm-12  h-25">
-          <img src="../assets/RenderMolino.png" alt="Book" />
+          <img src="./assets/RenderMolino.png" alt="Book" />
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@ require 'header.php';
         <div class="row">
           <div class="col-md-6 col-12">
             <div class="pray">
-              <img src="../assets/pexels-photo-1904769.jpeg" alt="Pray" class="" />
+              <img src="./assets/pexels-photo-1904769.jpeg" alt="Pray" class="" />
             </div>
           </div>
           <div class="col-md-6 col-12">
@@ -41,6 +41,7 @@ require 'header.php';
               <p class="pt-4">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere iure adipisci harum ducimus accusantium, repudiandae aperiam
                 voluptatum, id ex ratione omnis reiciendis possimus officiis.
+                Hola como estan todo aqui hare un commit
               </p>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi vitae, tenetur quidem eum aliquid vel labore sint placeat
@@ -187,7 +188,7 @@ require 'header.php';
         <div class="col-md-4 col-12 text-center"> <!--Miguel-->
             <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
-                  <img src="../assets/UI-face-3.jpg" class="img-fluid border-radius p-4" alt=""><!--CARGAR IMAGEN DE MIGUEL-->
+                  <img src="./assets/UI-face-3.jpg" class="img-fluid border-radius p-4" alt=""><!--CARGAR IMAGEN DE MIGUEL-->
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Miguel Alejandre</h3>
@@ -208,7 +209,7 @@ require 'header.php';
                   <div class="carousel-item active">
                     <div class="card mr-2 d-inline-block shadow">
                       <div class="card-img-top">
-                        <img src="../assets/UI-face-1.jpg" class="img-fluid rounded-circle w-50 p-4" alt=""><!--CARGAR IMAGEN DE ALONSO-->
+                        <img src="./assets/UI-face-1.jpg" class="img-fluid rounded-circle w-50 p-4" alt=""><!--CARGAR IMAGEN DE ALONSO-->
                       </div>
                       <div class="card-body">
                         <h3 class="card-title">Alonso Villa</h3>
@@ -225,7 +226,7 @@ require 'header.php';
                   <div class="carousel-item">
                     <div class="card  d-inline-block mr-2 shadow">
                       <div class="card-img-top">
-                        <img src="../assets/UI-face-2.jpg" class="img-fluid rounded-circle w-50 p-4" alt=""> <!--Cargar imagen de Mauricio-->
+                        <img src="./assets/UI-face-2.jpg" class="img-fluid rounded-circle w-50 p-4" alt=""> <!--Cargar imagen de Mauricio-->
                       </div>
                       <div class="card-body">
                         <h3 class="card-title">Mauricio Chavez</h3>
@@ -245,7 +246,7 @@ require 'header.php';
         <div class="col-md-4 col-12 text-center">
             <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
-                  <img src="../assets/UI-face-1.jpg" class="img-fluid border-radius p-4" alt="">
+                  <img src="./assets/UI-face-1.jpg" class="img-fluid border-radius p-4" alt="">
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Braulio </h3>
