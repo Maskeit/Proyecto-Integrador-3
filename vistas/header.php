@@ -49,7 +49,7 @@
               <div class="dropdown">
                 <a href="#" class="nav-link">CUENTAS</a>
                 <div class="dropdown-content">
-                  <a href="#">CLIENTE</a>
+                  <a href="./rscCliente/loginCliente.php">CLIENTE</a>
                   <a href="ejecutivo.php">EJECUTIVO</a>
                 </div>
               </div>
