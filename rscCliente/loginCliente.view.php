@@ -22,7 +22,7 @@
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
-           		   		<h5>Número de cuenta</h5>
+           		   		<h5>Código de Cliente/Nº Tarjeta/Nº Cuenta</h5>
            		   		<input type="text" class="input">
            		   </div>
            		</div>
@@ -31,7 +31,7 @@
            		    	<i class="fas fa-lock"></i>
            		   </div>
            		   <div class="div">
-           		    	<h5>Password</h5>
+           		    	<h5>Contraseña</h5>
            		    	<input type="password" class="input">
             	   </div>
             	</div>
