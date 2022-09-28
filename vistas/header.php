@@ -11,6 +11,7 @@
     crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
     crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./Style.css" />
   <link rel="stylesheet" href="./mobile-style.css">
 
@@ -24,7 +25,7 @@
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="index.php">
-          <i class="fas fa-book-reader fa-2x mx-3"></i>UNIBANK</a>
+          <i class="bi bi-cash-coin fa-2x mx-3"></i>Unibank</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
           aria-label="Toggle navigation">
           <i class="fas fa-align-right text-light"></i>
@@ -37,14 +38,8 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">HOME2
-              </a> <!--EL ACCESO A ESTE PERFIL EN ESTE MENU ES PROVISIONAL-->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">PRICE</a>
-            </li>
-            <!--PAGES DORPDOWN-->
+
+            <!--CUENTAS-->
             <li class="nav-item dropdown">
               <div class="dropdown">
                 <a href="#" class="nav-link">Ingresa</a>
@@ -54,16 +49,26 @@
                 </div>
               </div>
             </li>
-            <!--PAGES DORPDOWN-->
+
             <li class="nav-item">
-              <a class="nav-link" href="#">FACT</a>
+              <a class="nav-link" href="#offer">OFFER
+              </a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#facts">STATS</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#us">EQUIPO</a>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="cerrarSesionEjecutivo.php">
                 <?php if(isset($_SESSION['usuarioEjecutivo'])){
                     echo "CERRAR SESION"; //se va mostrar cerrar sesion si es que el ejecutivo tiene una sesion iniciada
                      } else {
-                         echo "About us"; //sino pues muetra otro texto   
+                         echo "ABOUT US"; //sino pues muetra otro texto   
                     }?>
               </a>
             </li>
