@@ -19,7 +19,7 @@ require 'header.php';
           </button>
         </div>
         <div class="col-md-5 col-sm-12  h-25">
-          <img src="./assets/RenderMolino.png" alt="Book" />
+          <img src="./assets/unibank.png" alt="Book" />
         </div>
       </div>
     </div>

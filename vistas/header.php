@@ -24,7 +24,7 @@
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="index.php">
-          <i class="fas fa-book-reader fa-2x mx-3"></i>Books</a>
+          <i class="fas fa-book-reader fa-2x mx-3"></i>UNIBANK</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
           aria-label="Toggle navigation">
           <i class="fas fa-align-right text-light"></i>
@@ -47,9 +47,9 @@
             <!--PAGES DORPDOWN-->
             <li class="nav-item dropdown">
               <div class="dropdown">
-                <a href="#" class="nav-link">CUENTAS</a>
+                <a href="#" class="nav-link">Ingresa</a>
                 <div class="dropdown-content">
-                  <a href="./rscCliente/loginCliente.php">CLIENTE</a>
+                  <a href="./rscCliente/loginCliente.php">Cliente</a>
                   <a href="ejecutivo.php">EJECUTIVO</a>
                 </div>
               </div>

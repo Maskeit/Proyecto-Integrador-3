@@ -9,7 +9,7 @@
 body {
 	font-size: 16px;
 	font-family: 'Raleway', sans-serif;
-	background: #1B1D35;
+	background: #1b2e35;/*#1B1D35 */
 	color:#fff;
 }
 
@@ -44,7 +44,7 @@ a:hover {
 }
 
 .formulario {
-	background: #2C2C47;
+	background: #2e7d32;/*2C2C47*/
 	padding: 30px;
 	margin-bottom: 30px;
 }
