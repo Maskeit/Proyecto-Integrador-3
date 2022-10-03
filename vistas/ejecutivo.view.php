@@ -29,7 +29,7 @@ require 'vistas/header.php';
                 </p>
                 <div class="pricing">
                   <h1>NUEVO</h1>
-                  <a href="EjeRegistraCliente.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Registrar</a>
+                  <a href="vistaCliente.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Registrar</a>
                 </div>
               </div>
             </div>
