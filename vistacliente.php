@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <!-- CSS personalizado --> 
-    <link rel="stylesheet" href="main.css">  
+    <link rel="stylesheet" href="css/mainCrud.css">  
       
       
     <!--datables CSS básico-->
