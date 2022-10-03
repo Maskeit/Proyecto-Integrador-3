@@ -14,9 +14,11 @@ require 'header.php';
           <p>
             Ofreciendo facilidad y atención a nuestra clientela
           </p>
+          <a href="rscCliente/loginCliente.php">
           <button class="btn btn-light px-5 py-2 primary-btn">
-            Ingrese aquí para registrarse
+            Click Aqui para iniciar sesion
           </button>
+          </a>
         </div>
         <div class="col-md-5 col-sm-12  h-25">
           <img src="./assets/frontIcon.png" alt="Book" />
