@@ -27,6 +27,7 @@
 			</div>
 
 			<!-- Comprobamos si la variable errores esta seteada, si es asi mostramos los errores -->
+			<!--Comentario para agregar un commit simple-->
 			<?php if(!empty($errores)): ?>
 				<div class="error">
 					<ul>
