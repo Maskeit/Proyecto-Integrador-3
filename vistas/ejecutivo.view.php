@@ -43,7 +43,7 @@ require 'vistas/header.php';
                 </p>
                 <div class="pricing">
                   <h1>Cierra Sesion</h1> 
-                  <a href="cerrarSesionEjecutivo.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Purchase Now</a>  <?php// cerrar_sesion_ejecutivo();?>
+                  <a href="#" class="btn btn-dark px-5 py-2 primary-btn mb-5">Purchase Now</a>
                 </div>
               </div>
             </div>

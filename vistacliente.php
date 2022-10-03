@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="#" />  
-    <title>CRUD GOOOOOOOOD</title>
+    <title>TablaClientes</title>
       
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -23,7 +23,7 @@
 </head>
 <body> 
     <header>
-    <h3 class='text-center'> CRUD GOOOOOOOOD </h3>
+    <h3 class='text-center'> Tabla Clientes </h3>
     </header>    
       
     <div class="container">
