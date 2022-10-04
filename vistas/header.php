@@ -42,7 +42,7 @@
             <!--CUENTAS-->
             <li class="nav-item dropdown">
               <div class="dropdown">
-                <a href="#" class="nav-link">Ingresa</a>
+                <a href="#" class="nav-link">INGRESAR</a>
                 <div class="dropdown-content">
                   <a href="./rscCliente/loginCliente.php">Cliente</a>
                   <a href="ejecutivo.php">EJECUTIVO</a>
@@ -67,7 +67,7 @@
               <a class="nav-link" href="cerrarSesionEjecutivo.php">
                 <?php if(isset($_SESSION['usuarioEjecutivo'])){
                     echo "CERRAR SESION"; //se va mostrar cerrar sesion si es que el ejecutivo tiene una sesion iniciada
-                     } else {
+                    } else {
                          echo "ABOUT US"; //sino pues muetra otro texto   
                     }?>
               </a>

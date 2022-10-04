@@ -171,46 +171,36 @@ require 'header.php';
               </div>
         </div>
 
-        <div class="col-md-4 col-12">
-            <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
-
-                <div class="carousel-inner text-center"><!--ALONSO, MAURICIO-->
-                  <div class="carousel-item active">
-                    <div class="card mr-2 d-inline-block shadow">
-                      <div class="card-img-top">
-                        <img src="./assets/UI-face-1.jpg" class="img-fluid rounded-circle w-50 p-4" alt=""><!--CARGAR IMAGEN DE ALONSO-->
-                      </div>
-                      <div class="card-body">
-                        <h3 class="card-title">Alonso Villa</h3>
-                        <p class="card-text">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
-                          minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
-                        </p>
-                        <a href="#" class="text-secondary text-decoration-none">Contactame!</a>
-                        <p class="text-black-50">Estudiante de programación</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="card  d-inline-block mr-2 shadow">
-                      <div class="card-img-top">
-                        <img src="./assets/UI-face-2.jpg" class="img-fluid rounded-circle w-50 p-4" alt=""> <!--Cargar imagen de Mauricio-->
-                      </div>
-                      <div class="card-body">
-                        <h3 class="card-title">Mauricio Chavez</h3>
-                        <p class="card-text">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
-                          minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
-                        </p>
-                        <a href="#" class="text-secondary text-decoration-none">Contactame!</a>
-                        <p class="text-black-50">Estudiante de programación</p>
-                      </div>
-                    </div>         
-                  </div>
-
+        <div class="col-md-4 col-12 text-center">
+            <div class="card mr-2 d-inline-block shadow-lg">
+                <div class="card-img-top">
+                  <img src="./assets/UI-face-1.jpg" class="img-fluid border-radius p-4" alt="">
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title">Mauricio Chávez </h3>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
+                    minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
+                  </p>
+                  <a href="#" class="text-secondary text-decoration-none">Contactame!</a>
+                  <p class="text-black-50">Estudiante de programación</p>                </div>
               </div>
         </div>
+        
+        <div class="col-md-4 col-12 text-center">
+            <div class="card mr-2 d-inline-block shadow-lg">
+                <div class="card-img-top">
+                  <img src="./assets/UI-face-1.jpg" class="img-fluid border-radius p-4" alt="">
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title">Jesus Alonso </h3>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
+                    minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
+                  </p>
+                  <a href="#" class="text-secondary text-decoration-none">Contactame!</a>
+                  <p class="text-black-50">Estudiante de programación</p>                </div>
+              </div>
         </div>
         <div class="col-md-4 col-12 text-center">
             <div class="card mr-2 d-inline-block shadow-lg">
@@ -218,7 +208,22 @@ require 'header.php';
                   <img src="./assets/UI-face-1.jpg" class="img-fluid border-radius p-4" alt="">
                 </div>
                 <div class="card-body">
-                  <h3 class="card-title">Braulio </h3>
+                  <h3 class="card-title">Adolfo Ángel </h3>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
+                    minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
+                  </p>
+                  <a href="#" class="text-secondary text-decoration-none">Contactame!</a>
+                  <p class="text-black-50">Estudiante de programación</p>                </div>
+              </div>
+        </div>
+        <div class="col-md-4 col-12 text-center">
+            <div class="card mr-2 d-inline-block shadow-lg">
+                <div class="card-img-top">
+                  <img src="./assets/UI-face-1.jpg" class="img-fluid border-radius p-4" alt="">
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title">Braulio Roberto </h3>
                   <p class="card-text">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
                     minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
@@ -243,8 +248,8 @@ require 'header.php';
           </p>
         </div>
         <div class="col-md-5 col-sm-12">
-          <h4 class="text-light">contactanos</h4>
-          <p class="text-muted">Mantente actualziado</p>
+          <h4 class="text-light">Contactanos</h4>
+          <p class="text-muted">Mantente actualizado</p>
           <form class="form-inline">
             <div class="col pl-0">
               <div class="input-group pr-5">
@@ -260,7 +265,7 @@ require 'header.php';
         </div>
         <div class="col-md-2 col-sm-12">
           <h4 class="text-light">Siguenos</h4>
-          <p class="text-muted">en todas nuestras redes</p>
+          <p class="text-muted">Nuestras redes sociales: </p>
           <div class="column text-light">
             <a href="#"> <i class="fab fa-facebook-f pl-3"></i> </a>
             <a href="#"> <i class="fab fa-instagram pl-3"></i> </a>
