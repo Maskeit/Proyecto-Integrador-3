@@ -44,8 +44,8 @@
               <div class="dropdown">
                 <a href="#" class="nav-link">Ingresa</a>
                 <div class="dropdown-content">
-                  <a href="./rscCliente/loginCliente.php">Cliente</a>
-                  <a href="ejecutivo.php">EJECUTIVO</a>
+                  <a href="./rscCliente/loginCliente.php">Cliente</a> <!--Aqui mover la ubicacion y cambiarla por cliente.php haciendo un isset-->
+                  <a href="ejecutivo.php">Ejecutivo</a>
                 </div>
               </div>
             </li>

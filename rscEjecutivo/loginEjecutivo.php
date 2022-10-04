@@ -33,6 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //comprobamos si los datos se han en
 	}
 }
 
-require 'vistas/loginEjecutivo.view.php';
+require 'loginEjecutivo.view.php';
 
 ?>

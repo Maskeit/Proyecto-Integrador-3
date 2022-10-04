@@ -7,6 +7,13 @@ function comprobar_sesion_ejecutivo(){
     }
 }
 
+function comprobar_sesion_cliente(){
+    if(isset($_SESSION['usuarioCliente'])){
+        header('Location: index.php');
+        die();
+    }
+}
+
 //funcion para primero entrar como administrador EN PRUEBAS
 function comprobar_sesion_administrador(){
     if(isset($_SESSION['adminUser'])){
