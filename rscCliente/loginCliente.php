@@ -1,7 +1,7 @@
 <?php session_start();
 //comprobamos si el cliente ya tiene una sesion iniciada
 #si ya tiene una sesion redirigimos al perfil de cliente
-require '../funciones.php';
+require '../funciones/funciones.php';
 comprobar_sesion_cliente();
 // comprobamos si ya han sido enviados los datos
 

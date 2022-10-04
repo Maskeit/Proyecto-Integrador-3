@@ -2,14 +2,14 @@
 
 function comprobar_sesion_ejecutivo(){
     if(isset($_SESSION['usuarioEjecutivo'])){
-        header('Location: index.php');
+        header('Location: ../index.php');
         die();
     }
 }
 
 function comprobar_sesion_cliente(){
     if(isset($_SESSION['codigoCliente'])){
-        header('Location: index.php');
+        header('Location: ../index.php');
         die();
     }
 }
@@ -17,7 +17,7 @@ function comprobar_sesion_cliente(){
 //funcion para primero entrar como administrador EN PRUEBAS
 function comprobar_sesion_administrador(){
     if(isset($_SESSION['adminUser'])){
-        header('Location: index.php');
+        header('Location: ../index.php');
     } else{
         header('Location: adminUser.php');;
     }
@@ -28,7 +28,7 @@ function cerrar_sesion_ejecutivo(){
     session_destroy();
 $_SESSION = array();
 
-header('Location: index.php');
+header('Location: ../index.php');
 die();
 
 }

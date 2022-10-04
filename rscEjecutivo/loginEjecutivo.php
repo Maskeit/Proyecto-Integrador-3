@@ -1,7 +1,7 @@
 <?php session_start();
 // Comprobamos si ya tiene una sesion
 # Si ya tiene una sesion redirigimos al contenido, para que no pueda acceder al formulario
-require '../funciones.php';
+require '../funciones/funciones.php';
 comprobar_sesion_ejecutivo();
 // Comprobamos si ya han sido enviado los datos
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { //comprobamos si los datos se han enviado

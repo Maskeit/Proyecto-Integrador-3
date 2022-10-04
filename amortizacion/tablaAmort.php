@@ -48,7 +48,7 @@ $pagoMensual = $pagoMensual = round(($prestamo * $porcentaje)/(1-(pow((1+$porcen
 
  				<td><?php echo $pagoMensual; $totalPago+=$pagoMensual?></td>
 
- 				<td><?php $interes = $prestamo * $porcentaje; echo $interes; $totalInteres+=$interes?></td>
+ 				<td><?php $interes = $prestamo * $porcentaje; echo $interes; $totalInteres=$totalInteres+$interes?></td>
 
  				<td><?php $amortizacion = $pagoMensual - $interes; echo $amortizacion; $totalAmort+=$amortizacion?></td>
 
@@ -57,15 +57,17 @@ $pagoMensual = $pagoMensual = round(($prestamo * $porcentaje)/(1-(pow((1+$porcen
  			<?php $meses--; }?>
  			<tr>
  				<td>Total</td>
- 				<td>$<?php $totalPago //agregue los php y quite el '=' ?></td> 
- 				<td>$<?php $totalInteres?></td>
- 				<td>$<?php round($totalAmort)?></td>
+ 				<td>$<?= $totalPago //agregue los php y quite el '=' ?></td> 
+ 				<td>$<?= $totalInteres?></td>
+ 				<td>$<?= round($totalAmort)?></td>
  				<td>-</td>
  			</tr>
  		</tbody>
  	</table>
 
 <a class="btn btn-primary" href="formularioAmort.php" >Regresar</a>
+<br>
+<a class="btn btn-primary" href="../ejecutivo.php" >Hacer otras operaciones</a>
 
  </body>
  </html>
