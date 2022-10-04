@@ -3,7 +3,7 @@
 if(isset($_SESSION['usuarioEjecutivo'])){
     require 'vistas/ejecutivo.view.php';
 } else {
-    header('Location: loginEjecutivo.php');
+    header('Location: rscEjecutivo/loginEjecutivo.php');
     die();
 }
 

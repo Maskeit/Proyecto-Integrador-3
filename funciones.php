@@ -8,7 +8,7 @@ function comprobar_sesion_ejecutivo(){
 }
 
 function comprobar_sesion_cliente(){
-    if(isset($_SESSION['usuarioCliente'])){
+    if(isset($_SESSION['codigoCliente'])){
         header('Location: index.php');
         die();
     }

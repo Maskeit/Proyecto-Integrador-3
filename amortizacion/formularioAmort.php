@@ -11,11 +11,11 @@
 <h3>Nuestros prestamos cuentan con 5% de comisión anual</h3>
 <b>
 	¿Cuanto dinero desea?
-	<input type="numbers" name="dinero"><br>
+	<input type="numbers" name="dinero" placeholder="$$$$"><br>
 </b>
 <b>
 	¿En cuantos meses pagará?
-	<input type="numbers" name="meses"><br>
+	<input type="numbers" name="meses" placeholder="Ej. 12 meses"><br>
 </b>
 <input type="submit" value="Subir">
 

@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){ //comprobar si los datos se han enviad
     $resultado = $statement->fetch(); //fetch devuelve el resultado
 	if ($resultado !== false) {
 		$_SESSION['codigoCliente'] = $codigoCliente;
-		header('Location: cliente.php');
+		header('Location: ../cliente.php');
 	} else {
 		$errores = '<li>Datos incorrectos</li>';
 	}

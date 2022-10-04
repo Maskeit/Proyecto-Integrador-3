@@ -1,5 +1,7 @@
-<<?php 
-
+<?php 
+require 'formularioAmort.php';
+//comprobamos si han sido enviados los datos
+if($_SERVER['REQUEST_METHOD'] == 'POST'){//agrego una condicional
 $meses = $_POST['meses']; //Aquí llegan los meses desde el formulario.
 $auxMeses = $meses;
 $porcentaje = 0.05; //Aquí esta a cambiar, es el interes que queramos poner
@@ -8,6 +10,7 @@ $totalPago =  0;
 $totalInteres = 0;
 $totalAmort = 0;
 $pagoMensual = $pagoMensual = round(($prestamo * $porcentaje)/(1-(pow((1+$porcentaje),-$meses))),2); //calculo chistoso
+}
  ?>
 
  <!DOCTYPE html>
@@ -54,9 +57,9 @@ $pagoMensual = $pagoMensual = round(($prestamo * $porcentaje)/(1-(pow((1+$porcen
  			<?php $meses--; }?>
  			<tr>
  				<td>Total</td>
- 				<td>$<?=$totalPago?></td>
- 				<td>$<?=$totalInteres?></td>
- 				<td>$<?=round($totalAmort)?></td>
+ 				<td>$<?php $totalPago //agregue los php y quite el '=' ?></td> 
+ 				<td>$<?php $totalInteres?></td>
+ 				<td>$<?php round($totalAmort)?></td>
  				<td>-</td>
  			</tr>
  		</tbody>

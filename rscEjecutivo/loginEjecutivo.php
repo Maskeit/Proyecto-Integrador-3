@@ -1,7 +1,7 @@
 <?php session_start();
 // Comprobamos si ya tiene una sesion
 # Si ya tiene una sesion redirigimos al contenido, para que no pueda acceder al formulario
-require 'funciones.php';
+require '../funciones.php';
 comprobar_sesion_ejecutivo();
 // Comprobamos si ya han sido enviado los datos
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { //comprobamos si los datos se han enviado
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //comprobamos si los datos se han en
 	$resultado = $statement->fetch(); //fetch devuelve el resultado
 	if ($resultado !== false) {
 		$_SESSION['usuarioEjecutivo'] = $usuarioEjecutivo;
-		header('Location: ejecutivo.php');
+		header('Location: ../ejecutivo.php');
 	} else {
 		$errores = '<li>Datos incorrectos</li>';
 	}

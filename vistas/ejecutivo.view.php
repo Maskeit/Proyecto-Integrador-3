@@ -36,14 +36,14 @@ require 'vistas/header.php';
             <div class="card">
               <div class="card-body">
                 <div class="title">
-                  <h5 class="card-title">BAJA</h5>
+                  <h5 class="card-title">Tablas</h5>
                 </div>
                 <p class="card-text">
-                  Dar de baja algun cliente.
+                  Generar tabla de amortizacion
                 </p>
                 <div class="pricing">
-                  <h1>Cierra Sesion</h1> 
-                  <a href="#" class="btn btn-dark px-5 py-2 primary-btn mb-5">Purchase Now</a>
+                  <h1>Generar Tabla</h1> 
+                  <a href="./amortizacion/formularioAmort.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Generar</a>
                 </div>
               </div>
             </div>
