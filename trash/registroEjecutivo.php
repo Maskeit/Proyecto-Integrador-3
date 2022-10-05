@@ -1,7 +1,7 @@
 <?php session_start();
 
 //En esta carpeta estan archivos que no se estan utilizando y probablemente se descarten al final
-require 'funciones.php';
+require '../funciones/funciones.php';
 # Si ya se tiene permisos de administrador,se puede acceder al registro de ejecutivos
 comprobar_sesion_ejecutivo();//usuarioAdministrador
 
@@ -68,11 +68,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			));
 		//	echo "Hola mundo";
 		// Despues de registrar al usuario redirigimos para que inicie sesion.
-		header('Location: loginEjecutivo.php');
+		header('Location: ../rscEjecutivo/loginEjecutivo.php');
 	}
 
 
 }
 
-require 'vistas/registroEjecutivo.view.php';
+require 'registroEjecutivo.view.php';
 ?>

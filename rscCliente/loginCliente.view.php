@@ -46,7 +46,7 @@
 
 				<p class="input"><a href="regisCliente.php">Registrarse</a></p>
 
-							<!-- Comprobamos si la variable errores esta seteada, si es asi mostramos los errores -->
+			<!-- Comprobamos si la variable errores esta seteada, si es asi mostramos los errores -->
 			<?php if(!empty($errores)): ?>
 				<div class="error">
 					<ul>
@@ -55,10 +55,7 @@
 				</div>
 			<?php endif; ?>
 
-			
             </form>
-			
-			
 
         </div>
     </div>

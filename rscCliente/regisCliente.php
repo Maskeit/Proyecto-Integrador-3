@@ -1,15 +1,13 @@
 <?php session_start();
 //logica del registro para clientes
-if(isset($_SESSION['codigoCLiente'])){
-    header('Location: ./index.php');
-}
-
+require '../funciones/funciones.php';
+comprobar_sesion_cliente();
+//comprobamos si los datos han sido enviados
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $codigoCliente = filter_var(strtolower($_POST['codigoCliente']),FILTER_SANITIZE_STRING);
     $password = $_POST['password'];
     $password2 = $_POST['password2'];
 
-    
 
     $errores = '';
     // Comprobamos que ninguno de los campos este vacio.
@@ -56,7 +54,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     ':codigoCliente' => $codigoCliente,
                     ':pass' => $password
                 ));
-            	//echo "Hola mundo";
             // Despues de registrar al usuario redirigimos para que inicie sesion.
             header('Location: loginCliente.php');
             
