@@ -7,4 +7,5 @@ if(isset($_SESSION['codigoCliente'])){
     die();
 }
 
+require 'vistas/cliente.view.php';
 ?> 
