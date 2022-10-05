@@ -165,7 +165,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="" class="col-form-label">Codigo Postal</label>
-                                <input type="text" class="form-control" id="codigoPostal">
+                                <input type="text" class="form-control" id="codigoPostal" minlength="5" maxlength = "5">
                             </div>
                         </div>    
                         <div class="col-lg-6">    
@@ -183,7 +183,7 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="" class="col-form-label">Curp</label>
-                                <input type="text" class="form-control" id="curp">
+                                <input type="text" class="form-control" id="curp" minlength="18" maxlength = "18">
                             </div>
                         </div>    
                         <div class="col-lg-6">    
