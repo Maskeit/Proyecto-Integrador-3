@@ -44,7 +44,7 @@
               <div class="dropdown">
                 <a href="#" class="nav-link">INGRESAR</a>
                 <div class="dropdown-content">
-                  <a href="./rscCliente/loginCliente.php">Cliente</a> <!--Aqui mover la ubicacion y cambiarla por cliente.php haciendo un isset-->
+                  <a href="cliente.php">Cliente</a> <!--Aqui mover la ubicacion y cambiarla por cliente.php haciendo un isset-->
                   <a href="ejecutivo.php">Ejecutivo</a>
                 </div>
               </div>
@@ -65,7 +65,7 @@
 
             <li class="nav-item">
               <a class="nav-link" href="./funciones/cerrarSesionEjecutivo.php">
-                <?php if(isset($_SESSION['usuarioEjecutivo'])){
+                <?php if(isset($_SESSION['usuarioEjecutivo'|| 'codigoCliente'])){
                     echo "CERRAR SESION"; //se va mostrar cerrar sesion si es que el ejecutivo tiene una sesion iniciada
                     } else {
                          echo "ABOUT US"; //sino pues muetra otro texto   
