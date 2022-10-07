@@ -14,34 +14,62 @@
 			<img src="../assets/bg.svg">
 		</div>
 		<div class="login-content">
-			<form action="index.html">
+
+
+			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name = "login">
 				<img src="../assets/avatar.svg">
-				<h2 class="title">BIENVENIDO</h2>
+				<h2 class="title">REGISTRARSE</h2>
+
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
            		   		<h5>Código de Cliente/Nº Tarjeta/Nº Cuenta</h5>
-           		   		<input type="text" class="input">
+           		   		<input type="text" name="codigoCliente" class="input">
            		   </div>
            		</div>
+
            		<div class="input-div pass">
            		   <div class="i"> 
            		    	<i class="fas fa-lock"></i>
            		   </div>
            		   <div class="div">
            		    	<h5>Contraseña</h5>
-           		    	<input type="password" class="input" name="password">
-            	   </div>
-                   <div class="div">
-           		    	<h5>Repite Contraseña</h5>
-           		    	<input type="password" class="input" name="password2">
-            	   </div>
+           		    	<input type="password" name="password" class="input">
+            	   </div>                   
             	</div>
-            	<a href="#">¿Has olvidado tu contraseña?</a>
-            	<input type="submit" class="btn" value="Iniciar sesión">
+
+				
+				<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Repetir Contraseña</h5>
+           		    	<input type="password" name="password2" class="input">
+            	   </div>                   
+            	</div>
+
+				
+            	<input type="submit" class="btn" value="Registrarse" onclick="login.submit()">
+
+				<p class="input"><a href="loginCliente.php">Iniciar Sesion</a></p>
+
+							<!-- Comprobamos si la variable errores esta seteada, si es asi mostramos los errores -->
+			<?php if(!empty($errores)): ?>
+				<div class="error">
+					<ul>
+						<?php echo $errores; //imprime el error que haya ocurrido?>
+					</ul>
+				</div>
+			<?php endif; ?>
+
+
             </form>
+			
+			
+
         </div>
     </div>
     <script type="text/javascript" src="../mainLoginClient.js"></script>
