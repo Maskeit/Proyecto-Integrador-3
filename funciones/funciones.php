@@ -1,5 +1,7 @@
 <?php 
 
+
+#FUNCIONES PARA INICIOS Y CIERRES DE SESION
 function comprobar_sesion_ejecutivo(){
     if(isset($_SESSION['usuarioEjecutivo'])){
         header('Location: ../index.php');
@@ -32,5 +34,26 @@ header('Location: ../index.php');
 die();
 
 }
+
+//funcion para cerrar la sesion del cliente
+function cerrar_sesion_cliente(){
+    session_destroy();
+$_SESSION = array();
+
+header('Location: ../index.php');
+die();
+
+}
+
+#FUNCION PARA CONECTARNOS A LA BASE DE DATOS
+function conectar_base_datos(){
+    try {
+        $conexion = new PDO('mysql:host=localhost;dbname=uni-bank', 'root', '');
+    } catch (PDOException $e) {
+        echo "Error:" . $e->getMessage();
+    }
+}
+
+
 
 ?>
