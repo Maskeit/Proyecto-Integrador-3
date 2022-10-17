@@ -34,7 +34,7 @@
 						<?php echo $errores; ?>
 					</ul>
 				</div>
-			<?php endif; ?>
+			<?php endif; ?>,,
 		</form>
 
 			<p class="texto-registrate">

@@ -65,9 +65,12 @@
 
             <li class="nav-item">
               <a class="nav-link" href="./funciones/cerrarSesionEjecutivo.php">
-                <?php if(isset($_SESSION['usuarioEjecutivo'|| 'codigoCliente'])){
+                <?php if(isset($_SESSION['usuarioEjecutivo'])){
                     echo "CERRAR SESION"; //se va mostrar cerrar sesion si es que el ejecutivo tiene una sesion iniciada
-                    } else {
+                    } elseif (isset($_SESSION['codigoCliente'])) {
+                    echo "CERRAR SESION";
+                    }
+                    else {
                          echo "ABOUT US"; //sino pues muetra otro texto   
                     }?>
               </a>
