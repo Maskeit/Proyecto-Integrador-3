@@ -1,3 +1,7 @@
+<?php
+require '../vistas/header.php';
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
