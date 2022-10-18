@@ -50,14 +50,14 @@ require 'vistas/header.php';
             <div class="card">
               <div class="card-body">
                 <div class="title">
-                  <h5 class="card-title">Validar datos</h5>
+                  <h5 class="card-title">Status de pedidos</h5>
                 </div>
                 <p class="card-text">
-                  With supporting text below as a natural lead-in.
+                  En este apartado podras revisar el estado del perfil de un cliente si hace una consulta.
                 </p>
                 <div class="pricing">
-                  <h1>VALIDA</h1>
-                  <a href="#" class="btn btn-dark px-5 py-2 primary-btn mb-5">Purchase Now</a>
+                  <h1>Estado</h1>
+                  <a href="#" class="btn btn-dark px-5 py-2 primary-btn mb-5">Estados</a>
                 </div>
               </div>
             </div>

@@ -43,7 +43,7 @@
 
             	<a href="#">¿Has olvidado tu contraseña?</a>
             	<input type="submit" class="btn" value="Iniciar Sesion" onclick="login.submit()">
-
+				<p class="input"><a href="../index.php">Regresar</a></p>
 				<p class="input"><a href="regisCliente.php">Registrarse</a></p>
 
 			<!-- Comprobamos si la variable errores esta seteada, si es asi mostramos los errores -->

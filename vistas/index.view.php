@@ -148,7 +148,7 @@ require 'header.php';
     </section>
 
         <!-- Section 4 -->
-        <section class="section-4">
+    <section class="section-4">
       <div class="container text-center" id="us">
         <h1 class="text-dark">Nuestro equipo de desarrollo</h1>
         <p class="text-secondary">Conoce a cada uno de nosotros</p>

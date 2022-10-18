@@ -25,7 +25,8 @@
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="index.php">
-          <i class="bi bi-cash-coin fa-2x mx-3"></i>Unibank</a>
+          <i class="bi bi-cash-coin fa-2x mx-3"></i>Unibank
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
           aria-label="Toggle navigation">
           <i class="fas fa-align-right text-light"></i>
@@ -73,7 +74,7 @@
                     echo "CERRAR SESION";
                     }
                     else {
-                         echo "ABOUT US"; //sino pues muetra otro texto   
+                         echo " "; //sino no muestra nada  
                     }?>
               </a>
 
