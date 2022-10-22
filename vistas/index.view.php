@@ -41,13 +41,13 @@ require 'header.php';
             <div class="panel text-left" id="aboutUs">
               <h1>Sobre UNIBANK</h1>
               <p class="pt-4">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere iure adipisci harum ducimus accusantium, repudiandae aperiam
-                voluptatum, id ex ratione omnis reiciendis possimus officiis.
+              UNIBANK es uno de los grupos financieros líderes en el país, centrado en la transformación comercial y en la innovación.
+              Su negocio está enfocado en la Banca Minorista, con fuerte integración con Banca Mayorista, lo que se suma al impulso de
+              los negocios de Banca Privada, Gestión de Activos y Seguros.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi vitae, tenetur quidem eum aliquid vel labore sint placeat
-                ad deserunt consectetur fugit ullam. Eius unde neque ducimus obcaecati ipsum quos vero totam recusandae hic
-                expedita nemo sit, illum harum. Quisquam impedit ullam itaque facere et ad molestiae quod reprehenderit excepturi!
+              Tras el importante plan de inversión de los últimos años, el Grupo está preparado para crecer de manera rentable,
+              recurrente y sostenible, además de aumentar la base de clientes vinculados y digitales y de mejorar la satisfacción del cliente.
               </p>
             </div>
           </div>
