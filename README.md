@@ -3,6 +3,12 @@ Unibank es una web app financiera que imita las funciones de un sistema bancario
 
 Desarrollado por:
 
-**Maskeit**
-**Jamiro-MR**
-**AngelPerez10**
+-**Maskeit**
+
+-**Jamiro-MR**
+
+-**AngelPerez10**
+
+-**mchavez12**
+
+-**AlonViglez**
