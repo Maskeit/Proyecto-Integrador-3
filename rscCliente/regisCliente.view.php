@@ -54,7 +54,7 @@
 				
             	<input type="submit" class="btn" value="Registrarse" onclick="login.submit()">
 
-				<p class="input"><a href="loginCliente.php">Iniciar Sesion</a></p>
+				<p class="input"><a href="loginCliente.php">¿Ya tienes cuenta? Inicia Sesion</a></p>
 
 							<!-- Comprobamos si la variable errores esta seteada, si es asi mostramos los errores -->
 			<?php if(!empty($errores)): ?>
