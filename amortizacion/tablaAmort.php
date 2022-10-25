@@ -24,50 +24,57 @@ $pagoMensual = $pagoMensual = round(($prestamo * $porcentaje)/(1-(pow((1+$porcen
  </head>
 
  <body>
+    <section tablaAmort>
+     	<table class="table table-hover">
+     		
+     		<thead>
+     			<th scope="col">Plazo</th>
+     			<th scope="col">Pago mensual</th>
+     			<th scope="col">Interes</th>
+     			<th scope="col">Amortización</th>
+     			<th scope="col">Resto a pagar</th>
+     		</thead>
+     		<tbody>
+     			<tr> <!-- primer renglon -->
+     				<td>0</td>
+     				<td>-</td>
+     				<td>-</td>
+     				<td>-</td>
+     				<td>$<?=$prestamo?></td>
+     			</tr>
+     			<?php for($i = 1; $i <= $auxMeses; $i++){ ?>
+     			<tr>
+     				<td><?php echo $i?></td>
 
- 	<table class="table mt-3">
- 		
- 		<thead>
- 			<th scope="col">Plazo</th>
- 			<th scope="col">Pago mensual</th>
- 			<th scope="col">Interes</th>
- 			<th scope="col">Amortización</th>
- 			<th scope="col">Resto a pagar</th>
- 		</thead>
- 		<tbody>
- 			<tr> <!-- primer renglon -->
- 				<td>0</td>
- 				<td>-</td>
- 				<td>-</td>
- 				<td>-</td>
- 				<td>$<?=$prestamo?></td>
- 			</tr>
- 			<?php for($i = 1; $i <= $auxMeses; $i++){ ?>
- 			<tr>
- 				<td><?php echo $i?></td>
+     				<td><?php echo $pagoMensual; $totalPago+=$pagoMensual?></td>
 
- 				<td><?php echo $pagoMensual; $totalPago+=$pagoMensual?></td>
+     				<td><?php $interes = $prestamo * $porcentaje; echo $interes; $totalInteres=$totalInteres+$interes?></td>
 
- 				<td><?php $interes = $prestamo * $porcentaje; echo $interes; $totalInteres=$totalInteres+$interes?></td>
+     				<td><?php $amortizacion = $pagoMensual - $interes; echo $amortizacion; $totalAmort+=$amortizacion?></td>
 
- 				<td><?php $amortizacion = $pagoMensual - $interes; echo $amortizacion; $totalAmort+=$amortizacion?></td>
+     				<td> <?php $prestamo = $prestamo - $amortizacion; if($prestamo>1){echo $prestamo;}else {echo "0";}?> </td>
+     			</tr>
+     			<?php $meses--; }?>
+     			<tr>
+     				<td>Total</td>
+     				<td>$<?= $totalPago //agregue los php y quite el '=' ?></td> 
+     				<td>$<?= $totalInteres?></td>
+     				<td>$<?= round($totalAmort)?></td>
+     				<td>-</td>
+     			</tr>
+     		</tbody>
+     	</table>
+    </section>
 
- 				<td> <?php $prestamo = $prestamo - $amortizacion; if($prestamo>1){echo $prestamo;}else {echo "0";}?> </td>
- 			</tr>
- 			<?php $meses--; }?>
- 			<tr>
- 				<td>Total</td>
- 				<td>$<?= $totalPago //agregue los php y quite el '=' ?></td> 
- 				<td>$<?= $totalInteres?></td>
- 				<td>$<?= round($totalAmort)?></td>
- 				<td>-</td>
- 			</tr>
- 		</tbody>
- 	</table>
+<section buttons class="d-flex justify-content-center"> <!-- Botones de acciones -->
 
-<a class="btn btn-primary" href="formularioAmort.php" >Regresar</a>
-<br>
-<a class="btn btn-primary" href="../ejecutivo.php" >Hacer otras operaciones</a>
+<div class="d-grid gap-3" style="max-width: 30%;">
+  <a class="btn btn-primary" href="formularioAmort.php"> Regresar </a>
+  <a class="btn btn-primary" href="../ejecutivo.php"> Hacer otras operaciones</a>
+  <div class="btn btn-primary" onclick="print()"> Imprimir tabla </div>
+</div>
+
+</section>
 
  </body>
  </html>
