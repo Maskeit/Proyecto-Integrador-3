@@ -28,7 +28,7 @@ require 'vistas/header.php';
                   Necesitas revisar tus cuentas?
                 </p>
                 <div class="pricing">
-                  <h1>Consulta</h1>
+                  <h2>Consulta</h2>
                   <a href="#" class="btn btn-dark px-5 py-2 primary-btn mb-5">Ver</a>
                 </div>
               </div>
@@ -42,8 +42,8 @@ require 'vistas/header.php';
                   Realiza Transferencias rapidas
                 </p>
                 <div class="pricing">
-                  <h1>Transferencias rapidas  </h1> 
-                  <a href="./amortizacion/formularioAmort.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Transferir</a>
+                  <h2>Transferencias rapidas  </h2> 
+                  <a href="./movimientos/movimientos.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Transferir</a>
                 </div>
               </div>.
             </div>
@@ -56,7 +56,7 @@ require 'vistas/header.php';
                   With supporting text below as a natural lead-in.
                 </p>
                 <div class="pricing">
-                  <h1>VALIDA</h1>
+                  <h2>VALIDA</h2>
                   <a href="#" class="btn btn-dark px-5 py-2 primary-btn mb-5">Purchase Now</a>
                 </div>
               </div>

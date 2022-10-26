@@ -6,4 +6,6 @@ if(isset($_SESSION['codigoCliente'])){
     header('Location: rscCliente/loginCliente.php');
     die();
 }
+
+//require 'vistas/cliente.view.php';
 ?> 

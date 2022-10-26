@@ -1,4 +1,8 @@
 <?php session_start();
+
+include_once '../bd/conexion.php';
+$objeto = new Conexion();
+$conexion = $objeto->Conectar();
 //logica del registro para clientes
 require '../funciones/funciones.php';
 comprobar_sesion_cliente();
@@ -15,12 +19,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$errores .= '<li>Por favor rellena todos los datos correctamente</li>'; //el punto agregado al =
 	} else {
 
-		// Comprobamos que el usuario no exista ya.
-		try {
-			$conexion = new PDO('mysql:host=localhost;dbname=uni-bank', 'root', '');
-		} catch (PDOException $e) {
-			echo "Error:" . $e->getMessage();
-		}
 
 		$statement = $conexion->prepare('SELECT * FROM cuentas WHERE codigoCliente = :codigoCliente LIMIT 1');//tabla cuentas 
 		$statement->execute(array(':codigoCliente' => $codigoCliente));
