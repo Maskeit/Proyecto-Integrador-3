@@ -25,7 +25,8 @@
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="index.php">
-          <i class="bi bi-cash-coin fa-2x mx-3"></i>Unibank</a>
+          <i class="bi bi-cash-coin fa-2x mx-3"></i>Unibank
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
           aria-label="Toggle navigation">
           <i class="fas fa-align-right text-light"></i>
@@ -64,13 +65,19 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="./funciones/cerrarSesionEjecutivo.php">
-                <?php if(isset($_SESSION['usuarioEjecutivo'|| 'codigoCliente'])){
+
+              <a class="nav-link" href="./funciones/cerrarSesion.php">
+
+                <?php if(isset($_SESSION['usuarioEjecutivo'])){
                     echo "CERRAR SESION"; //se va mostrar cerrar sesion si es que el ejecutivo tiene una sesion iniciada
-                    } else {
-                         echo "ABOUT US"; //sino pues muetra otro texto   
+                    } elseif (isset($_SESSION['codigoCliente'])) {
+                    echo "CERRAR SESION";
+                    }
+                    else {
+                         echo " "; //sino no muestra nada  
                     }?>
               </a>
+
             </li>
           </ul>
         </div>

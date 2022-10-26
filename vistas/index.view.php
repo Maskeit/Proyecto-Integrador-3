@@ -148,7 +148,7 @@ require 'header.php';
     </section>
 
         <!-- Section 4 -->
-        <section class="section-4">
+    <section class="section-4">
       <div class="container text-center" id="us">
         <h1 class="text-dark">Nuestro equipo de desarrollo</h1>
         <p class="text-secondary">Conoce a cada uno de nosotros</p>
@@ -157,7 +157,7 @@ require 'header.php';
         <div class="col-md-4 col-12 text-center"> <!--Miguel-->
             <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
-                  <img src="./assets/UI-face-3.jpg" class="img-fluid border-radius p-4" alt=""><!--CARGAR IMAGEN DE MIGUEL-->
+                  <img src="./assets/Yo.png" class="img-fluid border-radius p-4" alt=""><!--CARGAR IMAGEN DE MIGUEL-->
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Miguel Alejandre</h3>
@@ -174,7 +174,7 @@ require 'header.php';
         <div class="col-md-4 col-12 text-center">
             <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
-                  <img src="./assets/UI-face-1.jpg" class="img-fluid border-radius p-4" alt="">
+                  <img src="./assets/mauricio.jpeg" class="img-fluid border-radius p-4" alt="">
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Mauricio Chávez </h3>
@@ -190,7 +190,7 @@ require 'header.php';
         <div class="col-md-4 col-12 text-center">
             <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
-                  <img src="./assets/UI-face-1.jpg" class="img-fluid border-radius p-4" alt="">
+                  <img src="./assets/alonso.jpeg" class="img-fluid border-radius p-4" alt="">
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Jesus Alonso </h3>
@@ -205,7 +205,7 @@ require 'header.php';
         <div class="col-md-4 col-12 text-center">
             <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
-                  <img src="./assets/UI-face-1.jpg" class="img-fluid border-radius p-4" alt="">
+                  <img src="./assets/adolfo.jpeg" class="img-fluid border-radius p-4" alt="">
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Adolfo Ángel </h3>
@@ -220,7 +220,7 @@ require 'header.php';
         <div class="col-md-4 col-12 text-center">
             <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
-                  <img src="./assets/UI-face-1.jpg" class="img-fluid border-radius p-4" alt="">
+                  <img src="./assets/braulio.jpeg" class="img-fluid border-radius p-4" alt="">
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Braulio Roberto </h3>
