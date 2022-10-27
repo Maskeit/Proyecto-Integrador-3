@@ -1,4 +1,8 @@
 <?php session_start();
+
+include_once '../bd/conexion.php';
+$objeto = new Conexion();
+$conexion = $objeto->Conectar();
 // Comprobamos si ya tiene una sesion
 # Si ya tiene una sesion redirigimos al contenido, para que no pueda acceder al formulario
 require '../funciones/funciones.php';
@@ -10,12 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //comprobamos si los datos se han en
 	$password = $_POST['password'];
 	$password = hash('sha512', $password);
 
-	// Nos conectamos a la base de datos
-	try {
-		$conexion = new PDO('mysql:host=localhost;dbname=uni-bank', 'root', '');
-	} catch (PDOException $e) {
-		echo "Error:" . $e->getMessage();
-	}
+//conexion()
 												//tabla de la db    //el usuario ingresado              //contrasena ingresada coincida con la tabla
 	$statement = $conexion->prepare('SELECT * FROM ejecutivos WHERE usuarioEjecutivo = :usuarioEjecutivo AND sucursal = :sucursal AND pass = :password');
 	$statement->execute(array(
