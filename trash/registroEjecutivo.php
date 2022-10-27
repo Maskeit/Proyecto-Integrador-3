@@ -3,7 +3,7 @@
 //En esta carpeta estan archivos que no se estan utilizando y probablemente se descarten al final
 require '../funciones/funciones.php';
 # Si ya se tiene permisos de administrador,se puede acceder al registro de ejecutivos
-comprobar_sesion_ejecutivo();//usuarioAdministrador
+//comprobar_sesion_ejecutivo();//usuarioAdministrador
 
 // Comprobamos si ya han sido enviado los datos
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
