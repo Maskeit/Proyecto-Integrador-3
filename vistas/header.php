@@ -47,6 +47,7 @@
                 <div class="dropdown-content">
                   <a href="cliente.php">Cliente</a> <!--Aqui mover la ubicacion y cambiarla por cliente.php haciendo un isset-->
                   <a href="ejecutivo.php">Ejecutivo</a>
+                  <a href="adminUser.php">Unibank</a>
                 </div>
               </div>
             </li>
