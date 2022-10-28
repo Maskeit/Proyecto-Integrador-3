@@ -21,7 +21,7 @@ function comprobar_sesion_administrador(){
     if(isset($_SESSION['adminUser'])){
         header('Location: ../index.php');
     } else{
-        header('Location: adminUser.php');
+        header('Location: adminUser.php');;
     }
 }
 
@@ -45,7 +45,7 @@ die();
 
 }
 
-#FUNCION PARA CONECTARNOS A LA BASE DE DATOS// update: se usa el objeto de la clase en bd/conexion.php
+#FUNCION PARA CONECTARNOS A LA BASE DE DATOS
 function conectar_base_datos(){
     try {
         $conexion = new PDO('mysql:host=localhost;dbname=uni-bank', 'root', '');

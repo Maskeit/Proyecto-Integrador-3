@@ -17,9 +17,6 @@ require 'vistas/header.php';
         <p>
           Comienza a dar de alta a tus clientes.
         </p>
-<!--pruebas del card-->
-
-<!--pruebas del card-->                
         <div class="cards">
           <div class="d-flex flex-row justify-content-center flex-wrap">
             <div class="card">
@@ -60,7 +57,7 @@ require 'vistas/header.php';
                 </p>
                 <div class="pricing">
                   <h1>Estado</h1>
-                  <a href="./rscEjecutivo/status.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Estados</a>
+                  <a href="#" class="btn btn-dark px-5 py-2 primary-btn mb-5">Estados</a>
                 </div>
               </div>
             </div>
