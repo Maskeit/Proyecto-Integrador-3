@@ -1,7 +1,5 @@
 <?php 
 require 'formularioAmort.php';
-
-
 //comprobamos si han sido enviados los datos
 if($_SERVER['REQUEST_METHOD'] == 'POST'){//agrego una condicional
 $meses = $_POST['meses']; //Aquí llegan los meses desde el formulario.
@@ -25,9 +23,9 @@ $pagoMensual = $pagoMensual = round(($prestamo * $porcentaje)/(1-(pow((1+$porcen
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
  </head>
 
- <body class="container-fluid" style="background-image: url('../assets/image4.png'); Background-size: cover;">
+ <body>
     <section tablaAmort>
-     	<table class="table table-bordered border-primary table-dark table-hover">
+     	<table class="table table-hover">
      		
      		<thead>
      			<th scope="col">Plazo</th>
@@ -68,10 +66,13 @@ $pagoMensual = $pagoMensual = round(($prestamo * $porcentaje)/(1-(pow((1+$porcen
      	</table>
     </section>
 
-<section class="d-flex justify-content-center"> <!-- Botones de acciones -->
-  <a class="btn btn-primary btn-md mx-2" href="formularioAmort.php" role="button">Regresar</a>
-  <a class="btn btn-primary btn-md mx-2" href="../ejecutivo.php" role="button">Hacer otras operaciones</a>
-  <button type="button btn-primary btn-md" class="btn btn-primary mx-2" onclick="print()">Imprimir tabla</button>
+<section buttons class="d-flex justify-content-center"> <!-- Botones de acciones -->
+
+<div class="d-grid gap-3" style="max-width: 30%;">
+  <a class="btn btn-primary" href="formularioAmort.php"> Regresar </a>
+  <a class="btn btn-primary" href="../ejecutivo.php"> Hacer otras operaciones</a>
+  <div class="btn btn-primary" onclick="print()"> Imprimir tabla </div>
+</div>
 
 </section>
 
