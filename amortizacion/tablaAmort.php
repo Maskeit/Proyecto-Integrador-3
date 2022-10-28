@@ -71,7 +71,7 @@ $pagoMensual = $pagoMensual = round(($prestamo * $porcentaje)/(1-(pow((1+$porcen
 <section class="d-flex justify-content-center"> <!-- Botones de acciones -->
   <a class="btn btn-primary btn-md mx-2" href="formularioAmort.php" role="button">Regresar</a>
   <a class="btn btn-primary btn-md mx-2" href="../ejecutivo.php" role="button">Hacer otras operaciones</a>
-  <button type="button btn-primary btn-md" class="btn btn-primary mx-2" onclick="print()">Imprimir tabla</button>
+  <button type="button btn-primary btn-md" class="btn btn-primary mx-2" onclick="print()">Imprimir tabla</button> <!-- El botón print parece ser problema exclusivamente de Opera, revisen en otro navegador para ver si el problema persiste -->
 
 </section>
 
