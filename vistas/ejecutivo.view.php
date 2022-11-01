@@ -1,5 +1,5 @@
 <?php
-require 'vistas/header.php';
+require 'vistas/headerEspecifico.php';
 ?>
     <!--Purchase Whatever You Want-->
     <section class="section-2 container-fluid p-0">

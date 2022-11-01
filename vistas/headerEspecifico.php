@@ -12,7 +12,14 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="./Style.css" />
+  <!----><link rel="stylesheet" href="./mobile-style.css">
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-grid.css">
+  <link rel="stylesheet" href="../assets/bootstrap/js/bootstrap-grid.js">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
 
   <link rel="stylesheet" href="../css/estilosLogReg.css">
 
@@ -43,11 +50,15 @@
               <a class="nav-link" href="./funciones/cerrarSesion.php">
                 <?php if(isset($_SESSION['adminUser'])){
                     echo "CERRAR SESION"; //se va mostrar cerrar sesion si es que el ejecutivo tiene una sesion iniciada
-                    }else{
-                      echo "ACCEDE";
+                    } elseif (isset($_SESSION['usuarioEjecutivo'])) {
+                    echo "CERRAR SESION";
+                    } elseif (isset($_SESSION['codigoCliente'])) {
+                    echo "CERRAR SESION";
                     }
-                     
-                    ?>
+                    else {
+                         echo " "; //sino no muestra nada  
+                    }
+                  ?>
               </a>
 
             </li>
@@ -55,3 +66,4 @@
         </div>
       </nav>
     </div>
+  </header>

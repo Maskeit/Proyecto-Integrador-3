@@ -1,6 +1,17 @@
-<!DOCTYPE html>
-<html>
- 
+<?php session_start();
+
+require 'bd/conexion.php';
+$objeto = new Conexion();
+$conexion = $objeto->Conectar();
+
+$codigoCliente = $_SESSION['codigoCliente'];
+
+$statement = $conexion->prepare('SELECT * FROM alta WHERE codigoC = :codigoCliente AND saldo = :saldo');
+	$statement->execute(array(
+			':codigoCliente' => $codigoCliente,
+			':saldo' => $saldo
+		));
+?> 
 <head>
 	<style>
 	.hide {display: none;}
@@ -10,7 +21,8 @@
 	</style>
  
 	<script>
-	var saldo = 0;
+		
+	var saldo = <?php $saldo?>;
  
 	function showContent(id,e) {
 		document.getElementById("error").style.display='none';
@@ -52,31 +64,6 @@
  
 	</script>
  
-</head>
- 
-<body>
-	<h3>Saldo actual: <span id="saldo">0</span></h3>
- 
-	<form>
-		<div>
-			<b>Deposito</b>
-			<input type="checkbox" value="1" onchange="javascript:showContent('deposito',this)" />
-			<div id="deposito" class="hide">
-				Ingresa el Deposito a Realizar <input type="text" name="valor1">
-				<br><input type="button" value="Enviar" onclick="deposito()">
-			</div>
-		</div>
- 
-		<div>
-			<b>Retiro</b>
-			<input type="checkbox" value="1" onchange="javascript:showContent('retiro',this)" />
-			<div id="error"></div>
-			<div id="retiro" class="hide">
-				Ingresa el retiro a Realizar <input type="text" name="valor2">
-				<br><input type="button" value="Enviar" onclick="retiro()">
-			</div>
-		</div>
-	</form>
- 
-</body>
-</html>
+<?php
+require 'vistas/movimientos.view.php';
+?>

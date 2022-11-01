@@ -12,16 +12,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$password = $_POST['password'];
 	$password2 = $_POST['password2'];
 
-// // Tambien podemos limpiar mediante las funciones
-// 	# El problema es que si lo hacemos de esta forma no estamos eliminando caracteres especiales, solo los transformamos.
-	
-// 	// La funcion htmlspecialchars() convierte caracteres especiales en entidades HTML, (&, "", '', <, >)
-// 	$usuario = htmlspecialchars($_POST['usuario']);
-// 	// La funcion trim() elimina espacio en blanco al inicio y final de la cadena de texo
-// 	$usuario = trim($usuario);
-// 	// stripslashes() quita las barras de un string con comillas escapadas, los \ los convierte en \'
-// 	$usuario = stripslashes($usuario);
-
 	$errores = '';
 
 	// Comprobamos que ninguno de los campos este vacio.

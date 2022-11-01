@@ -1,5 +1,5 @@
 <?php
-require 'vistas/header.php';
+require 'vistas/headerEspecifico.php';
 ?>
     <!--Purchase Whatever You Want-->
     <section class="section-2 container-fluid p-0">
@@ -29,7 +29,7 @@ require 'vistas/header.php';
                 </p>
                 <div class="pricing">
                   <h2>Consulta</h2>
-                  <a href="#" class="btn btn-dark px-5 py-2 primary-btn mb-5">Ver</a>
+                  <a href="movimientos.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Ver</a>
                 </div>
               </div>
             </div>
@@ -65,3 +65,7 @@ require 'vistas/header.php';
         </div>
       </div>
     </section>
+    
+<?php
+require 'footer.php';
+?>
