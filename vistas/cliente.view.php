@@ -1,5 +1,6 @@
 <?php
 require 'vistas/headerEspecifico.php';
+//SE SUPONE QUE ALONSO CAMBIARA EL DISEÑO DE ESTA VISTA **ELIMINEN ESTE COMENTARIO CUANDO YA ESTE TERMINADO PORFA
 ?>
     <!--Purchase Whatever You Want-->
     <section class="section-2 container-fluid p-0">

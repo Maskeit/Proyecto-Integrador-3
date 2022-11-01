@@ -1,5 +1,6 @@
 <?php
 require 'vistas/headerEspecifico.php';
+//ALGUIEN ESTA TRABAJANDO EN ESTA VISTA DEL EJECUTIVO? CREO QUE ROBERTO LO ESTABA HACIENDO SI NO ME EQUIVOCO
 ?>
     <!--Purchase Whatever You Want-->
     <section class="section-2 container-fluid p-0">
@@ -32,7 +33,7 @@ require 'vistas/headerEspecifico.php';
                 </p>
                 <div class="pricing">
                   <h1>NUEVO</h1>
-                  <a href="vistacliente.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Registrar</a>
+                  <a href="vistacliente.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Registrar</a><!--FALTA QUE ANGEL MODIFIQUE LOS CAMPOS REQUERIDOS EN EL CRUD, URGE!!-->
                 </div>
               </div>
             </div>
