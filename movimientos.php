@@ -3,14 +3,7 @@
 require 'bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
-
-$codigoCliente = $_SESSION['codigoCliente'];
-
-$statement = $conexion->prepare('SELECT * FROM alta WHERE codigoC = :codigoCliente AND saldo = :saldo');
-	$statement->execute(array(
-			':codigoCliente' => $codigoCliente,
-			':saldo' => $saldo
-		));
+$saldo = 0;
 ?> 
 <head>
 	<style>
@@ -22,7 +15,7 @@ $statement = $conexion->prepare('SELECT * FROM alta WHERE codigoC = :codigoClien
  
 	<script>
 		
-	var saldo = <?php $saldo?>;
+	var saldo = <?php echo $saldo?>;
  
 	function showContent(id,e) {
 		document.getElementById("error").style.display='none';
@@ -33,7 +26,7 @@ $statement = $conexion->prepare('SELECT * FROM alta WHERE codigoC = :codigoClien
 			document.getElementById(id).style.display='none';
 		}
 	}
- 
+//funcion para hacer el deposito
 	function deposito() {
 		document.getElementById("error").style.display='none';
  
@@ -44,7 +37,7 @@ $statement = $conexion->prepare('SELECT * FROM alta WHERE codigoC = :codigoClien
 			document.getElementById("saldo").innerHTML=saldo;
 		}
 	}
- 
+//funcion para hacer el retiro
 	function retiro() {
 		document.getElementById("error").style.display='none';
  

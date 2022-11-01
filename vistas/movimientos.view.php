@@ -93,7 +93,7 @@ require 'headerEspecifico.php';
 
 
 <!--HTML DE LA LOGICA DEL MOVIMIENTO-->
-<h3 class="container">Saldo actual: <span id="saldo">0</span></h3> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
+<!--<h3 class="container">Saldo actual: <span id="saldo">0</span></h3> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
  
 	
  <div class="container">
