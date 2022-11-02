@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="contenedor">
-		<h1 class="titulo">Regístrate Ejecutivo</h1>
+		<h1 class="titulo">Registrar nuevo Ejecutivo</h1>
 		
 		<hr class="border">
 
@@ -39,7 +39,7 @@
 		</form>
 
 		<p class="texto-registrate">
-			¿ Ya tienes cuenta ?
+			¿ Ya tiene cuenta ?
 			<a href="../rscEjecutivo/loginEjecutivo.php">Iniciar Sesión</a>
 		</p>
 
