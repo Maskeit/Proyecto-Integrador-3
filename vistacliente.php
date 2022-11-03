@@ -43,6 +43,7 @@
                         <thead class="text-center">
                             <tr>
                                 <th>ID</th>
+                                <th>Codigo</th>
                                 <th>Nombre</th>
                                 <th>Apellido Paterno</th>
                                 <th>Apellido Materno</th>                                
@@ -54,6 +55,7 @@
                                 <th>Sexo</th>
                                 <th>Curp</th>
                                 <th>Fecha de Nacimiento</th>
+                                <th>Saldo</th>
                                 <th>Ocupacion</th>
                                 <th>Acciones</th>
                             </tr>
