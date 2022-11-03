@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-10-2022 a las 00:57:36
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.2
+-- Tiempo de generación: 02-11-2022 a las 01:26:22
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,31 +43,45 @@ INSERT INTO `administrador` (`id`, `adminUser`, `adminPass`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `alta`
+-- Estructura de tabla para la tabla `cliente`
 --
 
-CREATE TABLE `alta` (
-  `idAlta` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `apellidoPaterno` varchar(70) DEFAULT NULL,
-  `apellidoMaterno` varchar(70) DEFAULT NULL,
-  `estado` enum('AGUASCALIENTES','BAJA CALIFORNIA','BAJA CALIFORNIA SUR','CAMPECHE','COAHUILA','COLIMA','CHIAPAS','CHIHUAHUA','DURANGO','ESTADO DE MÉXICO','GUANAJUATO','GUERRERO','HIDALGO','JALISCO','CIUDAD DE MÉXICO','MICHOACÁN','MORELOS','NAYARIT','NUEVO LEÓN','OAXACA','PUEBLA','QUERÉTARO','QUINTANA ROO','SAN LUIS POTOSÍ','SINALOA, SONORA','TABASCO','TAMAULIPAS','TLAXCALA','VERACRUZ','YUCATÁN','ZACATECAS') DEFAULT NULL,
-  `municipio` varchar(70) NOT NULL,
-  `calle` varchar(90) NOT NULL,
-  `colonia` varchar(90) NOT NULL,
+CREATE TABLE `cliente` (
+  `idcliente` int(11) NOT NULL,
+  `codigoCliente` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nombre` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `apellidoPaterno` varchar(70) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `apellidoMaterno` varchar(70) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `estado` enum('AGUASCALIENTES','BAJA CALIFORNIA','BAJA CALIFORNIA SUR','CAMPECHE','COAHUILA','COLIMA','CHIAPAS','CHIHUAHUA','DURANGO','ESTADO DE MÉXICO','GUANAJUATO','GUERRERO','HIDALGO','JALISCO','CIUDAD DE MÉXICO','MICHOACÁN','MORELOS','NAYARIT','NUEVO LEÓN','OAXACA','PUEBLA','QUERÉTARO','QUINTANA ROO','SAN LUIS POTOSÍ','SINALOA, SONORA','TABASCO','TAMAULIPAS','TLAXCALA','VERACRUZ','YUCATÁN','ZACATECAS') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `municipio` varchar(70) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `calle` varchar(90) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `colonia` varchar(90) COLLATE utf8mb4_unicode_ci NOT NULL,
   `codigoPostal` int(5) NOT NULL,
-  `sexo` enum('Masculino','Femenino') DEFAULT NULL,
-  `curp` varchar(18) NOT NULL,
+  `sexo` enum('Masculino','Femenino') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `curp` varchar(18) COLLATE utf8mb4_unicode_ci NOT NULL,
   `fechaNacimiento` date DEFAULT NULL,
-  `ocupacion` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `saldo` float NOT NULL,
+  `ocupacion` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `alta`
+-- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `alta` (`idAlta`, `nombre`, `apellidoPaterno`, `apellidoMaterno`, `estado`, `municipio`, `calle`, `colonia`, `codigoPostal`, `sexo`, `curp`, `fechaNacimiento`, `ocupacion`) VALUES
-(1, 'Miguel Agustin', 'Alejandre', 'Arreola', 'JALISCO', 'Autlan', 'Apozolco', 'Aguilas', 28864, 'Masculino', 'AEMA010111HJCLRGA3', '2001-01-11', 'ESTUDIANTE');
+INSERT INTO `cliente` (`idcliente`, `codigoCliente`, `nombre`, `apellidoPaterno`, `apellidoMaterno`, `estado`, `municipio`, `calle`, `colonia`, `codigoPostal`, `sexo`, `curp`, `fechaNacimiento`, `saldo`, `ocupacion`) VALUES
+(1, 'UB0001', 'Adolfo Angel', 'Perez', 'Salado', 'COLIMA', 'Manzanillo', 'Deportiva', 'Deportiva', 28864, 'Masculino', 'PESA021101HCMRLDA7', '2002-11-01', 2500, 'Estudiante');
+
+--
+-- Disparadores `cliente`
+--
+DELIMITER $$
+CREATE TRIGGER `Generar_codigo` BEFORE INSERT ON `cliente` FOR EACH ROW BEGIN
+	DECLARE siguiente_codigo int;
+    SET siguiente_codigo = (SELECT ifnull (MAX(CONVERT(SUBSTRING(codigoCliente, 3), SIGNED INTEGER)), 0) FROM cliente) + 1;
+    SET NEW.codigoCliente = concat('UB', LPAD(siguiente_codigo, 4, '0'));
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -125,13 +139,6 @@ ALTER TABLE `administrador`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `alta`
---
-ALTER TABLE `alta`
-  ADD PRIMARY KEY (`idAlta`),
-  ADD UNIQUE KEY `curp` (`curp`);
-
---
 -- Indices de la tabla `cuentas`
 --
 ALTER TABLE `cuentas`
@@ -152,12 +159,6 @@ ALTER TABLE `ejecutivos`
 --
 ALTER TABLE `administrador`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de la tabla `alta`
---
-ALTER TABLE `alta`
-  MODIFY `idAlta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `cuentas`
