@@ -3,6 +3,7 @@
 include_once '../bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
+
 // Comprobamos si ya tiene una sesion
 # Si ya tiene una sesion redirigimos al contenido, para que no pueda acceder al formulario
 if (isset($_SESSION['codigoCliente'])) {
