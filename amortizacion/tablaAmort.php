@@ -1,5 +1,5 @@
 <?php 
-require 'formularioAmort.php';
+require 'genLoan.php';
 
 
 //comprobamos si han sido enviados los datos
