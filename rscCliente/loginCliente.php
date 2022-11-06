@@ -15,7 +15,7 @@ if (isset($_SESSION['codigoCliente'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$codigoCliente = filter_var(strtolower($_POST['codigoCliente']), FILTER_SANITIZE_STRING);
 	$password = $_POST['password'];
-	$password = hash('sha512', $password);
+	//$password = hash('sha512', $password);
 
 
 	$statement = $conexion->prepare('SELECT * FROM cuentas WHERE codigoCliente = :codigoCliente AND pass = :password');
