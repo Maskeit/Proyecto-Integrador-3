@@ -77,7 +77,7 @@ DELIMITER $$
 CREATE TRIGGER `Generar_codigo` BEFORE INSERT ON `cliente` FOR EACH ROW BEGIN
 	DECLARE siguiente_codigo int;
     SET siguiente_codigo = (SELECT ifnull (MAX(CONVERT(SUBSTRING(codigoCliente, 3), SIGNED INTEGER)), 0) FROM cliente) + 1;
-    SET NEW.codigoCliente = concat('UB', LPAD(siguiente_codigo, 4, '0'));
+    SET NEW.codigoCliente = concat('22', LPAD(siguiente_codigo, 4, '0'));
 END
 $$
 DELIMITER ;

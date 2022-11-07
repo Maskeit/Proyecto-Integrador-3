@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="#" />  
-    <title>TablaClientes</title>
+    <title>Tabla de Clientes</title>
       
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -42,7 +42,6 @@
                     <table id="tablaUsuarios" class="table table-striped table-bordered table-condensed" style="width:100%" >
                         <thead class="text-center">
                             <tr>
-                                <th>ID</th>
                                 <th>Codigo</th>
                                 <th>Nombre</th>
                                 <th>Apellido Paterno</th>
@@ -82,7 +81,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label for="" class="col-form-label">Nombre:</label>
+                                <label for="" class="col-form-label">Nombre</label>
                                 <input type="text" class="form-control" id="nombre">
                             </div>
                         </div> 

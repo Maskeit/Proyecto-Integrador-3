@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var idcliente, opcion;
+    var codigoCliente, opcion;
     opcion = 4;
         
     tablaAcademico = $('#tablaUsuarios').DataTable({  
@@ -10,7 +10,6 @@ $(document).ready(function() {
             "dataSrc":""
         },
         "columns":[
-            {"data": "idcliente"},
             {"data": "codigoCliente"},
             {"data": "nombre"},
             {"data": "apellidoPaterno"},
@@ -51,7 +50,7 @@ $(document).ready(function() {
               url: "bd/crud.php",
               type: "POST",
               datatype:"json",    
-              data:  {idcliente:idcliente, codigoCliente:codigoCliente, nombre:nombre, apellidoPaterno:apellidoPaterno, apellidoMaterno:apellidoMaterno, estado:estado, municipio:municipio, calle:calle, colonia:colonia, codigoPostal:codigoPostal, sexo:sexo, curp:curp, fechaNacimiento:fechaNacimiento, saldo:saldo, ocupacion:ocupacion, opcion:opcion},    
+              data:  {codigoCliente:codigoCliente, nombre:nombre, apellidoPaterno:apellidoPaterno, apellidoMaterno:apellidoMaterno, estado:estado, municipio:municipio, calle:calle, colonia:colonia, codigoPostal:codigoPostal, sexo:sexo, curp:curp, fechaNacimiento:fechaNacimiento, saldo:saldo, ocupacion:ocupacion, opcion:opcion},    
               success: function(data) {
                 tablaAcademico.ajax.reload(null, false);
                }
@@ -64,7 +63,7 @@ $(document).ready(function() {
     //para limpiar los campos antes de dar de cliente una Persona
     $("#btnNuevo").click(function(){
         opcion = 1; //cliente           
-        idcliente=null;
+        codigoCliente=null;
         $("#formAcademico").trigger("reset");
         $(".modal-header").css( "background-color", "#007bff");
         $(".modal-header").css( "color", "white" );
@@ -76,21 +75,20 @@ $(document).ready(function() {
     $(document).on("click", ".btnEditar", function(){		        
         opcion = 2;//editar
         fila = $(this).closest("tr");	        		            
-        idcliente = parseInt(fila.find('td:eq(0)').text());
-        codigoCliente = fila.find('td:eq(1)').text();
-        nombre = fila.find('td:eq(2)').text();
-        apellidoPaterno = fila.find('td:eq(3)').text();
-        apellidoMaterno = fila.find('td:eq(4)').text();
-        estado = fila.find('td:eq(5)').text();
-        municipio = fila.find('td:eq(6)').text();
-        calle = fila.find('td:eq(7)').text();
-        colonia = fila.find('td:eq(8)').text();
-        codigoPostal = fila.find('td:eq(9)').text();
-        sexo = fila.find('td:eq(10)').text();
-        curp = fila.find('td:eq(11)').text();
-        fechaNacimiento = fila.find('td:eq(12)').text();
-        saldo = fila.find('td:eq(13)').text();
-        ocupacion = fila.find('td:eq(14)').text();
+        codigoCliente = parseInt(fila.find('td:eq(0)').text());
+        nombre = fila.find('td:eq(1)').text();
+        apellidoPaterno = fila.find('td:eq(2)').text();
+        apellidoMaterno = fila.find('td:eq(3)').text();
+        estado = fila.find('td:eq(4)').text();
+        municipio = fila.find('td:eq(5)').text();
+        calle = fila.find('td:eq(6)').text();
+        colonia = fila.find('td:eq(7)').text();
+        codigoPostal = fila.find('td:eq(8)').text();
+        sexo = fila.find('td:eq(9)').text();
+        curp = fila.find('td:eq(10)').text();
+        fechaNacimiento = fila.find('td:eq(11)').text();
+        saldo = fila.find('td:eq(12)').text();
+        ocupacion = fila.find('td:eq(13)').text();
         $("#codigoCliente").val(codigoCliente);
         $("#nombre").val(nombre);
         $("#apellidoPaterno").val(apellidoPaterno);
@@ -114,15 +112,15 @@ $(document).ready(function() {
     //Borrar
     $(document).on("click", ".btnBorrar", function(){
         fila = $(this);           
-        idcliente = parseInt($(this).closest('tr').find('td:eq(0)').text()) ;		
+        codigoCliente = parseInt($(this).closest('tr').find('td:eq(0)').text()) ;		
         opcion = 3; //eliminar        
-        var respuesta = confirm("¿Está seguro de borrar el registro " + idcliente + "?");                
+        var respuesta = confirm("¿Está seguro de borrar el registro " + codigoCliente + "?");                
         if (respuesta) {            
             $.ajax({
               url: "bd/crud.php",
               type: "POST",
               datatype:"json",    
-              data:  {opcion:opcion, idcliente:idcliente},    
+              data:  {opcion:opcion, codigoCliente:codigoCliente},    
               success: function() {
                   tablaAcademico.row(fila.parents('tr')).remove().draw();                  
                }
@@ -130,4 +128,4 @@ $(document).ready(function() {
         }
      });
          
-    });    
+    });
