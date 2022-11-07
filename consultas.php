@@ -58,5 +58,5 @@ $saldo = 0;
 	</script>
  
 <?php
-require 'vistas/movimientos.view.php';
+require 'vistas/consultas.view.php';
 ?>

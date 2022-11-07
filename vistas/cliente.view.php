@@ -2,6 +2,13 @@
 require 'vistas/headerEspecifico.php';
 //SE SUPONE QUE ALONSO CAMBIARA EL DISEÑO DE ESTA VISTA **ELIMINEN ESTE COMENTARIO CUANDO YA ESTE TERMINADO PORFA
 ?>
+    <style>
+      .bg > div {
+        background:#f2f2f2;
+        margin: 10px 0;
+        padding:40px;
+      }
+    </style>
     <!--Purchase Whatever You Want-->
     <section class="section-2 container-fluid p-0">
       <div class="cover">
@@ -14,15 +21,15 @@ require 'vistas/headerEspecifico.php';
         </div>
       </div>
       <div class="purchase text-center">
-        <h1>Bienvenido <?php
-          //echo $row["nombre"]; 
-          echo strtoupper("$_SESSION[codigoCliente]"); ?>
+        <h1>Bienvenido 
+          <?php echo strtoupper("$_SESSION[codigoCliente]") ?>
         </h1> <!--Aqui va el nombre del cliente registrado con una variable supongo que $nombreCliente-->
-        <p>
-          Realiza Operaciones.
-        </p>
+          <p>
+            Realiza Operaciones.
+          </p>
         <div class="cards">
           <div class="d-flex flex-row justify-content-center flex-wrap">
+            
             <div class="card">
               <div class="card-body">
                 <div class="title">
@@ -33,10 +40,11 @@ require 'vistas/headerEspecifico.php';
                 </p>
                 <div class="pricing">
                   <h2>Consulta</h2>
-                  <a href="movimientos.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Ver</a>
+                  <a href="consultas.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Ver</a>
                 </div>
               </div>
             </div>
+
             <div class="card">
               <div class="card-body">
                 <div class="title">
@@ -51,6 +59,7 @@ require 'vistas/headerEspecifico.php';
                 </div>
               </div>.
             </div>
+
             <div class="card">
               <div class="card-body">
                 <div class="title">
@@ -65,8 +74,58 @@ require 'vistas/headerEspecifico.php';
                 </div>
               </div>
             </div>
+
           </div>
+        </div><!--end of cards-->
+        <div class="container">
+        <div class="row bg">
+          <!--apartado de las cards-->
+            <div class="card-deck">
+              <div class="col">
+              <div class="card">
+                <img class="card-img-top" src="./assets/img/foto3.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Una nueva vida</h5>
+                  <p class="card-text">No dejes pasar esta increible oferta que Unibank tiene para ti.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+              </div>
+            
+              <div class="col">
+              <div class="card">
+                <img class="card-img-top" src="./assets/img/foto4.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Estrena auto</h5>
+                  <p class="card-text">Esta navida con tu crédito Unibank estrena un auto nuevo.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+              </div>
+
+              <div class="col">
+              <div class="card">
+                <img class="card-img-top" src="./assets/img/foto1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Tomate un respiro</h5>
+                  <p class="card-text">Haz trabajado tan duro que te mereces un descanso.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+              </div>
+
+            </div>
+          
+
         </div>
+        </div>
+
       </div>
     </section>
     
