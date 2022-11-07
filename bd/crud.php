@@ -3,7 +3,7 @@ include_once '../bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
-$codigoCliente = (isset($_POST['codigoCliente'])) ? $_POST['codigoCliente'] : '';
+
 $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
 $apellidoPaterno = (isset($_POST['apellidoPaterno'])) ? $_POST['apellidoPaterno'] : '';
 $apellidoMaterno = (isset($_POST['apellidoMaterno'])) ? $_POST['apellidoMaterno'] : '';
@@ -19,32 +19,31 @@ $saldo = (isset($_POST['saldo'])) ? $_POST['saldo'] : '';
 $ocupacion = (isset($_POST['ocupacion'])) ? $_POST['ocupacion'] : '';
 
 $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
-$idcliente = (isset($_POST['idcliente'])) ? $_POST['idcliente'] : '';
-
+$codigoCliente = (isset($_POST['codigoCliente'])) ? $_POST['codigoCliente'] : '';
 
 switch($opcion){
     case 1:
-        $consulta = "INSERT INTO cliente (codigoCliente, nombre, apellidoPaterno, apellidoMaterno, estado, municipio, calle, colonia, codigoPostal, sexo, curp, fechaNacimiento, saldo, ocupacion) VALUES('$codigoCliente','$nombre', '$apellidoPaterno', '$apellidoMaterno', '$estado', '$municipio', '$calle', '$colonia', '$codigoPostal', '$sexo', '$curp', '$fechaNacimiento', '$saldo', '$ocupacion') ";			
+        $consulta = "INSERT INTO cliente (nombre, apellidoPaterno, apellidoMaterno, estado, municipio, calle, colonia, codigoPostal, sexo, curp, fechaNacimiento, saldo, ocupacion) VALUES('$codigoCliente','$nombre', '$apellidoPaterno', '$apellidoMaterno', '$estado', '$municipio', '$calle', '$colonia', '$codigoPostal', '$sexo', '$curp', '$fechaNacimiento', '$saldo', '$ocupacion') ";			
         $resultado = $conexion->prepare($consulta);
         $resultado->execute(); 
         
-        $consulta = "SELECT * FROM cliente ORDER BY idcliente DESC LIMIT 1";
+        $consulta = "SELECT * FROM cliente ORDER BY codigoCliente DESC LIMIT 1";
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);       
         break;    
     case 2:        
-        $consulta = "UPDATE cliente SET codigoCliente='$codigoCliente' nombre='$nombre', apellidoPaterno='$apellidoPaterno', apellidoMaterno='$apellidoMaterno', estado='$estado', municipio='$municipio', calle='$calle', colonia='$colonia', codigoPostal='$codigoPostal', sexo='$sexo', curp='$curp', fechaNacimiento='$fechaNacimiento', saldo='$saldo', ocupacion='$ocupacion'  WHERE idcliente='$idcliente' ";		
+        $consulta = "UPDATE cliente SET codigoCliente='$codigoCliente' nombre='$nombre', apellidoPaterno='$apellidoPaterno', apellidoMaterno='$apellidoMaterno', estado='$estado', municipio='$municipio', calle='$calle', colonia='$colonia', codigoPostal='$codigoPostal', sexo='$sexo', curp='$curp', fechaNacimiento='$fechaNacimiento', saldo='$saldo', ocupacion='$ocupacion'  WHERE codigoCliente='$codigoCliente' ";		
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();        
         
-        $consulta = "SELECT * FROM cliente WHERE idcliente='$idcliente' ";       
+        $consulta = "SELECT * FROM cliente WHERE codigoCliente='$codigoCliente' ";       
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         break;
     case 3:        
-        $consulta = "DELETE FROM cliente WHERE idcliente='$idcliente' ";		
+        $consulta = "DELETE FROM cliente WHERE codigoCliente='$codigoCliente' ";		
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();                           
         break;
