@@ -24,9 +24,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			':password' => $password
 		));
 
+	$nom = $conexion->prepare("SELECT * FROM cliente WHERE codigoCliente = $codigoCliente");
+	$nom->setFetchMode(PDO::FETCH_ASSOC);
+	$nom->execute();
+
+	while($row = $nom->fetch()){
+		$nombre = $row['nombre'];
+	}
+
+
 	$resultado = $statement->fetch();
 	if ($resultado !== false) {
 		$_SESSION['codigoCliente'] = $codigoCliente;
+		$_SESSION['nombre'] = $nombre;
 		header('Location: ../cliente.php');
 	} else {
 		$errores = '<li>Datos incorrectos</li>';
