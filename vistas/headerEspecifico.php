@@ -13,20 +13,23 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./Style.css" />
-  <!----><link rel="stylesheet" href="./mobile-style.css">
+
+  <link rel="stylesheet" href="./mobile-style.css">
+
   <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-grid.css">
   <link rel="stylesheet" href="../assets/bootstrap/js/bootstrap-grid.js">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   
-
   <link rel="stylesheet" href="../css/estilosLogReg.css">
 
   <!--Miguel-->
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <!--finmiguel-->
 </head>
+<body>
+  
   <header>
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg">
