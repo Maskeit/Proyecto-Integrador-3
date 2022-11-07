@@ -15,7 +15,7 @@ if (isset($_SESSION['codigoCliente'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$codigoCliente = filter_var(strtolower($_POST['codigoCliente']), FILTER_SANITIZE_STRING);
 	$password = $_POST['password'];
-	$password = hash('sha512', $password);
+	//$password = hash('sha512', $password);
 
 
 	$statement = $conexion->prepare('SELECT * FROM cuentas WHERE codigoCliente = :codigoCliente AND pass = :password');
@@ -24,9 +24,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			':password' => $password
 		));
 
+	$nom = $conexion->prepare("SELECT * FROM cliente WHERE codigoCliente = $codigoCliente");
+	$nom->setFetchMode(PDO::FETCH_ASSOC);
+	$nom->execute();
+
+	while($row = $nom->fetch()){
+		$nombre = $row['nombre'];
+	}
+
+
 	$resultado = $statement->fetch();
 	if ($resultado !== false) {
 		$_SESSION['codigoCliente'] = $codigoCliente;
+		$_SESSION['nombre'] = $nombre;
 		header('Location: ../cliente.php');
 	} else {
 		$errores = '<li>Datos incorrectos</li>';

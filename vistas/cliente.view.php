@@ -14,7 +14,7 @@ require 'vistas/headerEspecifico.php';
         </div>
       </div>
       <div class="purchase text-center">
-        <h1>Bienvenido <?php echo strtoupper("$_SESSION[codigoCliente]") ?> </h1> <!--Aqui va el nombre del cliente registrado con una variable supongo que $nombreCliente-->
+        <h1>Bienvenido <?php echo strtoupper("$_SESSION[nombre]") ?> </h1> <!--Aqui va el nombre del cliente registrado con una variable supongo que $nombreCliente-->
         <p>
           Realiza Operaciones.
         </p>
