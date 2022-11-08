@@ -41,13 +41,13 @@ require 'header.php';
             <div class="panel text-left" id="aboutUs">
               <h1>Sobre UNIBANK</h1>
               <p class="pt-4">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere iure adipisci harum ducimus accusantium, repudiandae aperiam
-                voluptatum, id ex ratione omnis reiciendis possimus officiis.
+              UNIBANK es uno de los grupos financieros líderes en el país, centrado en la transformación comercial y en la innovación.
+              Su negocio está enfocado en la Banca Minorista, con fuerte integración con Banca Mayorista, lo que se suma al impulso de
+              los negocios de Banca Privada, Gestión de Activos y Seguros.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi vitae, tenetur quidem eum aliquid vel labore sint placeat
-                ad deserunt consectetur fugit ullam. Eius unde neque ducimus obcaecati ipsum quos vero totam recusandae hic
-                expedita nemo sit, illum harum. Quisquam impedit ullam itaque facere et ad molestiae quod reprehenderit excepturi!
+              Tras el importante plan de inversión de los últimos años, el Grupo está preparado para crecer de manera rentable,
+              recurrente y sostenible, además de aumentar la base de clientes vinculados y digitales y de mejorar la satisfacción del cliente.
               </p>
             </div>
           </div>
@@ -148,7 +148,7 @@ require 'header.php';
     </section>
 
         <!-- Section 4 -->
-        <section class="section-4">
+    <section class="section-4">
       <div class="container text-center" id="us">
         <h1 class="text-dark">Nuestro equipo de desarrollo</h1>
         <p class="text-secondary">Conoce a cada uno de nosotros</p>
@@ -157,7 +157,7 @@ require 'header.php';
         <div class="col-md-4 col-12 text-center"> <!--Miguel-->
             <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
-                  <img src="./assets/UI-face-3.jpg" class="img-fluid border-radius p-4" alt=""><!--CARGAR IMAGEN DE MIGUEL-->
+                  <img src="./assets/Yo.png" class="img-fluid border-radius p-4" alt=""><!--CARGAR IMAGEN DE MIGUEL-->
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Miguel Alejandre</h3>
@@ -174,7 +174,7 @@ require 'header.php';
         <div class="col-md-4 col-12 text-center">
             <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
-                  <img src="./assets/UI-face-1.jpg" class="img-fluid border-radius p-4" alt="">
+                  <img src="./assets/mauricio.jpeg" class="img-fluid border-radius p-4" alt="">
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Mauricio Chávez </h3>
@@ -190,7 +190,7 @@ require 'header.php';
         <div class="col-md-4 col-12 text-center">
             <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
-                  <img src="./assets/UI-face-1.jpg" class="img-fluid border-radius p-4" alt="">
+                  <img src="./assets/alonso.jpeg" class="img-fluid border-radius p-4" alt="">
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Jesus Alonso </h3>
@@ -205,7 +205,7 @@ require 'header.php';
         <div class="col-md-4 col-12 text-center">
             <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
-                  <img src="./assets/UI-face-1.jpg" class="img-fluid border-radius p-4" alt="">
+                  <img src="./assets/adolfo.jpeg" class="img-fluid border-radius p-4" alt="">
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Adolfo Ángel </h3>
@@ -220,7 +220,7 @@ require 'header.php';
         <div class="col-md-4 col-12 text-center">
             <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
-                  <img src="./assets/UI-face-1.jpg" class="img-fluid border-radius p-4" alt="">
+                  <img src="./assets/braulio.jpeg" class="img-fluid border-radius p-4" alt="">
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Braulio Roberto </h3>
@@ -237,45 +237,9 @@ require 'header.php';
   </main>
 
   <!--Comienza el footer-->
-  <footer>
-    <div class="container-fluid p-0">
-      <div class="row text-left">
-        <div class="col-md-5 col-sm-5">
-          <h4 class="text-light">Acerca de nosotros</h4>
-          <p class="text-muted">Somos un equipo de desarrolladores de la carreara de ingenieria de software de la Facultad de ingenieria electromecanica de la UdeC</p>
-          <p class="pt-4 text-muted">Copyright ©2022 All rights reserved | made by:
-            <span> Equipo 2 Ing de software 3-D</span>
-          </p>
-        </div>
-        <div class="col-md-5 col-sm-12">
-          <h4 class="text-light">Contactanos</h4>
-          <p class="text-muted">Mantente actualizado</p>
-          <form class="form-inline">
-            <div class="col pl-0">
-              <div class="input-group pr-5">
-                <input type="text" class="form-control bg-dark text-white" id="inlineFormInputGroupUsername2" placeholder="Email">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <i class="fas fa-arrow-right"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="col-md-2 col-sm-12">
-          <h4 class="text-light">Siguenos</h4>
-          <p class="text-muted">Nuestras redes sociales: </p>
-          <div class="column text-light">
-            <a href="#"> <i class="fab fa-facebook-f pl-3"></i> </a>
-            <a href="#"> <i class="fab fa-instagram pl-3"></i> </a>
-            <a href="#"> <i class="fab fa-twitter pl-3"></i> </a>
-            <a href="#"> <i class="fab fa-youtube pl-3"></i> </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+<?php
+require 'footer.php';
+?>
   <!--Termina el footer-->
 
   <!--Links de bootstrap-->

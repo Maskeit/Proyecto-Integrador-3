@@ -149,11 +149,15 @@ form{
 
 a{
 	display: block;
-	text-align: right;
+	text-align: center;
 	text-decoration: none;
 	color: #999;
 	font-size: 0.9rem;
 	transition: .3s;
+	font-size: 18px;
+}
+#RegresarBtn {
+	margin-top: 25px;
 }
 
 a:hover{

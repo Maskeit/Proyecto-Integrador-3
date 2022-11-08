@@ -3,7 +3,7 @@
 //En esta carpeta estan archivos que no se estan utilizando y probablemente se descarten al final
 require '../funciones/funciones.php';
 # Si ya se tiene permisos de administrador,se puede acceder al registro de ejecutivos
-comprobar_sesion_ejecutivo();//usuarioAdministrador
+//comprobar_sesion_ejecutivo();//usuarioAdministrador
 
 // Comprobamos si ya han sido enviado los datos
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -11,16 +11,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$usuarioEjecutivo = filter_var(strtolower($_POST['usuarioEjecutivo']), FILTER_SANITIZE_STRING);
 	$password = $_POST['password'];
 	$password2 = $_POST['password2'];
-
-// // Tambien podemos limpiar mediante las funciones
-// 	# El problema es que si lo hacemos de esta forma no estamos eliminando caracteres especiales, solo los transformamos.
-	
-// 	// La funcion htmlspecialchars() convierte caracteres especiales en entidades HTML, (&, "", '', <, >)
-// 	$usuario = htmlspecialchars($_POST['usuario']);
-// 	// La funcion trim() elimina espacio en blanco al inicio y final de la cadena de texo
-// 	$usuario = trim($usuario);
-// 	// stripslashes() quita las barras de un string con comillas escapadas, los \ los convierte en \'
-// 	$usuario = stripslashes($usuario);
 
 	$errores = '';
 
