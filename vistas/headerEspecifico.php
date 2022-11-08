@@ -13,20 +13,21 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./Style.css" />
-  <!----><link rel="stylesheet" href="./mobile-style.css">
-  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-grid.css">
-  <link rel="stylesheet" href="../assets/bootstrap/js/bootstrap-grid.js">
+
+  <link rel="stylesheet" href="./mobile-style.css">
+
+  <link rel="stylesheet" href="../assets/bootstrap/Btrap5/css/bootstrap.min.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   
-
   <link rel="stylesheet" href="../css/estilosLogReg.css">
-
+  <link rel="stylesheet" href="../assets/bootstrap/Btrap5/css/features.css">
   <!--Miguel-->
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <!--finmiguel-->
 </head>
+<body>
+  
   <header>
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg">
@@ -45,9 +46,35 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="./funciones/cerrarSesion.php">
+            <?php if(isset($_SESSION['codigoCliente'])){
+                    echo '
+                    <li class="nav-item dropdown">
+                    <div class="dropdown">
+                      <a href="#" class="nav-link">Más</a>
+                      <div class="dropdown-content">
+                        <a href="consultas.php">Consultas</a> <!--Aqui mover la ubicacion y cambiarla por cliente.php haciendo un isset-->
+                        <a href="movimientos.php">Movimientos</a>
+                        <a href="#">Stats</a>
+                      </div>
+                    </div>
+                  </li>
+                  '; //se va mostrar cerrar sesion si es que el ejecutivo tiene una sesion iniciada
+                    } else echo '';
+                  ?>      
+
+            <li class="nav-item" >
+            <script type="text/javascript">
+                function ConfirmClose()
+                {
+                  var res alert("¿Estás seguro de cerrar tu sesión?");
+                  if(res == true){
+                    return true;
+                  } else{
+                    return false;
+                  }
+                }
+            </script>    
+             <a class="nav-link" href="./funciones/cerrarSesion.php">
                 <?php if(isset($_SESSION['adminUser'])){
                     echo "CERRAR SESION"; //se va mostrar cerrar sesion si es que el ejecutivo tiene una sesion iniciada
                     } elseif (isset($_SESSION['usuarioEjecutivo'])) {
@@ -59,9 +86,9 @@
                          echo " "; //sino no muestra nada  
                     }
                   ?>
-              </a>
 
-            </li>
+              </a>
+              </li>
           </ul>
         </div>
       </nav>

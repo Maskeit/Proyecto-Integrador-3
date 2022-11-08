@@ -1,30 +1,28 @@
 <?php session_start();
-
+include_once '../bd/conexion.php';
+$objeto = new Conexion();
+$conexion = $objeto->Conectar();
 //En esta carpeta estan archivos que no se estan utilizando y probablemente se descarten al final
 require '../funciones/funciones.php';
 # Si ya se tiene permisos de administrador,se puede acceder al registro de ejecutivos
-//comprobar_sesion_ejecutivo();//usuarioAdministrador
+comprobar_sesion_ejecutivo();//usuarioAdministrador
 
 // Comprobamos si ya han sido enviado los datos
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// Validamos que los datos hayan sido rellenados
 	$usuarioEjecutivo = filter_var(strtolower($_POST['usuarioEjecutivo']), FILTER_SANITIZE_STRING);
+	$sucursal = $_POST['sucursal'];
 	$password = $_POST['password'];
 	$password2 = $_POST['password2'];
 
 	$errores = '';
 
 	// Comprobamos que ninguno de los campos este vacio.
-	if (empty($usuarioEjecutivo) or empty($password) or empty($password2)) {
+	if (empty($usuarioEjecutivo) or empty($sucursal) or empty($password) or empty($password2)) {
 		$errores .= '<li>Por favor rellena todos los datos correctamente</li>'; //el punto agregado al =
 	} else {
 
 		// Comprobamos que el usuario no exista ya.
-		try {
-			$conexion = new PDO('mysql:host=localhost;dbname=uni-bank', 'root', '');
-		} catch (PDOException $e) {
-			echo "Error:" . $e->getMessage();
-		}
 
 		$statement = $conexion->prepare('SELECT * FROM ejecutivos WHERE usuarioEjecutivo = :usuarioEjecutivo LIMIT 1');//tabla ejecutivos 
 		$statement->execute(array(':usuarioEjecutivo' => $usuarioEjecutivo));
@@ -51,9 +49,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// Comprobamos si hay errores, sino entonces agregamos el usuario y redirigimos.
 	if ($errores == '') {
-		$statement = $conexion->prepare('INSERT INTO ejecutivos (id, usuarioEjecutivo, pass) VALUES (null, :usuarioEjecutivo, :pass)');
+		$statement = $conexion->prepare('INSERT INTO ejecutivos (id, usuarioEjecutivo, sucursal, pass) VALUES (null, :usuarioEjecutivo, :sucursal, :pass)');
 		$statement->execute(array(
 				':usuarioEjecutivo' => $usuarioEjecutivo,
+				':sucursal'=> $sucursal,
 				':pass' => $password
 			));
 		//	echo "Hola mundo";

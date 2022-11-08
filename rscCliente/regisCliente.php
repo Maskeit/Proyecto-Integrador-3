@@ -20,15 +20,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	} else {
 
 
-		$statement = $conexion->prepare('SELECT * FROM cuentas WHERE codigoCliente = :codigoCliente LIMIT 1');//tabla cuentas 
+		$statement = $conexion->prepare('SELECT * FROM cliente WHERE codigoCliente = :codigoCliente LIMIT 1');//tabla cuentas 
 		$statement->execute(array(':codigoCliente' => $codigoCliente));
 
 		// El metodo fetch nos va a devolver el resultado o false en caso de que no haya resultado.
 		$resultado = $statement->fetch();
 
 		// Si resultado es diferente a false entonces significa que ya existe el usuario.
-		if ($resultado != false) {
-			$errores .= '<li>Este cliente ya está registrado</li>';
+		if ($resultado != true) {
+			$errores .= '<li>Este cliente no está registrado</li>';
 		}
 
 		// Hasheamos nuestra contraseña para protegerla un poco.

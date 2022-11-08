@@ -20,6 +20,10 @@
 			</div>
 
 			<div class="form-group">
+				<i class="icono izquierda fa fa-user"></i><input class="usuario" type="text" name="sucursal" placeholder="Sucursal">
+			</div>
+
+			<div class="form-group">
 				<i class="icono izquierda fa fa-lock"></i><input class="password" type="password" name="password" placeholder="Contraseña">
 			</div>
 
