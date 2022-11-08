@@ -1,4 +1,3 @@
-=======
 <?php
 require 'vistas/headerEspecifico.php';
 //SE SUPONE QUE ALONSO CAMBIARA EL DISEÑO DE ESTA VISTA **ELIMINEN ESTE COMENTARIO CUANDO YA ESTE TERMINADO PORFA
@@ -71,4 +70,4 @@ require 'vistas/headerEspecifico.php';
 <?php
 require 'footer.php';
 ?>
->>>>>>> main
+
