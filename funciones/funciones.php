@@ -65,7 +65,7 @@ function cc_cliente($cc){
     return (int)limpiarDatos ($cc);
 }
 function obtener_saldo_por_cc($conexion, $cc_cliente){
-    $resultado = $conexion->query("SELECT * FROM cliente WHERE codigoCliente = $cc_cliente LIMIT 1");
+    $resultado = $conexion->query("SELECT saldo FROM cliente WHERE codigoCliente = $cc_cliente LIMIT 1");
     $resultado = $resultado->fetchAll();
     return ($resultado) ? $resultado : false;
 }

@@ -1,6 +1,6 @@
 <?php session_start();
 
-require 'bd/conexion.php';
+require '../bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 $saldo = 0;
