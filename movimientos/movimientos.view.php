@@ -17,6 +17,11 @@
 </head>
 <body>
 <!--carousel-->
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+          <h5 class="container">Saldo actual: <span id="saldo">0</span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
+          </div>
+        </div>
 <div class="container">
    <b>Deposito</b>
    <input type="checkbox" value="1" onchange="javascript:showContent('deposito',this)" />
