@@ -15,9 +15,9 @@ if (isset($_SESSION['codigoCliente'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$codigoCliente = filter_var(strtolower($_POST['codigoCliente']), FILTER_SANITIZE_STRING);
 	$password = $_POST['password'];
-	//$password = hash('sha512', $password);
-
-
+	$password = hash('sha512', $password);
+	
+	//preparamos la consulta a la base de datos
 	$statement = $conexion->prepare('SELECT * FROM cuentas WHERE codigoCliente = :codigoCliente AND pass = :password');
 	$statement->execute(array(
 			':codigoCliente' => $codigoCliente,
@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 	$resultado = $statement->fetch();
+	
 	if ($resultado !== false) {
 		$_SESSION['codigoCliente'] = $codigoCliente;
 		$_SESSION['nombre'] = $nombre;
@@ -41,6 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	} else {
 		$errores = '<li>Datos incorrectos</li>';
 	}
+	
+
 }
 
 require 'loginCliente.view.php';
