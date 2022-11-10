@@ -24,25 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `administrador`
---
-
-CREATE TABLE `administrador` (
-  `id` int(11) NOT NULL,
-  `adminUser` varchar(50) NOT NULL,
-  `adminPass` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `administrador`
---
-
-INSERT INTO `administrador` (`id`, `adminUser`, `adminPass`) VALUES
-(3, 'admin', '12345');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `cliente`
 --
 
@@ -169,7 +150,6 @@ INSERT INTO `ejecutivos` (`id`, `usuarioEjecutivo`, `sucursal`, `pass`) VALUES
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`idCliente`);
-
 --
 -- Indices de la tabla `credito`
 --
@@ -205,6 +185,7 @@ ALTER TABLE `credito`
 --
 ALTER TABLE `debito`
   MODIFY `idTarjera` int(11) NOT NULL AUTO_INCREMENT;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

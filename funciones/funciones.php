@@ -1,6 +1,5 @@
 <?php 
 
-
 #FUNCIONES PARA INICIOS Y CIERRES DE SESION
 function comprobar_sesion_ejecutivo(){
     if(isset($_SESSION['usuarioEjecutivo'])){
@@ -45,15 +44,30 @@ die();
 
 }
 
+
+function limpiarDatos($datos){
+    $datos = trim($datos);
+    $datos = stripcslashes($datos);
+    $datos = htmlspecialchars($datos);
+    return $datos;
+}
 #FUNCION PARA CONECTARNOS A LA BASE DE DATOS
+/*
 function conectar_base_datos(){
     try {
-        $conexion = new PDO('mysql:host=localhost;dbname=uni-bank', 'root', '');
+        $conexion = new PDO('mysql:host=localhost;dbname=unibank', 'root', '');
     } catch (PDOException $e) {
         echo "Error:" . $e->getMessage();
     }
 }
-
-
+*/
+function cc_cliente($cc){
+    return (int)limpiarDatos ($cc);
+}
+function obtener_saldo_por_cc($conexion, $cc_cliente){
+    $resultado = $conexion->query("SELECT saldo FROM cliente WHERE codigoCliente = $cc_cliente LIMIT 1");
+    $resultado = $resultado->fetchAll();
+    return ($resultado) ? $resultado : false;
+}
 
 ?>

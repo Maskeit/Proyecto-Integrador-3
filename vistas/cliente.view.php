@@ -31,14 +31,14 @@ require 'vistas/headerEspecifico.php';
             <div class="card">
               <div class="card-body">
                 <div class="title">
-                  <h5 class="card-title">Conslita</h5>
+                  <h5 class="card-title">Consulta</h5>
                 </div>
                 <p class="card-text">
                   Necesitas revisar tus cuentas?
                 </p>
                 <div class="pricing">
-                  <h2>Conslita</h2>
-                  <a href="conslitas.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Ver</a>
+                  <h2>Consultas</h2>
+                  <a href="consultas.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Ver</a>
                 </div>
               </div>
             </div>
