@@ -6,6 +6,7 @@ $conexion = $objeto->Conectar();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { //comprobamos si los datos se han enviado
 	$adminUser = filter_var(strtolower($_POST['adminUser']), FILTER_SANITIZE_STRING);
 	$adminPass = $_POST['adminPass'];
+	$adminPass = hash('sha512', $adminPass);
 
 	// Nos conectamos a la base de datos
 												//tabla de la db    //el usuario ingresado              //contrasena ingresada coincida con la tabla
