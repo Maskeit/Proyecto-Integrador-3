@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-11-2022 a las 22:41:29
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.2
+-- Tiempo de generación: 09-11-2022 a las 05:35:25
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -47,28 +47,33 @@ INSERT INTO `administrador` (`id`, `adminUser`, `adminPass`) VALUES
 --
 
 CREATE TABLE `cliente` (
-  `codigoCliente` int(10) NOT NULL,
-  `nombre` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `apellidoPaterno` varchar(70) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `apellidoMaterno` varchar(70) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `estado` enum('AGUASCALIENTES','BAJA CALIFORNIA','BAJA CALIFORNIA SUR','CAMPECHE','COAHUILA','COLIMA','CHIAPAS','CHIHUAHUA','DURANGO','ESTADO DE MÉXICO','GUANAJUATO','GUERRERO','HIDALGO','JALISCO','CIUDAD DE MÉXICO','MICHOACÁN','MORELOS','NAYARIT','NUEVO LEÓN','OAXACA','PUEBLA','QUERÉTARO','QUINTANA ROO','SAN LUIS POTOSÍ','SINALOA, SONORA','TABASCO','TAMAULIPAS','TLAXCALA','VERACRUZ','YUCATÁN','ZACATECAS') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `municipio` varchar(70) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `calle` varchar(90) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `colonia` varchar(90) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idCliente` int(10) NOT NULL,
+  `codigoCliente` int(10) DEFAULT NULL,
+  `nombre` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `apellidoPaterno` varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `apellidoMaterno` varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `estado` enum('AGUASCALIENTES','BAJA CALIFORNIA','BAJA CALIFORNIA SUR','CAMPECHE','COAHUILA','COLIMA','CHIAPAS','CHIHUAHUA','DURANGO','ESTADO DE MÉXICO','GUANAJUATO','GUERRERO','HIDALGO','JALISCO','CIUDAD DE MÉXICO','MICHOACÁN','MORELOS','NAYARIT','NUEVO LEÓN','OAXACA','PUEBLA','QUERÉTARO','QUINTANA ROO','SAN LUIS POTOSÍ','SINALOA, SONORA','TABASCO','TAMAULIPAS','TLAXCALA','VERACRUZ','YUCATÁN','ZACATECAS') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `municipio` varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `calle` varchar(90) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `colonia` varchar(90) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `codigoPostal` int(5) NOT NULL,
-  `sexo` enum('Masculino','Femenino') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `curp` varchar(18) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sexo` enum('Masculino','Femenino') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `curp` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `fechaNacimiento` date DEFAULT NULL,
   `saldo` float NOT NULL,
-  `ocupacion` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `ocupacion` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`codigoCliente`, `nombre`, `apellidoPaterno`, `apellidoMaterno`, `estado`, `municipio`, `calle`, `colonia`, `codigoPostal`, `sexo`, `curp`, `fechaNacimiento`, `saldo`, `ocupacion`) VALUES
-(220001, 'Adolfo Angel', 'Perez', 'Salado', 'COLIMA', 'Manzanillo', 'Deportiva', 'Deportiva', 28864, 'Masculino', 'PESA021101HCMRLDA7', '2002-11-01', 2500, 'Estudiante');
+INSERT INTO `cliente` (`idCliente`, `codigoCliente`, `nombre`, `apellidoPaterno`, `apellidoMaterno`, `estado`, `municipio`, `calle`, `colonia`, `codigoPostal`, `sexo`, `curp`, `fechaNacimiento`, `saldo`, `ocupacion`) VALUES
+(1, 220001, 'Adolfo Angel', 'Perez', 'Salado', 'COLIMA', 'Manzanillo', 'Deportiva', 'Deportiva', 28864, 'Masculino', 'PESA021101HCMRLDA7', '2002-11-01', 2500, 'Estudiante'),
+(2, 220002, 'Fabian', 'Zepeda', 'Torres', 'COLIMA', 'Manzanillo', 'Juan Escutia', '5 de mayo', 24865, 'Masculino', 'SAIA541127HGRLGL04', '2000-05-06', 2500, 'Programador'),
+(3, 220003, 'Vianey', 'Cruz', 'López', 'COLIMA', 'Manzanillo', 'Badalona', 'Barrio 5', 28219, 'Femenino', 'VIA547127MGRLGL04', '2002-05-15', 10000, 'Secretaria'),
+(4, 220004, 'MARGARITA', 'BUENROSTRO', 'FAJES', 'YUCATÁN', 'TEPOZTLAN', 'Buenos Aires', 'Miguel de la Madrid', 24564, 'Femenino', 'FABM770222MMSJNR00', '1995-05-30', 0, 'Obrera'),
+(5, 220005, 'Daniel', 'Martinez', 'Gutierrez', 'ESTADO DE MÉXICO', 'Ecatepec', 'Buenos Aires', 'Indios Verdes', 28457, 'Masculino', 'DAMG022105HCMNLDA9', '2000-09-18', 0, 'Estudiante');
 
 --
 -- Disparadores `cliente`
@@ -89,17 +94,13 @@ DELIMITER ;
 --
 
 CREATE TABLE `credito` (
-  `noTarjeta` int(11) NOT NULL,
+  `idTarjera` int(11) NOT NULL,
+  `BIN` varchar(16) NOT NULL,
   `noCta` int(10) NOT NULL,
-  `saldo` decimal(20,6) NOT NULL
+  `saldo` float NOT NULL,
+  `codeSecurity` int(3) NOT NULL,
+  `expira` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `credito`
---
-
-INSERT INTO `credito` (`noTarjeta`, `noCta`, `saldo`) VALUES
-(1, 101, '15000.000000');
 
 -- --------------------------------------------------------
 
@@ -127,17 +128,13 @@ INSERT INTO `cuentas` (`noCta`, `codigoCliente`, `pass`) VALUES
 --
 
 CREATE TABLE `debito` (
-  `noTarjeta` int(11) NOT NULL,
+  `idTarjera` int(11) NOT NULL,
+  `BIN` varchar(16) NOT NULL,
   `noCta` int(10) NOT NULL,
-  `saldo` decimal(20,6) NOT NULL
+  `saldo` float NOT NULL,
+  `codeSecurity` int(3) NOT NULL,
+  `expira` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `debito`
---
-
-INSERT INTO `debito` (`noTarjeta`, `noCta`, `saldo`) VALUES
-(1, 101, '4500.000000');
 
 -- --------------------------------------------------------
 
@@ -168,105 +165,46 @@ INSERT INTO `ejecutivos` (`id`, `usuarioEjecutivo`, `sucursal`, `pass`) VALUES
 --
 
 --
--- Indices de la tabla `administrador`
---
-ALTER TABLE `administrador`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`codigoCliente`);
+  ADD PRIMARY KEY (`idCliente`);
 
 --
 -- Indices de la tabla `credito`
 --
 ALTER TABLE `credito`
-  ADD PRIMARY KEY (`noTarjeta`),
-  ADD UNIQUE KEY `noCta` (`noCta`);
-
---
--- Indices de la tabla `cuentas`
---
-ALTER TABLE `cuentas`
-  ADD PRIMARY KEY (`noCta`) USING BTREE,
-  ADD UNIQUE KEY `codigoCliente` (`codigoCliente`);
+  ADD PRIMARY KEY (`idTarjera`),
+  ADD UNIQUE KEY `BIN` (`BIN`);
 
 --
 -- Indices de la tabla `debito`
 --
 ALTER TABLE `debito`
-  ADD PRIMARY KEY (`noTarjeta`),
-  ADD UNIQUE KEY `noCta` (`noCta`);
-
---
--- Indices de la tabla `ejecutivos`
---
-ALTER TABLE `ejecutivos`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`idTarjera`),
+  ADD UNIQUE KEY `BIN` (`BIN`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `administrador`
---
-ALTER TABLE `administrador`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `codigoCliente` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=220002;
+  MODIFY `idCliente` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `credito`
 --
 ALTER TABLE `credito`
-  MODIFY `noTarjeta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de la tabla `cuentas`
---
-ALTER TABLE `cuentas`
-  MODIFY `noCta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `idTarjera` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `debito`
 --
 ALTER TABLE `debito`
-  MODIFY `noTarjeta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de la tabla `ejecutivos`
---
-ALTER TABLE `ejecutivos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `credito`
---
-ALTER TABLE `credito`
-  ADD CONSTRAINT `credito-cuenta` FOREIGN KEY (`noCta`) REFERENCES `cuentas` (`noCta`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `cuentas`
---
-ALTER TABLE `cuentas`
-  ADD CONSTRAINT `cuentas-cliente` FOREIGN KEY (`codigoCliente`) REFERENCES `cliente` (`codigoCliente`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `debito`
---
-ALTER TABLE `debito`
-  ADD CONSTRAINT `debito-cuenta` FOREIGN KEY (`noCta`) REFERENCES `cuentas` (`noCta`) ON DELETE CASCADE ON UPDATE CASCADE;
+  MODIFY `idTarjera` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
