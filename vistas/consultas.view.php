@@ -22,7 +22,7 @@ require 'headerEspecifico.php';?>
 <body>
 <div class="container">
   <div class="col">
-    <H4 class="mb=5">Cuenta en pesos <?php echo $saldo['saldo']; ?> MXN</H4>
+    <H4 class="mb=5">Cuenta en pesos <?php echo '$' . $saldo  ?> MXN</H4>
 
     <div id="accordion">
       <div class="card">
@@ -35,7 +35,7 @@ require 'headerEspecifico.php';?>
         </div>
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-          <h5 class="container">Saldo actual: <span id="saldo">0</span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
+          <h5 class="container">Saldo actual: <span id="saldo"><?php echo '$' . $debito  ?></span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@ require 'headerEspecifico.php';?>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
-          <h5 class="container">Saldo actual: <span id="saldo">0</span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
+          <h5 class="container">Saldo actual: <span id="saldo"><?php echo '$' . $credito  ?></span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
           </div>
         </div>
       </div>
