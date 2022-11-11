@@ -46,34 +46,8 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <?php if(isset($_SESSION['codigoCliente'])){
-                    echo '
-                    <li class="nav-item dropdown">
-                    <div class="dropdown">
-                      <a href="#" class="nav-link">Más</a>
-                      <div class="dropdown-content">
-                        <a href="consultas.php">Consultas</a> <!--Aqui mover la ubicacion y cambiarla por cliente.php haciendo un isset-->
-                        <a href="movimientos.php">Movimientos</a>
-                        <a href="#">Stats</a>
-                      </div>
-                    </div>
-                  </li>
-                  '; //se va mostrar cerrar sesion si es que el ejecutivo tiene una sesion iniciada
-                    } else echo '';
-                  ?>      
-
             <li class="nav-item" >
-            <script type="text/javascript">
-                function ConfirmClose()
-                {
-                  var res alert("¿Estás seguro de cerrar tu sesión?");
-                  if(res == true){
-                    return true;
-                  } else{
-                    return false;
-                  }
-                }
-            </script>    
+            
              <a class="nav-link" href="./funciones/cerrarSesion.php">
                 <?php if(isset($_SESSION['adminUser'])){
                     echo "CERRAR SESION"; //se va mostrar cerrar sesion si es que el ejecutivo tiene una sesion iniciada
@@ -83,7 +57,7 @@
                     echo "CERRAR SESION";
                     }
                     else {
-                         echo " "; //sino no muestra nada  
+                         echo ""; //sino no muestra nada  
                     }
                   ?>
 

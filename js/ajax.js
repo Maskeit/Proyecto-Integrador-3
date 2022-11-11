@@ -3,7 +3,7 @@ var loader =document.getElementById('loader');
 
 btn.addEventListener('click', function(){
     var peticion = new XMLHttpRequest();
-    peticion.open('GET', 'php/leer-datos.php');
+    peticion.open('GET', 'js/leer-datos.php');
     //peticion.open('GET', 'https://api.npoint.io/1cd57828553774bc1eda'); direccion para recibir datos desde la pagina de json
 
     loader.classList.add('active');
