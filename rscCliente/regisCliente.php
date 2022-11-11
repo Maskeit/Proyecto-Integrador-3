@@ -17,10 +17,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     // Comprobamos que ninguno de los campos este vacio.
 	if (empty($codigoCliente) or empty($password) or empty($password2)) {
 		$errores .= '<li>Por favor rellena todos los datos correctamente</li>'; //el punto agregado al =
-	} else {
-
-
-		$statement = $conexion->prepare('SELECT * FROM cuentas WHERE codigoCliente = :codigoCliente LIMIT 1');//tabla cuentas 
+	}
+    $statement = $conexion->prepare('SELECT codigoCliente FROM cuentas WHERE codigoCliente = :codigoCliente LIMIT 1');//tabla cuentas 
 		$statement->execute(array(':codigoCliente' => $codigoCliente));
 
 		// El metodo fetch nos va a devolver el resultado o false en caso de que no haya resultado.
@@ -28,7 +26,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		// Si resultado es diferente a false entonces significa que ya existe el usuario.
 		if ($resultado != false) {
-			$errores .= '<li>Este cliente ya está registrado</li>';
+			$errores .= '<li>Datos incorrectos</li>'; //en realidad diria que Ya esta registrado pero por seguridad debe ser asi
+		}
+    else {
+		$statement = $conexion->prepare('SELECT codigoCliente FROM cliente WHERE codigoCliente = :codigoCliente LIMIT 1');//tabla cuentas 
+		$statement->execute(array(':codigoCliente' => $codigoCliente));
+
+		// El metodo fetch nos va a devolver el resultado o false en caso de que no haya resultado.
+		$resultado = $statement->fetch();
+
+		// Si resultado es diferente a false entonces significa que ya existe el usuario.
+		if ($resultado != true) {
+			$errores .= '<li>Este cliente no está registrado Datos incorrectos</li>';
 		}
 
 		// Hasheamos nuestra contraseña para protegerla un poco.
@@ -47,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         // Comprobamos si hay errores, sino entonces agregamos el usuario y redirigimos.
         if ($errores == '') {
-            $statement = $conexion->prepare('INSERT INTO cuentas (idCta, codigoCliente, pass) VALUES (null, :codigoCliente, :pass)');
+            $statement = $conexion->prepare('INSERT INTO cuentas (noCta, codigoCliente, pass) VALUES (noCta, :codigoCliente, :pass)');
             $statement->execute(array(
                     ':codigoCliente' => $codigoCliente,
                     ':pass' => $password

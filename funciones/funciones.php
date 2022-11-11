@@ -1,6 +1,5 @@
 <?php 
 
-
 #FUNCIONES PARA INICIOS Y CIERRES DE SESION
 function comprobar_sesion_ejecutivo(){
     if(isset($_SESSION['usuarioEjecutivo'])){
@@ -21,7 +20,7 @@ function comprobar_sesion_administrador(){
     if(isset($_SESSION['adminUser'])){
         header('Location: ../index.php');
     } else{
-        header('Location: adminUser.php');
+        header('Location: adminUser.php');;
     }
 }
 
@@ -45,15 +44,30 @@ die();
 
 }
 
-#FUNCION PARA CONECTARNOS A LA BASE DE DATOS// update: se usa el objeto de la clase en bd/conexion.php
+
+function limpiarDatos($datos){
+    $datos = trim($datos);
+    $datos = stripcslashes($datos);
+    $datos = htmlspecialchars($datos);
+    return $datos;
+}
+#FUNCION PARA CONECTARNOS A LA BASE DE DATOS
+/*
 function conectar_base_datos(){
     try {
-        $conexion = new PDO('mysql:host=localhost;dbname=uni-bank', 'root', '');
+        $conexion = new PDO('mysql:host=localhost;dbname=unibank', 'root', '');
     } catch (PDOException $e) {
         echo "Error:" . $e->getMessage();
     }
 }
-
-
+*/
+function cc_cliente($cc){
+    return (int)limpiarDatos ($cc);
+}
+function obtener_saldo_por_cc($conexion, $cc_cliente){
+    $resultado = $conexion->query("SELECT saldo FROM cliente WHERE codigoCliente = $cc_cliente LIMIT 1");
+    $resultado = $resultado->fetchAll();
+    return ($resultado) ? $resultado : false;
+}
 
 ?>

@@ -1,5 +1,4 @@
 <?php session_start(); 
-
 if(isset($_SESSION['adminUser'])){
     require 'vistas/adminUser.view.php';
 } else {
@@ -7,5 +6,4 @@ if(isset($_SESSION['adminUser'])){
     die();
 }
 
-//require 'vistas/adminUser.view.php';
 ?>

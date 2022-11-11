@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-11-2022 a las 05:35:25
--- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Tiempo de generación: 10-11-2022 a las 05:14:38
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `administrador` (
-  `id` int(11) NOT NULL,
+  `idAdmin` int(11) NOT NULL,
   `adminUser` varchar(50) NOT NULL,
   `adminPass` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -37,8 +37,8 @@ CREATE TABLE `administrador` (
 -- Volcado de datos para la tabla `administrador`
 --
 
-INSERT INTO `administrador` (`id`, `adminUser`, `adminPass`) VALUES
-(3, 'admin', '12345');
+INSERT INTO `administrador` (`idAdmin`, `adminUser`, `adminPass`) VALUES
+(3, 'admin', '3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79');
 
 -- --------------------------------------------------------
 
@@ -94,12 +94,13 @@ DELIMITER ;
 --
 
 CREATE TABLE `credito` (
-  `idTarjera` int(11) NOT NULL,
+  `idTarjeta` int(11) NOT NULL,
   `BIN` varchar(16) NOT NULL,
   `noCta` int(10) NOT NULL,
   `saldo` float NOT NULL,
   `codeSecurity` int(3) NOT NULL,
-  `expira` varchar(5) NOT NULL
+  `expira` varchar(5) NOT NULL,
+  `nip` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -111,7 +112,7 @@ CREATE TABLE `credito` (
 CREATE TABLE `cuentas` (
   `noCta` int(11) NOT NULL,
   `codigoCliente` int(10) NOT NULL,
-  `pass` varchar(50) NOT NULL
+  `pass` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -119,7 +120,8 @@ CREATE TABLE `cuentas` (
 --
 
 INSERT INTO `cuentas` (`noCta`, `codigoCliente`, `pass`) VALUES
-(101, 220001, '123');
+(1, 220001, '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2'),
+(2, 220002, '3627909a29c31381a071ec27f7c9ca97726182aed29a7ddd2e54353322cfb30abb9e3a6df2ac2c20fe23436311d678564d0c8d305930575f60e2d3d048184d79');
 
 -- --------------------------------------------------------
 
@@ -128,12 +130,13 @@ INSERT INTO `cuentas` (`noCta`, `codigoCliente`, `pass`) VALUES
 --
 
 CREATE TABLE `debito` (
-  `idTarjera` int(11) NOT NULL,
+  `idTarjeta` int(11) NOT NULL,
   `BIN` varchar(16) NOT NULL,
   `noCta` int(10) NOT NULL,
   `saldo` float NOT NULL,
   `codeSecurity` int(3) NOT NULL,
-  `expira` varchar(5) NOT NULL
+  `expira` varchar(5) NOT NULL,
+  `nip` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -143,7 +146,7 @@ CREATE TABLE `debito` (
 --
 
 CREATE TABLE `ejecutivos` (
-  `id` int(11) NOT NULL,
+  `idEjecutivo` int(11) NOT NULL,
   `usuarioEjecutivo` varchar(200) NOT NULL,
   `sucursal` varchar(50) NOT NULL,
   `pass` varchar(200) NOT NULL
@@ -153,7 +156,7 @@ CREATE TABLE `ejecutivos` (
 -- Volcado de datos para la tabla `ejecutivos`
 --
 
-INSERT INTO `ejecutivos` (`id`, `usuarioEjecutivo`, `sucursal`, `pass`) VALUES
+INSERT INTO `ejecutivos` (`idEjecutivo`, `usuarioEjecutivo`, `sucursal`, `pass`) VALUES
 (1, 'miguel', 'fie', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2'),
 (2, 'angel', 'fie', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2'),
 (3, 'roberto', 'fie', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2'),
@@ -165,6 +168,12 @@ INSERT INTO `ejecutivos` (`id`, `usuarioEjecutivo`, `sucursal`, `pass`) VALUES
 --
 
 --
+-- Indices de la tabla `administrador`
+--
+ALTER TABLE `administrador`
+  ADD PRIMARY KEY (`idAdmin`);
+
+--
 -- Indices de la tabla `cliente`
 --
 ALTER TABLE `cliente`
@@ -174,19 +183,35 @@ ALTER TABLE `cliente`
 -- Indices de la tabla `credito`
 --
 ALTER TABLE `credito`
-  ADD PRIMARY KEY (`idTarjera`),
+  ADD PRIMARY KEY (`idTarjeta`),
   ADD UNIQUE KEY `BIN` (`BIN`);
+
+--
+-- Indices de la tabla `cuentas`
+--
+ALTER TABLE `cuentas`
+  ADD PRIMARY KEY (`noCta`);
 
 --
 -- Indices de la tabla `debito`
 --
 ALTER TABLE `debito`
-  ADD PRIMARY KEY (`idTarjera`),
+  ADD PRIMARY KEY (`idTarjeta`),
   ADD UNIQUE KEY `BIN` (`BIN`);
-
+--
+-- Indices de la tabla `ejecutivos`
+--
+ALTER TABLE `ejecutivos`
+  ADD PRIMARY KEY (`idEjecutivo`);
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `administrador`
+--
+ALTER TABLE `administrador`
+  MODIFY `idAdmin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
@@ -198,13 +223,24 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `credito`
 --
 ALTER TABLE `credito`
-  MODIFY `idTarjera` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTarjeta` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `cuentas`
+--
+ALTER TABLE `cuentas`
+  MODIFY `noCta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `debito`
 --
 ALTER TABLE `debito`
-  MODIFY `idTarjera` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTarjeta` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `ejecutivos`
+--
+ALTER TABLE `ejecutivos`
+  MODIFY `idEjecutivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
