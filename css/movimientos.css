@@ -2,15 +2,15 @@
     box-sizing: border-box;
   }
   body {
-    background: #333;
-    color: white;
+    background: rgb(93, 97, 92);
+    color: rgb(2, 2, 2);
     font-family: sans-serif;
   }
   
   form {
     width: 500px;
     margin: auto;
-    background: #555;
+    background: rgb(255, 255, 255);
     padding: 20px;
     margin-top: 20px;
   }

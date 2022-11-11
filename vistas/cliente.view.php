@@ -53,7 +53,7 @@ require 'vistas/headerEspecifico.php';
                 </p>
                 <div class="pricing">
                   <h2>Transferencias rapidas  </h2> 
-                  <a href="./movimientos/movimientos.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Transferir</a>
+                  <a href="./movimientos/transferencia.php" class="btn btn-dark px-5 py-2 primary-btn mb-5">Transferir</a>
                 </div>
               </div>.
             </div>

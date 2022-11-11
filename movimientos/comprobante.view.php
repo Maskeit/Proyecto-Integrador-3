@@ -10,12 +10,13 @@
 <body>
     <div class="container">
         <?php 
-        echo "<p> $ctaOrigen </p>"; 
+        echo "<p> $ctaOrigen</p>"; 
         echo "<p> $ctaDestino </p>"; 
         echo "<p> $concepto </p>" ;
         echo "<p> $monto </p>" ;
         ?>
     </div>
+
     
 </body>
 </html>
