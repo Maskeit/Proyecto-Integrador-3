@@ -1,9 +1,16 @@
 <?php session_start();
+if(isset($_SESSION['codigoCliente'])){
+    require 'vistas/consultas.view.php';
+} else {
+    header('Location: index.php');
+    die();
+}
 
 require 'bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 require 'funciones/funciones.php';
+
 
 /*
 $cc_cliente = cc_cliente($_POST['codigoCliente']);
@@ -41,5 +48,5 @@ $cred = $conexion->prepare("SELECT * FROM credito"); //$sal guarda la consulta
 	while($row = $cred->fetch()){
 		$credito = $row['saldo'];
 	}
-require 'vistas/consultas.view.php';
+	
 ?>
