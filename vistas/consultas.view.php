@@ -35,7 +35,7 @@ require 'headerEspecifico.php';?>
         </div>
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-          <h5 class="container">Saldo actual: <span id="saldo"><?php echo '$' . $debito  ?></span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
+          <h5 class="container">Saldo actual: <span id="saldo"><?php echo '$' . $debito  ?>  <div class="col"> <a href="debito.php">Ver movimientos.</a></div></span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
           </div>
         </div>
       </div>
@@ -44,13 +44,13 @@ require 'headerEspecifico.php';?>
         <div class="card-header" id="headingTwo">
           <h5 class="mb-0">
             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            CUENTA UNIVERSITARIA DE CRÉDITO.
+              CUENTA UNIVERSITARIA DE CRÉDITO.
             </button>
           </h5>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
-          <h5 class="container">Saldo actual: <span id="saldo"><?php echo '$' . $credito  ?></span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
+          <h5 class="container">Saldo actual: <span id="saldo"><?php echo '$' . $credito  ?> <div class="col"> <a href="#">Ver movimientos.</a></div></span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
           </div>
         </div>
       </div>
@@ -59,13 +59,13 @@ require 'headerEspecifico.php';?>
         <div class="card-header" id="headingThree">
           <h5 class="mb-0">
             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            CUENTA UNIVERSITARIA ORDINARIA.
+            CUENTA UNIVERSITARIA DE AHORROS.
             </button>
           </h5>
         </div>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
           <div class="card-body">
-            <h5 class="container">Saldo actual: <span id="saldo">0</span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
+            <h5 class="container">Saldo actual: <span id="saldo"><?php echo '$' . $ahorro  ?> <div class="col"> <a href="#">Ver movimientos.</a></div></span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
           </div>
         </div>
       </div>
