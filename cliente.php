@@ -11,10 +11,4 @@ if(isset($_SESSION['codigoCliente'])){
     die();
 }
 
-/* consulta para obtener el nombre
-$nombreCliente = "SELECT nombre FROM cliente where codigoCliente = :codigoCliente";
-$resultado = mysqli_query($conexion, $nombreCliente);
-    $row=mysqli_fetch_assoc($resultado);
-*/
-//require 'vistas/cliente.view.php';
 ?> 
