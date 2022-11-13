@@ -1,6 +1,5 @@
 <?php
 require 'vistas/headerEspecifico.php';
-//ALGUIEN ESTA TRABAJANDO EN ESTA VISTA DEL EJECUTIVO? CREO QUE ROBERTO LO ESTABA HACIENDO SI NO ME EQUIVOCO  (si, ando trabajando en ella.)
 ?>
     <!--Purchase Whatever You Want-->
     <section class="section-2 container-fluid p-0">
