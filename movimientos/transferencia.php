@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     if (empty($concepto) or empty($monto)) {
 		$errores .= '<li>Por favor rellena todos los datos correctamente</li>'; //el punto agregado al =
 	} else {
-        header ('Location: comprobante.php');
+        '<script> alert("Datos enviado"); </script>';
     }
 
 }
