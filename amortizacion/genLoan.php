@@ -16,17 +16,21 @@ require '../vistas/header.php';
 
 		<!-- Cuadro de texto -->
 		<div style="background-color: rgba(100, 150, 300, 0.2);" class="p-3 border-top border-start border-end border-dark d-flex justify-content-center" style="max-width: 95%;">
-			<b>
+			<b class="p-3">
+			Numero de cuenta(cliente):
+			<input type="number" class="form-control" name="NoCli" placeholder="Ej. 20181033" required>
+			</b>
+			<b class="p-3">
 			¿Cuanto dinero desea pedir?
-			<input type="number" name="dinero" placeholder="$$$$">
+			<input type="number" class="form-control" name="dinero" placeholder="$$$$" required>
 			</b>
-			<b>
+			<b class="p-3">
 			¿En cuantos meses pagará?
-			<input type="number" name="meses" placeholder="Ej. 12 meses">
+			<input type="number" class="form-control" name="meses" placeholder="Ej. 12 meses" required>
 			</b>
-			<b>
-			Introduzca su contraseña:
-			<input type="password" name="passeje" placeholder="Ej. 1234">
+			<b class="p-3">
+			Introduzca su contraseña(Ejecutivo):
+			<input type="password" class="form-control" name="passeje" placeholder="Ej. 1234" required>
 			</b>
 		</div>
 		<div style="background-color: rgba(100, 150, 300, 0.2); " class="mb-4 p-3 border-bottom border-start border-end border-dark d-flex justify-content-center" style="max-width: 95%;">
