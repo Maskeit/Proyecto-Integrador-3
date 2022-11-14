@@ -61,13 +61,18 @@ function conectar_base_datos(){
     }
 }
 */
-function cc_cliente($cc){
-    return (int)limpiarDatos ($cc);
+//esta funcion se utiliza en la paginacion de movimientos que tenga la consulta 
+//de saldos en el perfil del cliente
+function pagina_actual(){
+    return isset($_GET['p']) ? (int)$_GET['p'] : 1;
 }
-function obtener_saldo_por_cc($conexion, $cc_cliente){
-    $resultado = $conexion->query("SELECT saldo FROM cliente WHERE codigoCliente = $cc_cliente LIMIT 1");
-    $resultado = $resultado->fetchAll();
-    return ($resultado) ? $resultado : false;
+
+function obtener_movimiento($movimiento_por_pagina, $conexion){
+    $inicio = (pagina_actual() > 1) ? pagina_actual() * $movimiento_por_pagina - $movimiento_por_pagina: 0 ;  
+    $sentencia = $conexion->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM movimientos LIMIT $inicio, $movimiento_por_pagina"); //falta hacer una tabla con los movimientos creados
+    $sentencia->execute();
+    return $sentencia->fetchAll();
 }
+
 
 ?>

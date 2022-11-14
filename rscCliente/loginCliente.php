@@ -23,7 +23,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			':codigoCliente' => $codigoCliente,
 			':password' => $password
 		));
+	//para encontrar el saldo del cliente
+	$sal = $conexion->prepare("SELECT * FROM cliente WHERE codigoCliente = $codigoCliente");
+	$sal->setFetchMode(PDO::FETCH_ASSOC);
+	$sal->execute();
 
+	while($rowSal = $sal->fetch()){
+		$saldo = $rowSal['saldo'];
+	}
+	//para encontrar el nombre del cliente
 	$nom = $conexion->prepare("SELECT * FROM cliente WHERE codigoCliente = $codigoCliente");
 	$nom->setFetchMode(PDO::FETCH_ASSOC);
 	$nom->execute();
@@ -32,12 +40,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$nombre = $row['nombre'];
 	}
 
-
 	$resultado = $statement->fetch();
 	
 	if ($resultado !== false) {
 		$_SESSION['codigoCliente'] = $codigoCliente;
 		$_SESSION['nombre'] = $nombre;
+		$_SESSION['saldo'] = $saldo;
 		header('Location: ../cliente.php');
 	} else {
 		$errores = '<li>Datos incorrectos</li>';
