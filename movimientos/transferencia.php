@@ -4,7 +4,13 @@ include_once '../bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
+$codigoCliente = $_SESSION['codigoCliente'];
+$nombre = $_SESSION['nombre'];
+$saldo =  $_SESSION['saldo'];
+
 //comprobamos que los datos esten correctos
+
+
 
 if($_SERVER['REQUEST_METHOD']== 'POST'){
     $concepto = filter_var($_POST['concepto'], FILTER_SANITIZE_STRING);
@@ -20,7 +26,16 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
         '<script> alert("Datos enviado"); </script>';
     }
 
+    if($monto > $saldo){
+        $errores.= '<li>El monto supera el limite disponible</li>';
+    }
+
 }
+
+$lista = $conexion->prepare("SELECT * FROM cliente");
+$lista->setFetchMode(PDO::FETCH_ASSOC);
+$lista->execute();
+
 
 require 'transferencia.view.php';
 ?>

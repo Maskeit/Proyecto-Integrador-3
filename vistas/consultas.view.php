@@ -23,7 +23,7 @@ require 'headerEspecifico.php';?>
 
 <div class="container">
   <div class="col">
-    <H4 class="mb=5">Cuenta en pesos <?php echo '$' . number_format($_SESSION['saldo'], 2 , '.' , ',' ); ?> MXN</H4>
+    <H4 class="mb=5">Cuenta en pesos <?php echo '$' . number_format($_SESSION['saldo'], 2 , '.' , ',' ); ?> MXN</H4><!--Aqui va codigo php para traer el saldo dependiendo la tarjeta del cliente-->
 
     <div id="accordion">
       <div class="card">
@@ -61,7 +61,7 @@ require 'headerEspecifico.php';?>
 
   <!--Divisor de cuentas con lo que ofrece el banco-->
   <!--HTML DE LA LOGICA DEL MOVIMIENTO-->
-  <!--<h3 class="container">Saldo actual: <span id="saldo">0</span></h3> Aqui va codigo php para traer el saldo dependiendo el cliente-->
+  
 
 </div>
 
