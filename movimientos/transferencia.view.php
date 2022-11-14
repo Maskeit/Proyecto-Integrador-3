@@ -41,6 +41,7 @@
 					</ul>
 				</div>
 			<?php endif; ?>
+      <p class="input"><a class="btn" href="../cliente.php">Regresar</a></p>
 </form>
 
   <div class="container">
