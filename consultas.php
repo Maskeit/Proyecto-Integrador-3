@@ -1,6 +1,5 @@
 <?php session_start();
 require 'bd/conexion.php';
-//include ("bd/conexion.php");
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 require 'funciones/funciones.php';

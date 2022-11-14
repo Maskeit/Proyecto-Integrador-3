@@ -1,39 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/movimientos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>UNIBANK</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./Style.css" />
+
+  <link rel="stylesheet" href="./mobile-style.css">
+
+  <link rel="stylesheet" href="../assets/bootstrap/Btrap5/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="../css/estilosLogReg.css">
+  <link rel="stylesheet" href="../assets/bootstrap/Btrap5/css/features.css">
+  <!--Miguel-->
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <!--finmiguel-->
+</head>
+<body>
+  
+  <header>
+    <div class="container-fluid p-0">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="../index.php">
+          <i class="bi bi-cash-coin fa-2x mx-3"></i>Unibank
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fas fa-align-right text-light"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mr-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="../index.php">HOME
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item" >
+            
+             <a class="nav-link" href="../funciones/cerrarSesion.php">
+                <?php if(isset($_SESSION['adminUser'])){
+                    echo "CERRAR SESION"; //se va mostrar cerrar sesion si es que el ejecutivo tiene una sesion iniciada
+                    } elseif (isset($_SESSION['usuarioEjecutivo'])) {
+                    echo "CERRAR SESION";
+                    } elseif (isset($_SESSION['codigoCliente'])) {
+                    echo "CERRAR SESION";
+                    }
+                    else {
+                         echo ""; //sino no muestra nada  
+                    }
+                  ?>
+
+              </a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    
+
     <title>Movimientos</title>
 </head>
 <body>
-<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-      <h1>Realizar un Movimiento</h1>
-      <label for="">CUENTA ORIGEN (mis cuentas): </label>
-      <select name="ctaOrigen" id="">
-        <option value="debito">cuenta debito</option>
-        <option value="ahorros">cuenta ahorros</option>
-      </select>
-      <!--destino--> 
-      <label for="">CUENTAS DESTINO: </label>
-      <select name="ctaDestino" id="">
-        <option value="adolfo">cuenta Adolfo</option>
-        <option value="daniel">cuenta Daniel</option>
-        <option value="miguel">cuenta Miguel</option>
-        <option value="yolanda">cuenta Yolanda</option>
-      </select>
-      <label for="">Concepto </label>
-        <input type="text" name="concepto">
-      <label for="">Monto: </label>
-        <input type="text" name="monto">
-      <label for="">Seleccione banco: </label>
-      <select name="banco" id="">
-        <option value="unibank">UNIBANK</option>
-        <option value="bbva">BBVA</option>
-        <option value="santander">SANTANDER</option>
-      </select>
-    <input type="submit" value="Depositar">
+<div class="container">
+  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+  <h1>Transferencia a otra cuenta</h1>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">Cuenta Origen</label>
+    <select name="ctaOrigen" class="form-select" id="inputGroupSelect01">
+      <option selected>Tus cuentas</option>
+      <option value="<?php echo $_SESSION['codigoCliente'];?>"><?php echo $_SESSION['nombre'];?></option>
+    </select>
+  </div>
+
+  <div class="input-group mb-3">
+    <select name="ctaDestino" class="form-select" id="inputGroupSelect02">
+      <option selected>Cuenta destino</option>
+        <?php foreach($list as $item): ?>
+
+          <option value="<?php $item['codigoCliente']; ?>"><?php echo $item['nombre']; ?></option>
+        
+        <?php endforeach; ?>
+    </select>
+    <label class="input-group-text" for="inputGroupSelect02">Cuenta Destino</label>
+  </div>
+
+      <div class="input-group">
+        <span class="input-group-text">Concepto:</span>
+        <input type="text" class="form-control" name="concepto">
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control" name="monto" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-text">.00</span>
+      </div>
+
+    <div class="input-group mb-3">
+    <select name="banco" class="form-select" id="inputGroupSelect02">
+      <option value="unibank">UNIBANK</option>
+      <option value="bbva">BBVA</option>
+      <option value="santander">SANTANDER</option>
+    </select>
+    <label class="input-group-text" for="inputGroupSelect02">Seleccione Banco</label>
+    </div>
+    <button type="submit" value="Depositar" class="btn btn-outline-success">Completar</button>
+    <button type="button" class="btn btn-outline-secondary"><a style="text-decoration: none;" href="../cliente.php">Regresar</a></button>
+
     <?php if(!empty($errores)): ?>
 				<div class="error">
 					<ul>
@@ -41,16 +128,34 @@
 					</ul>
 				</div>
 			<?php endif; ?>
-      <p class="input"><a class="btn" href="../cliente.php">Regresar</a></p>
 </form>
+</div>
 
-  <div class="container">
-        <?php 
-          echo "<p> $ctaOrigen</p>"; 
-          echo "<p> $ctaDestino </p>"; 
-          echo "<p> $concepto </p>" ;
-          echo "<p> $monto </p>" ;
-        ?>  
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
+  </div>
+</div>
+
+<!--
+
+-->
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
 </body>
-</html>
+</html> 

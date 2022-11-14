@@ -1,4 +1,7 @@
 <?php session_start();
+$codigoCliente = $_SESSION['codigoCliente'];
+$nombre = $_SESSION['nombre'];
+$saldo = $_SESSION['saldo'];
 
 /*
     $concepto = $_POST['concepto'];
