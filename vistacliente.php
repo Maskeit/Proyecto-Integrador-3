@@ -19,22 +19,22 @@
     <link rel="stylesheet"  type="text/css" href="assets/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">    
     
     <!--css de la tabla-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="./Style.css" />
-  <link rel="stylesheet" href="./mobile-style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./Style.css" />
+    <link rel="stylesheet" href="./mobile-style.css">
   
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+
+
+    
 </head>
 <body> 
     <header>
      
-<!--comienza header-->
-  <header>
+    <!--comienza header-->
+    <header>
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="index.php">
@@ -73,11 +73,11 @@
     </div>
   </header>
     </header>    
-      
+    <br>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">            
-            <button id="btnNuevo" type="button" class="btn btn-info" data-toggle="modal"><i class="material-icons">library_add</i></button>    
+            <button id="btnNuevo" type="button" class="btn btn-success" data-toggle="modal"><i class="material-icons">library_add</i></button>    
             </div>    
         </div>    
     </div>    
@@ -90,6 +90,7 @@
                     <table id="tablaUsuarios" class="table table-striped table-bordered table-condensed" style="width:100%" >
                         <thead class="text-center">
                             <tr>
+                                <th>ID</th>
                                 <th>Codigo</th>
                                 <th>Nombre</th>
                                 <th>Apellido Paterno</th>
@@ -273,3 +274,4 @@
     
 </body>
 </html>
+

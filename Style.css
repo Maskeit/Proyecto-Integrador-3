@@ -255,6 +255,14 @@ header .container .col-md-7 p {
   padding: 1em 0.5em;
 }
 
+#tituloAdmin{
+  text-align: center;
+  font-style: normal;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px;
+}
+
 /* Section 3 */
 
 .section-3 {
@@ -297,6 +305,7 @@ header .container .col-md-7 p {
 .section-4 .container h1 {
   font-size: 6vmin;
   padding-top: 14vmin;
+  background-color: red;
 }
 
 .section-4 .team {
@@ -461,4 +470,48 @@ form input[type="submit"]{
 form input[type="submit"]:hover{
 	background: #E64A19;
 }
-/*termina un poco del css dde Miguel*/
+
+.formMovimiento{
+  margin-top: 100px;
+  margin:auto;
+  background: rgb(201, 201, 201);
+  font-size: 30px;
+  font-family: Roboto;
+  width: 500px;
+  text-align: center;
+  border: 1px solid rgb(143, 143, 143);
+  border-radius: 20px;
+  box-shadow: 5px 3px #dddddd;
+}
+
+#checkboxSaldo{
+  height: 25px;
+  width: 25px;
+}
+
+#botonSaldo{
+  width: 80%;
+  background: #6ac46e;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #4f9453;
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+#botonSaldo:hover{
+  transform: scale(1.1);
+}
+
+#inputSaldo{
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+#saldo{
+  font-size: 25px;
+}
