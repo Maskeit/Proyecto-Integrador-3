@@ -11,13 +11,13 @@
 	<img class="wave" src="../assets/wave.png">
 	<div class="container">
 		<div class="img">
-			<img src="../assets/bg.svg">
+			<img src="../assets/img/login.jpg">
 		</div>
 		<div class="login-content">
 
 
 			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name = "login">
-				<img src="../assets/avatar.svg">
+				<img src="../assets/img/avatar.png">
 				<h2 class="title">Inicia Sesion</h2>
 
            		<div class="input-div one">

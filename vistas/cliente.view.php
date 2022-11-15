@@ -220,8 +220,8 @@
             </div>
             <div class="box">
                 <h2>SOBRE NOSOTROS</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+                <p>Somos un equipo de desarrolladores de la carreara de ingenieria de software de la Facultad de ingenieria electromecanica de la UdeC</p>
+                <p>Equipo 2 Ing de software 3-D</p>
             </div>
             <div class="box">
                 <h2>SIGUENOS</h2>
