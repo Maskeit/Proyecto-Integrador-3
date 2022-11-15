@@ -7,7 +7,6 @@ require 'funciones/funciones.php';
 $codigoCliente = $_SESSION['codigoCliente'];
 $nombre = $_SESSION['nombre'];
 $saldo = $_SESSION['saldo'];
-
 //datos de la tarjeta del cliente
 $debitoSaldo = $_SESSION['saldoDeb']; 
 $debitoBIN = $_SESSION['BIN'];

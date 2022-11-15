@@ -12,7 +12,7 @@ $saldo =  $_SESSION['saldo'];
 
 
 
-if($_SERVER['REQUEST_METHOD']== 'POST'){
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $concepto = filter_var($_POST['concepto'], FILTER_SANITIZE_STRING);
     $monto = filter_var($_POST['monto'], FILTER_SANITIZE_NUMBER_FLOAT,);
     $ctaOrigen = $_POST['ctaOrigen'];
@@ -21,10 +21,13 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     
     $errores = '';
     if (empty($concepto) or empty($monto)) {
-		$errores .= '<li>Por favor rellena todos los datos correctamente</li>'; //el punto agregado al =
-        $concepto .= 'No se ha escrito ningun concepto';
+
+        echo json_encode('Llena todos los campos');
+
+		//$errores .= '<li>Por favor rellena todos los datos correctamente</li>'; //el punto agregado al =
+        //$concepto .= 'No se ha escrito ningun concepto';
 	} else {
-        '<script> alert("Datos enviado"); </script>';
+        echo json_encode('Correcto: <br> se han enviado tu dinero'); //pendiente de llenar con recibo
     }
 
     if($monto > $saldo){

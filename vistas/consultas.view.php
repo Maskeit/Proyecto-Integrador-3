@@ -20,7 +20,7 @@ require 'headerEspecifico.php';?>
 </style>
 
 <body>
-<div class="container">
+<div class="container" style="margin-top: 12px;">
   <div class="col">
     <H4 class="mb=5">Cuenta en pesos <?php echo '$' . number_format($_SESSION['saldo'], 2 , '.' , ',' ); ?> MXN</H4><!--Aqui va codigo php para traer el saldo dependiendo la tarjeta del cliente-->
 
