@@ -20,7 +20,7 @@ require 'headerEspecifico.php';?>
 </style>
 
 <body>
-<div class="container" style="margin-top: 12px;">
+<div class="container" >
   <div class="col">
     <H4 class="mb=5">Cuenta en pesos <?php echo '$' . number_format($_SESSION['saldo'], 2 , '.' , ',' ); ?> MXN</H4><!--Aqui va codigo php para traer el saldo dependiendo la tarjeta del cliente-->
 
@@ -35,7 +35,27 @@ require 'headerEspecifico.php';?>
         </div>
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-          <h5 class="container">Saldo actual: <span id="saldo"><?php echo '$' . number_format($_SESSION['saldoDeb'], 2 , '.' , ',' ) ?>  <div class="col" name="debito"> <a href="debito.php">Ver movimientos.</a></div></span></h5> <!--Se supone que este deberia ser el saldo de la tarjeta debito del cliente pero me muestra $0.00-->
+          <h5 class="container">Saldo actual: <span id="saldo">
+            <?php if(!$_SESSION['saldoDeb']){
+              echo 'No se ha solicitado una tarjeta de debito';
+            }else{
+            echo '$' . number_format($_SESSION['saldoDeb'], 2 , '.' , ',' );
+            }
+            ?>
+            <?php if(!$_SESSION['BIN']){
+              echo '';
+            }else{
+            echo 'de la tarjeta' . $dato['BIN'];
+            }
+            ?> <div class="col" name="debito"> <a href="debito.php">
+              <?php
+              if(!$_SESSION['BIN']){
+
+              }else{
+                echo 'Ver movimientos.';
+              }
+              ?>
+            </a></div></span></h5> <!--Se supone que este deberia ser el saldo de la tarjeta debito del cliente pero me muestra $0.00-->
           </div>
         </div>
       </div>
@@ -50,14 +70,27 @@ require 'headerEspecifico.php';?>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
-          <h5 class="container">Saldo actual: <span id="saldo"><?php echo '$' . number_format($_SESSION['saldo'], 2 , '.' , ',' )?> <div class="col"> <a href="#">Ver movimientos.</a></div></span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
+          <h5 class="container">Saldo actual: <span id="saldo">
+          <?php if(!$_SESSION['saldoDeb']){
+              echo 'No se ha solicitado una tarjeta de Credito';
+            }else{
+            echo '$' . number_format($_SESSION['saldoDeb'], 2 , '.' , ',' );
+            }
+            ?>
+            <?php if(!$_SESSION['BIN']){
+              echo '';
+            }else{
+            echo 'de la tarjeta' . $dato['BIN'];
+            }
+            ?>
+            <div class="col"> <a href="#">
+            </a></div></span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
           </div>
         </div>
       </div>
       <!---->
     </div>  
   </div>
-
   <!--Divisor de cuentas con lo que ofrece el banco-->
   <!--HTML DE LA LOGICA DEL MOVIMIENTO-->
   

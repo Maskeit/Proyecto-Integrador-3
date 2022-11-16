@@ -69,31 +69,28 @@
     </div>
   </header>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-    
-
     <title>Movimientos</title>
 </head>
 <body>
 <div class="container" style="width:700px ;">
 <!--formulario-->
-  <form id="formulario" method="post">
-  <h1>Transferencia a otra cuenta</h1>
+<form id="formulario" method="post" action="comprobante.php">
+  <h1>Transferencia a otras cuentas</h1>
 
   <div class="input-group mb-3">
     <label class="input-group-text" for="inputGroupSelect01">Cuenta Origen</label>
     <select name="ctaOrigen" class="form-select" id="inputGroupSelect01">
       <option selected>Tus cuentas</option>
-      <option value="<?php echo $_SESSION['codigoCliente'];?>"><?php echo $_SESSION['codigoCliente'];?>: <?php echo '$' . number_format($_SESSION['saldo'], 2 , '.' , ',' ) ?> </option> <!--Aqui mostramos en forma de "lista" las cuentas que tenga el usuario con la cantidad de dinero que tenga ene sa tarjeta, !!!en realidad tiene que se un selector de tarjetas, no de cuentas-->
+      <option value="<?php echo $_SESSION['codigoCliente'];?>"><?php echo $_SESSION['codigoCliente'];?>: <?php  echo '$' . number_format($_SESSION['saldoDeb'], 2 , '.' , ',' ); ?> </option> <!--Aqui mostramos en forma de "lista" las cuentas que tenga el usuario con la cantidad de dinero que tenga ene sa tarjeta, !!!en realidad tiene que se un selector de tarjetas, no de cuentas-->
     </select>
   </div>
 
   <div class="input-group mb-3">
     <select name="ctaDestino" class="form-select" id="inputGroupSelect02">
       <option selected>Cuenta destino</option>
-        <?php foreach($list as $item): ?>
+        <?php foreach($usuarios as $usuario): ?>
 
-          <option value="<?php $item['codigoCliente']; ?>"><?php echo $item['nombre']; ?></option><!--Aqui tenemos que hacer una consulta para traer a todos los clientes que tengamos registrados y mostrarlos con este cilo foreach-->
+          <option value="<?php $usuario['codigoCliente']; ?>"><?php echo $usuario['nombre'] .'-'. $usuario['codigoCliente']; ?></option><!--Aqui tenemos que hacer una consulta para traer a todos los clientes que tengamos registrados y mostrarlos con este cilo foreach-->
         
         <?php endforeach; ?>
     </select>
@@ -102,7 +99,7 @@
 
       <div class="input-group">
         <span class="input-group-text">Concepto:</span>
-        <input type="text" class="form-control" name="concepto">
+        <input type="text" class="form-control" name="concepto" placeholder="servicios, prestamos..">
       </div>
       <br>
       <div class="input-group mb-3">
@@ -121,45 +118,25 @@
     </div>
     <button type="button" class="btn btn-outline-secondary"><a style="text-decoration: none;" href="../cliente.php">Regresar</a></button>
     <button type="submit" value="Depositar" class="btn btn-outline-success">Completar</button>
-    <?php if(!empty($errores)): ?>
+
+</form>
+<div class="mt-3" id="errorTrans">
+  <div class="alert alert-danger" role="alert">
+  <?php if(!empty($errores)): ?>
 				<div class="error">
 					<ul>
 						<?php echo $errores; //imprime el error que haya ocurrido?>
 					</ul>
 				</div>
 			<?php endif; ?>
-</form>
+  </div>
+</div>
 <!--formulario-->
 
-      <!-- Modal para mostrar el estado de la Transferencia antes de enviar se supone, (hay un error que aun no soluciono)-->
-      <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Transferencia En proceso</h5> <!--deberia decir Transferencia realizada cuando ya se haya enviado bien-->
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            <?php 
-                echo "Desde cuenta de $nombre <p> NoCta: $codigoCliente</p>"; //parecen errores pero es que no se han cargado los datos por no definirlos, pero funciona cuando ya guardamos algo en el formuluario
-                echo "A la cuenta <p>  No: $ctaDestino </p>"; 
-                echo "Referencia: ******8693";
-                echo "<p> Concepto:  $concepto </p>" ;
-                echo "Monto: <p>  $$monto </p>" ;
-              ?>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Ver resumen</button>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-<!-- Modal -->
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-<script src="../js/appForm.js"></script>
+<!--<script src="appForm.js"></script>-->
 </body>
 </html> 

@@ -8,8 +8,23 @@ $codigoCliente = $_SESSION['codigoCliente'];
 $nombre = $_SESSION['nombre'];
 $saldo =  $_SESSION['saldo'];
 
-//comprobamos que los datos esten correctos
+//consulta chingona
+$consulta = "SELECT * FROM cliente";
+$resultado = $conexion->prepare($consulta);
+$resultado->execute();
+$usuarios=$resultado->fetchAll(PDO::FETCH_ASSOC);
 
+
+//consutla para las tarjetas de debito
+$consulta = "SELECT * FROM debito";
+$resultado = $conexion->prepare($consulta);
+$resultado->execute();
+$datos=$resultado->fetchAll(PDO::FETCH_ASSOC);
+
+foreach($datos as $dato){
+    $dato['saldoDeb'];
+}
+//comprobamos que los datos esten correctos
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -22,23 +37,39 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $errores = '';
     if (empty($concepto) or empty($monto)) {
 
-        echo json_encode('Llena todos los campos');
+        echo 'Por favor llene todos los campos correctamente';
 
 		//$errores .= '<li>Por favor rellena todos los datos correctamente</li>'; //el punto agregado al =
         //$concepto .= 'No se ha escrito ningun concepto';
-	} else {
-        echo json_encode('Correcto: <br> se han enviado tu dinero'); //pendiente de llenar con recibo
-    }
-
-    if($monto > $saldo){
+	}elseif($monto > $dato['saldoDeb']){
         $errores.= '<li>El monto supera el limite disponible</li>';
+        
+        
+        //aqui comence a hacer el proceso de la transaccion bancaria pero no me salio xd, ignorenlo
+    } else {
+        $statement = $conexion->prepare('SELECT saldoDeb FROM debito'); //preparamos la consulta
+        $statement->execute(array('monto' => $monto));//asignamos a la variable $monto el monto
+
+    //equivale a resultado
+        $deposito = $statement->fetch();
+
+        if($deposito != true){
+            $errores.= '<li>No se pueden ahcer transferencias en este momento</li>';
+        }
+
+        if($errores == ''){
+            $statement = $conexion->prepare('INSERT INTO debito (saldoDeb) VALUES (:saldoDeb)');
+            $statement->execute(array(
+                ':monto' => $monto
+            ));
+
+            header('Location: comprobante.php');
+
+        }
+
     }
-
-}
-
-$lista = $conexion->prepare("SELECT * FROM cliente");
-$lista->setFetchMode(PDO::FETCH_ASSOC);
-$lista->execute();
+    
+} 
 
 //
 
@@ -55,7 +86,8 @@ require 'transferencia.view.php';
 
 <script>
 		
-        var saldo = <?php echo $_SESSION['saldo']; ?>;
+        var saldo = <?php echo $_SESSION['saldoDeb']; ?>;
+        console.log(saldo);
      
         function showContent(id,e) {
             document.getElementById("error").style.display='none';

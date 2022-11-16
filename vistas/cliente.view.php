@@ -1,4 +1,3 @@
-<?php echo $_SESSION['saldoDeb'];?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -210,6 +209,7 @@
        </article>
    </div>
     </main>
+    
     <footer class="pie-pagina">
         <div class="grupo-1">
             <div class="box">
@@ -235,7 +235,7 @@
             </div>
         </div>
         <div class="grupo-2">
-            <small>&copy; 2021 <b>SLee Dw</b> - Todos los Derechos Reservados.</small>
+            <small>&copy; 2022 <b>Ing de Software</b> - Todos los Derechos Reservados.</small>
         </div>
     </footer>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>

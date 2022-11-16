@@ -79,24 +79,32 @@
     }
    </style>
 
-<div class="container">
-    <div class="alert alert-success" role="alert">
-    <h4 class="alert-heading">Transacción Exitosa</h4>
-    <div class="container">
-                <?php 
-                echo "Desde cuenta de $nombre <p> No: $codigoCliente</p>"; 
+<h1>Hola si recibi los datos</h1>
+      <!-- Modal para mostrar el estado de la Transferencia antes de enviar se supone, (hay un error que aun no soluciono)-->
+      <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Transferencia En proceso</h5> <!--deberia decir Transferencia realizada cuando ya se haya enviado bien-->
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <?php 
+                echo "Desde cuenta de $nombre <p> NoCta: $codigoCliente</p>"; //parecen errores pero es que no se han cargado los datos por no definirlos, pero funciona cuando ya guardamos algo en el formuluario
                 echo "A la cuenta <p>  No: $ctaDestino </p>"; 
                 echo "Referencia: ******8693";
                 echo "<p> Concepto:  $concepto </p>" ;
-                echo "Por la cantidad de: <p>  $$monto </p>" ;
-                ?>
-                </div>
-    <hr>
-    <a href="#"><p class="mb-0">Descarga el comprobante de tu transferencia haciendo click aquí.</p></a>
-    </div>
-    <a href="transferencia.php">volver.</a>
-
-</div>
+                echo "Monto: <p>  $$monto </p>" ;
+              ?>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Ver resumen</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Modal -->
 
 
 
