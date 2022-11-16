@@ -20,8 +20,7 @@ require 'headerEspecifico.php';?>
 </style>
 
 <body>
-
-<div class="container">
+<div class="container" style="margin-top: 12px;">
   <div class="col">
     <H4 class="mb=5">Cuenta en pesos <?php echo '$' . number_format($_SESSION['saldo'], 2 , '.' , ',' ); ?> MXN</H4><!--Aqui va codigo php para traer el saldo dependiendo la tarjeta del cliente-->
 
@@ -36,7 +35,7 @@ require 'headerEspecifico.php';?>
         </div>
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-          <h5 class="container">Saldo actual: <span id="saldo"><?php echo '$' . number_format($_SESSION['saldo'], 2 , '.' , ',' ) ?>  <div class="col" name="debito"> <a href="debito.php">Ver movimientos.</a></div></span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
+          <h5 class="container">Saldo actual: <span id="saldo"><?php echo '$' . number_format($_SESSION['saldoDeb'], 2 , '.' , ',' ) ?>  <div class="col" name="debito"> <a href="debito.php">Ver movimientos.</a></div></span></h5> <!--Se supone que este deberia ser el saldo de la tarjeta debito del cliente pero me muestra $0.00-->
           </div>
         </div>
       </div>

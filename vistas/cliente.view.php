@@ -1,3 +1,4 @@
+<?php echo $_SESSION['saldoDeb'];?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

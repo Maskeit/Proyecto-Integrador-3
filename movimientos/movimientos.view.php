@@ -1,35 +1,7 @@
 <?php require '../vistas/headerEspecifico.php' ?> 
-<link rel="stylesheet" href="../css/movimientos.css">
+
 <body>
 <!--label--> 
-    <!--origen--> 
-    <form action="#" method="post">
-      <h1>Reliazar un Movimiento</h1>
-      <label for="">CUENTA ORIGEN (mis cuentas): </label>
-      <select name="cuentas" id="">
-        <option value="Arroz">cuenta debito</option>
-        <option value="Leche">cuenta ahorros</option>
-      </select>
-      <!--destino--> 
-      <label for="">CUENTAS DESTINO: </label>
-      <select name="cuentas" id="">
-        <option value="Arroz">cuenta Adolfo</option>
-        <option value="Leche">cuenta Daniel</option>
-        <option value="Azúcar">cuenta Miguel</option>
-        <option value="Yogurt">cuenta Yolanda</option>
-      </select>
-      <label for="">Concepto </label>
-      <input type="text" name="conepto">
-      <label for="">Monto: </label>
-      <input type="text" name="monto">
-      <label for="">Seleccione banco: </label>
-      <select name="banco" id="">
-        <option value="unibank">UNIBANK</option>
-        <option value="bbva">BBVA</option>
-        <option value="santander">SANTANDER</option>
-      </select>
-      <input type="submit" value="Depositar">
-    </form>
 <!--carousel-->
 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">

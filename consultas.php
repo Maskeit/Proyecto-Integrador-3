@@ -7,7 +7,9 @@ require 'funciones/funciones.php';
 $codigoCliente = $_SESSION['codigoCliente'];
 $nombre = $_SESSION['nombre'];
 $saldo = $_SESSION['saldo'];
-
+//datos de la tarjeta del cliente
+$debitoSaldo = $_SESSION['saldoDeb']; 
+$debitoBIN = $_SESSION['BIN'];
 
 if(isset($_SESSION['codigoCliente'])){
     require 'vistas/consultas.view.php';
@@ -15,4 +17,7 @@ if(isset($_SESSION['codigoCliente'])){
     header('Location: index.php');
     die();
 }
+
+
+
 ?>
