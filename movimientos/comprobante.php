@@ -16,3 +16,4 @@ $saldo = $_SESSION['saldo'];
         }   
     }
 require 'comprobante.view.php';
+?>

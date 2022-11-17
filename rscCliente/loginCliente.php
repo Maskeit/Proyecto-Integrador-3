@@ -57,9 +57,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if ($resultado !== false) {
 		$_SESSION['codigoCliente'] = $codigoCliente;//para iniciar sesion con el codigoCliente
 		$_SESSION['nombre'] = $nombre; //para referenciar el nombre del cliente logeado
-		$_SESSION['saldo'] = $saldo; //. saldo total del cliente dado de alta
-		$_SESSION['BIN'] = $debitoBIN; // el numero de 16 digitos de la tarjeta del cliente
-		$_SESSION['saldoDeb'] = $debitoSaldo; //. saldo de la tarjeta de debito del cliente
+		// $_SESSION['saldo'] = $saldo; //. saldo total del cliente dado de alta
+		// $_SESSION['BIN'] = $debitoBIN; // el numero de 16 digitos de la tarjeta del cliente
+		// $_SESSION['saldoDeb'] = $debitoSaldo; //. saldo de la tarjeta de debito del cliente
 		header('Location: ../cliente.php');
 	} else {
 		$errores = '<li>Datos incorrectos</li>';

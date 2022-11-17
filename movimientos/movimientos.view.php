@@ -1,15 +1,14 @@
-<?php require '../vistas/headerEspecifico.php' ?> 
-
 <body>
 <!--label--> 
 <!--carousel-->
 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-          <h5 class="container">Saldo actual: <span id="saldo">0</span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
+          <h1 class="container">Saldo actual: <span id="saldo">0</span></h1> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
           </div>
         </div>
 
    <b>Deposito</b>
+   <form action="">
    <input type="checkbox" value="1" onchange="javascript:showContent('deposito',this)" />
    <div id="deposito" class="hide">
      <label for="">Ingrese la cuenta a la que quiere depositar</label>
@@ -18,10 +17,12 @@
       <input type="text" name ="noCta" placeholder="noCta">
      </select>
      <label for="">Ingrese la cantidad a depositar</label>
-     <input type="text" name="valor1" placeholder="cantidad">
+     <input type="text" name="valor1" placeholder="cantidad" required>
 
      <input type="button" value="Enviar" onclick="deposito()">
    </div>
+   </form>
+   
 
    <b>Retiro</b>
    <input type="checkbox" value="1" onchange="javascript:showContent('retiro',this)" />
