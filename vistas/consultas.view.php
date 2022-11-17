@@ -17,13 +17,16 @@ require 'headerEspecifico.php';?>
           font-size: 3.5rem;
         }
       }
+
+      .container_img{
+        margin-top: 45px;
+      }
 </style>
 
 <body>
 <div class="container" >
   <div class="col">
-    <H4 class="mb=5">Cuenta en pesos <?php echo '$' . number_format($saldoSuma, 2 , '.' , ',' ); ?> MXN</H4><!--Aqui va codigo php para traer el saldo dependiendo la tarjeta del cliente-->
-
+    <h2 class="display-6">Cuenta en pesos <?php echo '$' . number_format($saldoSuma, 2 , '.' , ',' ); ?> MXN  <i class="bi bi-cash-stack"></i></h2><!--Aqui va codigo php para traer el saldo dependiendo la tarjeta del cliente-->
     <div id="accordion">
       <!-- aqui comienzan las tarjetas de debito -->
       <div class="card">
@@ -36,7 +39,7 @@ require 'headerEspecifico.php';?>
         </div>
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body" name="debito">
-          <h5 class="container">Saldos actuales:  <i class="bi bi-wallet"></i> <?php echo '<br>'; ?>  <span id="saldo">
+          <h5 class="display-7">Saldos actuales:  <i class="bi bi-wallet"></i> <?php echo '<br>'; ?>  <span id="saldo">
             <?php if(empty($debito)){
               echo 'No se ha solicitado una tarjeta de debito';
             }else{
@@ -59,7 +62,7 @@ require 'headerEspecifico.php';?>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
-          <h5 class="container">Saldo actual: <i class="bi bi-wallet"></i> <?php echo '<br>'; ?><span id="saldo">
+          <h5 class="container">Saldo actual: <i class="bi bi-credit-card"></i> <?php echo '<br>'; ?><span id="saldo">
           <?php if(empty($credito)){
               echo 'No se ha solicitado una tarjeta de debito';
             }else{
@@ -73,23 +76,34 @@ require 'headerEspecifico.php';?>
       </div>
       <!---->
     </div>  
+      <!--  -->
+      <div class="container_img">
+        <div class="card mb-3">
+          <img src="assets/img/car2.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Pide tu credito unibank</h5>
+            <p class="card-text">Que esperas para solicitar tu credito Unibank..</p>
+            <p class="card-text">Last updated 3 mins ago</p>
+          </div>
+        </div>
+      </div>
+    <div class="d-grid gap-2">
+      <button type="button" class="btn btn-warning">Hacer un momiento</button>
+      
+      <button type="button" class="btn btn-light"><a href="cliente.php">volver</a></button>
+      
+      
+    </div>
+      <!--  -->
   </div>
   <!--Divisor de cuentas con lo que ofrece el banco-->
   <!--HTML DE LA LOGICA DEL MOVIMIENTO-->
+</div>
 
-  <div class="row">
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-      <img src="assets/img/car1.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Que esperas para solicitar tu credito Unibank.</p>
-      </div>
-      </div>
-            
-    </div>
-  </div>
+<div class="containter">
 
 </div>
+
 
 <!--HTML DE LA LOGICA DEL MOVIMIENTO-->
 <?php
