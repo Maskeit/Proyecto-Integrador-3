@@ -92,6 +92,11 @@
     </div>
 
         <div class="input-group">
+          <span class="input-group-text">Beneficiario:</span>
+          <input type="text" class="form-control" name="beneficiario" id="beneficiario" placeholder="Miguel Alejandre">
+        </div>
+        <br>
+        <div class="input-group">
           <span class="input-group-text">Concepto:</span>
           <input type="text" class="form-control" name="concepto" id="concepto" placeholder="servicios, prestamos..">
         </div>

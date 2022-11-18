@@ -1,4 +1,4 @@
-const formulario = document.getElementById('formulario');
+/*const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formualario input');
 
 
@@ -11,10 +11,10 @@ inputs.forEach((input)=>{
     input.addEventListener('blur', validarFormulario);
 });
 formulario.addEventListener('submit', (e) =>{
-    e.preventDefault(e);
+    e.preventDefault(e);  
 });
+*/
 
-/*
 (function(){
 
     var formulario = document.getElementsByName('formulario')[0],
@@ -22,14 +22,14 @@ formulario.addEventListener('submit', (e) =>{
       boton = document.getElementById('btn');
 
       var validarDestino = function(e){
-        if(formulario.ctaDestino.value == 0){
+        if(formulario.ctaDestino.value == ''){
             alert("Completa el campo cuenta destino");
             e.preventDefault(e);
         }
       };
 
       var validarConcepto = function(e){
-        if(formulario.concepto.value == 0){
+        if(formulario.concepto.value == ''){
             alert('No se describió un concepto');
             e.preventDefault(e);
         }
@@ -52,4 +52,3 @@ formulario.addEventListener('submit', (e) =>{
       formulario.addEventListener("submit", validar);
 
 }())
-*/
