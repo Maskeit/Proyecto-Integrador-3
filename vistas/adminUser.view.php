@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,18 +13,18 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./Style.css" />
   <link rel="stylesheet" href="./mobile-style.css">
-  <link rel="stylesheet" href="css/ejecutivosTabla.css">
+
   <!--Miguel-->
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <!--finmiguel-->
 </head>
 <body>
  
-<!--comienza header-->
+<!--INICIO HEADER -->
   <header>
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="./index.php">
           <i class="bi bi-cash-coin fa-2x mx-3"></i>Unibank
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -61,14 +60,61 @@
       </nav>
     </div>
   </header>
+<!-- FIN HEADER -->
 
-<!--termina header-->
+
+  <section class="section-2 container-fluid p-0">
+      <div class="cover">
+        <div class="content text-center">
+        <h1>Panel de control del Administrador </h1>
+        <p>
+          Realize diversas operaciones para gestionar el funcionamiento de Unibank <br> 
+          <i style="font-size: 6em;" class="bi bi-person-badge-fill"></i>
+          <br>
+        </p>
+        </div>
+      </div>
+<div id="tituloAdmin">Funciones</div>
+      <div class="purchase text-center">
+        <div class="cards">
+          <div class="d-flex flex-row justify-content-center flex-wrap">
+            <div class="card card border-success">
+              <div class="card-body">
+                <div class="title">
+                  <h5 style="color: black;" class="card-title">Alta / Consulta de Ejecutivos</h5>
+                </div>
+                <p class="card-text">
+                  Es capaz de ver todos los ejecutivos que trabajan en Unibank o para dar de alta a nuevos ejecutivos<br>
+                </p>
+                <i style="font-size: 10em; color: black;" class="bi bi-clipboard-plus-fill"></i>
+                
+              </div>
+            </div>
+            
+            <div class="card card border-success">
+              <div class="card-body">
+                <div class="title">
+                  <h5 style="color: black;" class="card-title">Validación de préstamos</h5>
+                </div>
+                <p class="card-text">
+                  Podrá validar los prestamos solicitados por los clientes
+                </p>
+                <i style="font-size: 10em; color: black;" class="bi bi-cash-coin"></i>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- AQUI INICIAN LAS TABLAS DE EJECUTIVOS Y PRESTAMOS -->
 	<div class="contenedor">
         <div class="row">
             <h1>Tabla de Ejecutivos</h1>
             <div >
                 <div class="botoncito">
-                    <button id="btn_cargar_usuarios" class="btn activado">Cargar Usuarios</button>
+                    <button id="btn_cargar_usuarios" class="btn activado">Cargar lista de Ejecutivos</button>
                 </div>
             </div>
             <div >
@@ -77,7 +123,7 @@
                 </div>
             </div>
         </div>
-			
+			<br>
 		<main>
 			<div class="error_box" id="error_box">
 				<p>Se ha producido un error.</p>
@@ -93,5 +139,18 @@
 		</main>
 	</div>
 	<script src="js/ajax2.js"></script>
+
+  <h1>Tabla de Validación de Prestamos</h1><br>
+  <table id="tablaValidar" class="tablaValidar">
+				<tr>
+					<th>ID</th>
+					<th>noCta</th>
+					<th>Cantidad</th>
+          <th>Resolución (Aceptar/Denegar)</th>
+				</tr>
+			</table>
+<?php
+require '/footer.php';
+?>
 </body>
 </html>

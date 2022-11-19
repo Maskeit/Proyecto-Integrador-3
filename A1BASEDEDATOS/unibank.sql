@@ -257,7 +257,6 @@ ALTER TABLE `cuentas`
 ALTER TABLE `debito`
   ADD PRIMARY KEY (`idTarjeta`),
   ADD UNIQUE KEY `BIN` (`BIN`);
-
 --
 -- Indices de la tabla `ejecutivos`
 --
