@@ -2,14 +2,7 @@
 $codigoCliente = $_SESSION['codigoCliente'];
 $nombre = $_SESSION['nombre'];
 $saldo = $_SESSION['saldo'];
-
-/*
-    $concepto = $_POST['concepto'];
-    $monto = $_POST['monto'];
-    $ctaOrigen = $_POST['ctaOrigen'];
-    $ctaDestino = $_POST['ctaDestino'];
-    $banco = $_POST['banco'];
-*/    
+  
     if($_SERVER['REQUEST_METHOD']== 'POST'){
         $concepto = filter_var($_POST['concepto'], FILTER_SANITIZE_STRING);
         $monto = filter_var($_POST['monto'], FILTER_SANITIZE_NUMBER_FLOAT,);
@@ -23,3 +16,4 @@ $saldo = $_SESSION['saldo'];
         }   
     }
 require 'comprobante.view.php';
+?>

@@ -14,13 +14,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./Style.css" />
 
-  <link rel="stylesheet" href="./mobile-style.css">
+  <link rel="stylesheet" href="mobile-style.css">
 
   <link rel="stylesheet" href="../assets/bootstrap/Btrap5/css/bootstrap.min.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   
-  <link rel="stylesheet" href="../css/estilosLogReg.css">
   <link rel="stylesheet" href="../assets/bootstrap/Btrap5/css/features.css">
   <!--Miguel-->
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -69,93 +68,61 @@
     </div>
   </header>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-    
-
     <title>Movimientos</title>
 </head>
 <body>
-<div class="container">
-  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-  <h1>Transferencia a otra cuenta</h1>
-
-  <div class="input-group mb-3">
-    <label class="input-group-text" for="inputGroupSelect01">Cuenta Origen</label>
-    <select name="ctaOrigen" class="form-select" id="inputGroupSelect01">
-      <option selected>Tus cuentas</option>
-      <option value="<?php echo $_SESSION['codigoCliente'];?>"><?php echo $_SESSION['nombre'];?></option>
-    </select>
-  </div>
-
-  <div class="input-group mb-3">
-    <select name="ctaDestino" class="form-select" id="inputGroupSelect02">
-      <option selected>Cuenta destino</option>
-        <?php foreach($list as $item): ?>
-
-          <option value="<?php $item['codigoCliente']; ?>"><?php echo $item['nombre']; ?></option>
-        
-        <?php endforeach; ?>
-    </select>
-    <label class="input-group-text" for="inputGroupSelect02">Cuenta Destino</label>
-  </div>
-
-      <div class="input-group">
-        <span class="input-group-text">Concepto:</span>
-        <input type="text" class="form-control" name="concepto">
-      </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text">$</span>
-        <input type="text" class="form-control" name="monto" aria-label="Amount (to the nearest dollar)">
-        <span class="input-group-text">.00</span>
-      </div>
+  <!--formulario-->
+<div class="container" style="width:700px ;">
+<!-- ---------------------------------------------------------------------------------------------->
+  <form action="" id="formulario" name="formulario" method="get">
+    <h1>Transferencia a otras cuentas</h1>
 
     <div class="input-group mb-3">
-    <select name="banco" class="form-select" id="inputGroupSelect02">
-      <option value="unibank">UNIBANK</option>
-      <option value="bbva">BBVA</option>
-      <option value="santander">SANTANDER</option>
-    </select>
-    <label class="input-group-text" for="inputGroupSelect02">Seleccione Banco</label>
+      <label name="ctaOrigen" class="input-group-text" for="inputGroupSelect01">Cuenta Origen</label>
+      <select name="ctaOrigen" class="form-select" id="inputGroupSelect01">
+        <?php foreach ($datosDeb as $debito):?>
+        <option value="<?php $debito['BIN'];?>"><?php echo $debito['BIN'];?>: <?php  echo '$' . number_format($debito['saldoDeb'], 2 , '.' , ',' ); ?> </option> <!--Aqui mostramos en forma de "lista" las cuentas que tenga el usuario con la cantidad de dinero que tenga ene sa tarjeta, !!!en realidad tiene que se un selector de tarjetas, no de cuentas-->
+        <?php endforeach ?>                    
+      </select>
     </div>
-    <button type="submit" value="Depositar" class="btn btn-outline-success">Completar</button>
-    <button type="button" class="btn btn-outline-secondary"><a style="text-decoration: none;" href="../cliente.php">Regresar</a></button>
 
-    <?php if(!empty($errores)): ?>
-				<div class="error">
-					<ul>
-						<?php echo $errores; //imprime el error que haya ocurrido?>
-					</ul>
-				</div>
-			<?php endif; ?>
-</form>
-</div>
-
-<div class="modal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    <div class="input-group mb-3">
+      <input class="input-group-text" type="text" name="ctaDestino" id="ctaDestino" placeholder="ejem 4245 8956 1542 0012">
+      <label name="ctaDestino" class="input-group-text" for="inputGroupSelect02">Cuenta Destino</label>
     </div>
-  </div>
+
+        <div class="input-group">
+          <span class="input-group-text">Beneficiario:</span>
+          <input type="text" class="form-control" name="beneficiario" id="beneficiario" placeholder="Miguel Alejandre">
+        </div>
+        <br>
+        <div class="input-group">
+          <span class="input-group-text">Concepto:</span>
+          <input type="text" class="form-control" name="concepto" id="concepto" placeholder="servicios, prestamos..">
+        </div>
+        <br>
+        <div class="input-group mb-3">
+          <span class="input-group-text">$</span>
+          <input type="text" class="form-control" name="monto" id="monto" aria-label="Amount (to the nearest dollar)" >
+          <span class="input-group-text">.00</span>
+        </div>
+
+      <div class="input-group mb-3">
+      <select name="banco" class="form-select" id="inputGroupSelect02">
+        <option value="unibank">UNIBANK</option>
+        <option value="bbva">BBVA</option>
+        <option value="santander">SANTANDER</option>
+      </select>
+      <label class="input-group-text" for="inputGroupSelect02">Seleccione Banco</label>
+      </div>
+      <button type="button" class="btn btn-outline-secondary"><a style="text-decoration: none;" href="../cliente.php">Regresar</a></button>
+
+      <button type="submit" id="btn" name="btn" value="Enviar" class="btn btn-outline-success">Completar</button>
+
+  </form>
+
 </div>
-
-<!--
-
--->
-
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-
-</body>
-</html> 
+<script src="transferencia.js"></script>
+<?php
+require '../vistas/footer.php';
+?>
