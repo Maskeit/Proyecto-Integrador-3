@@ -74,16 +74,18 @@
   <!--formulario-->
 <div class="container" style="width:700px ;">
 <!-- ---------------------------------------------------------------------------------------------->
-  <form action="" id="formulario" name="formulario" method="get">
+  <form action="comprobante.php" id="formulario" name="formulario" method="post">
     <h1>Transferencia a otras cuentas</h1>
 
     <div class="input-group mb-3">
       <label name="ctaOrigen" class="input-group-text" for="inputGroupSelect01">Cuenta Origen</label>
+      
       <select name="ctaOrigen" class="form-select" id="inputGroupSelect01">
         <?php foreach ($datosDeb as $debito):?>
         <option value="<?php $debito['BIN'];?>"><?php echo $debito['BIN'];?>: <?php  echo '$' . number_format($debito['saldoDeb'], 2 , '.' , ',' ); ?> </option> <!--Aqui mostramos en forma de "lista" las cuentas que tenga el usuario con la cantidad de dinero que tenga ene sa tarjeta, !!!en realidad tiene que se un selector de tarjetas, no de cuentas-->
         <?php endforeach ?>                    
       </select>
+
     </div>
 
     <div class="input-group mb-3">
@@ -124,5 +126,5 @@
 </div>
 <script src="transferencia.js"></script>
 <?php
-require '../vistas/footer.php';
+//require '../vistas/footer.php';
 ?>
