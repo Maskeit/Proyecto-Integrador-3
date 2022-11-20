@@ -10,7 +10,7 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     fin-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
-    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -42,8 +42,7 @@
                     <h4>Inicio</h4>
                 </div>
             </a>
-
-            <a href="./movimientos/transferencia.php">
+            <a href="#">
                 <div class="option">
                     <i class="fas fa-exchange"></i>
                     <h4>Transferencias rapidas</h4>
@@ -69,10 +68,10 @@
     <main>
     <div class="slider">
       <ul>
-        <li><img src="./assets/pexels-photo-452738.jpeg" alt="" /></li>
-        <li><img src="./assets/pexels-photo-636243.jpeg" alt="" /></li>
-        <li><img src="./assets/pexels-photo-900102.jpeg" alt="" /></li>
-        <li><img src="./assets/pexels-photo-636243.jpeg" alt="" /></li>
+        <li><img src="../assets/pexels-photo-452738.jpeg" alt="" /></li>
+        <li><img src="../assets/pexels-photo-636243.jpeg" alt="" /></li>
+        <li><img src="../assets/pexels-photo-900102.jpeg" alt="" /></li>
+        <li><img src="../assets/pexels-photo-636243.jpeg" alt="" /></li>
       </ul>
     </div>
    <div class="informacion">
@@ -215,14 +214,14 @@
             <div class="box">
                 <figure>
                     <a href="#">
-                        <img src="./assets/unibank.png" alt="Logo de SLee Dw">
+                        <img src="../assets/unibank.png" alt="Logo de SLee Dw">
                     </a>
                 </figure>
             </div>
             <div class="box">
                 <h2>SOBRE NOSOTROS</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+                <p>Somos un equipo de desarrolladores de la carreara de ingenieria de software de la Facultad de ingenieria electromecanica de la UdeC</p>
+                <p>Equipo 2 Ing de software 3-D</p>
             </div>
             <div class="box">
                 <h2>SIGUENOS</h2>
@@ -239,6 +238,6 @@
         </div>
     </footer>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
