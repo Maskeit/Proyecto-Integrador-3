@@ -39,12 +39,20 @@ foreach($datosDeb as $debito){
 }
 
 //definiendo valores para enviar al servidor
-$debito = ['BIN'];
+$debito = ['saldoDeb'];
+$ctaOrigen = ['codigoCliente'];
 $ctaDestino = ['ctaDestino'];
 $beneficiario = ['beneficiario'];
 $concepto = ['concepto'];
 $monto = ['monto'];
 $banco = ['banco'];
+
+/*
+$consultaUpdate = "UPDATE saldo SET saldoDeb = saldoDeb + monto WHERE ctaDestino = ctaDestino";
+$resultado = $conexion->prepare($consultaUpdate);
+$resultado->execute();
+$resUpdate=$resultado->fetchAll(PDO::FETCH_ASSOC);
+*/
 
 
 require 'transferencia.view.php';
