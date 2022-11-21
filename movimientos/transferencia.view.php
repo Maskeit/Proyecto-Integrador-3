@@ -80,9 +80,9 @@
     <div class="input-group mb-3">
       <label name="ctaOrigen" class="input-group-text" for="inputGroupSelect01">Cuenta Origen</label>
       
-      <select name="ctaOrigen" class="form-select" id="inputGroupSelect01">
+      <select name="ctaOrigen" class="form-select" id="ctaOrigen">
         <?php foreach ($datosDeb as $debito):?>
-        <option value="<?php $debito['BIN'];?>"><?php echo $debito['BIN'];?>: <?php  echo '$' . number_format($debito['saldoDeb'], 2 , '.' , ',' ); ?> </option> <!--Aqui mostramos en forma de "lista" las cuentas que tenga el usuario con la cantidad de dinero que tenga ene sa tarjeta, !!!en realidad tiene que se un selector de tarjetas, no de cuentas-->
+        <option value="<?php $debito['BIN'] . $debito['saldoDeb'];?>"><?php echo $debito['BIN'];?>: <?php  echo '$' . number_format($debito['saldoDeb'], 2 , '.' , ',' ); ?> </option> <!--Aqui mostramos en forma de "lista" las cuentas que tenga el usuario con la cantidad de dinero que tenga ene sa tarjeta, !!!en realidad tiene que se un selector de tarjetas, no de cuentas-->
         <?php endforeach ?>                    
       </select>
 
@@ -95,17 +95,17 @@
 
         <div class="input-group">
           <span class="input-group-text">Beneficiario:</span>
-          <input type="text" class="form-control" name="beneficiario" id="beneficiario" placeholder="Miguel Alejandre">
+          <input type="text" class="form-control" name="beneficiario" id="beneficiario" placeholder="Miguel Alejandre" >
         </div>
         <br>
         <div class="input-group">
           <span class="input-group-text">Concepto:</span>
-          <input type="text" class="form-control" name="concepto" id="concepto" placeholder="servicios, prestamos..">
+          <input type="text" class="form-control" name="concepto" id="concepto" placeholder="servicios, prestamos...">
         </div>
         <br>
         <div class="input-group mb-3">
           <span class="input-group-text">$</span>
-          <input type="text" class="form-control" name="monto" id="monto" aria-label="Amount (to the nearest dollar)" >
+          <input type="text" class="form-control" name="monto" id="monto" aria-label="Amount (to the nearest dollar)">
           <span class="input-group-text">.00</span>
         </div>
 
