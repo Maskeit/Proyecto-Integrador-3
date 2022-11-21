@@ -10,7 +10,7 @@ require '../vistas/header.php';
 	<title>Formulario de Amortización</title>
 </head>
 <body>
-	<form action="tablaAmort.php" method="POST">
+	<form action="../recibir.php" method="POST">
 
 	<h2 class="fw-bolder text-center font-monospace text-black">Nuestros prestamos solo tienen un 5% de comisión anual!</h3>
 
@@ -39,7 +39,7 @@ require '../vistas/header.php';
 				<option value="1">Efectivo</option>
 				<option value="2">Transferencia</option>
 			</select>
-			<input class="mx-2" type="submit" value="Generar tabla">
+			<input class="mx-2" type="submit" value="Pedir prestamo">
 		</div>
 	</form>
 </body>
