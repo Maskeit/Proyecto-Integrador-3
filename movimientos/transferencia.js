@@ -35,6 +35,13 @@ formulario.addEventListener('submit', (e) =>{
         }
       };
 
+      var validarBeneficiario = function(e){
+        if(formulario.beneficiario.value == ''){
+            alert('No se especifico a quien se envia');
+            e.preventDefault(e);
+        }
+      };
+
       var validarMonto = function(e){
         if(formulario.monto.value = ''){
         } else{
@@ -46,7 +53,8 @@ formulario.addEventListener('submit', (e) =>{
       var validar = function(e){
         validarDestino(e);
         validarConcepto(e);
-        validarMonto(e);
+        validarBeneficiario(e);
+        //validarMonto(e);
       };
 
       formulario.addEventListener("submit", validar);
