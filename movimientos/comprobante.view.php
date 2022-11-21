@@ -83,14 +83,14 @@
 <h1>Comprobante de envío</h1>
 <div class="alert alert-success" role="alert">
 <?php 
-    echo 'A simple success alert—check it out! <br>';
-    echo 'pago de cosas';
-    echo '<br>'. $ctaOrigen . '</ br>';
-    echo '<br>'. $ctaDestino.' </ br>';
-    echo '<br>'.$beneficiario.' </ br>';
-    echo '<br>'. $concepto .' </ br>';
-    echo '<br>'.$banco.' </ br>';
-    echo '<br>'.$monto.' </ br>';
+    echo '<br> Transferencia enviada </ br>';
+    echo '<br> IMPORTE $'.$monto.' </ br>';
+    echo '<br> CUENTA ORIGEN '. $codigoCliente.' </ br>';
+    echo '<br> CUENTA DESTINO '. $ctaDestino.' </ br>';
+    echo '<br> TITULAR '.$beneficiario.' </ br>';
+    echo '<br> CONCEPTO '. $concepto .' </ br>';
+    echo '<br> FECHA Y HORA DE OPERACIÓN '.' </ br>';
+    echo '<br> BANCO '.$banco.' </ br>';
 ?>
 </div>
 

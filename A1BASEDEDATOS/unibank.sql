@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2022 a las 13:00:50
+-- Tiempo de generación: 21-11-2022 a las 23:53:42
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -69,11 +69,12 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`idCliente`, `codigoCliente`, `nombre`, `apellidoPaterno`, `apellidoMaterno`, `estado`, `municipio`, `calle`, `colonia`, `codigoPostal`, `sexo`, `curp`, `fechaNacimiento`, `saldo`, `ocupacion`) VALUES
-(1, '220001', 'Adolfo Angel', 'Perez', 'Salado', 'COLIMA', 'Manzanillo', 'Deportiva', 'Deportiva', 28864, 'Masculino', 'PESA021101HCMRLDA7', '2002-11-01', 194.23, 'Estudiante'),
-(2, '220002', 'Fabian', 'Zepeda', 'Torres', 'COLIMA', 'Manzanillo', 'Juan Escutia', '5 de mayo', 24865, 'Masculino', 'SAIA541127HGRLGL04', '2000-05-06', 2543.56, 'Programador'),
+(1, '220001', 'Adolfo Angel', 'Perez', 'Salado', 'COLIMA', 'Manzanillo', 'Deportiva', 'Deportiva', 28864, 'Masculino', 'PESA021101HCMRLDA7', '2002-11-01', 0, 'Estudiante'),
+(2, '220002', 'Fabian', 'Zepeda', 'Torres', 'COLIMA', 'Manzanillo', 'Juan Escutia', '5 de mayo', 24865, 'Masculino', 'SAIA541127HGRLGL04', '2000-05-06', 0, 'Programador'),
 (3, '220003', 'Vianey', 'Cruz', 'López', 'COLIMA', 'Manzanillo', 'Badalona', 'Barrio 5', 28219, 'Femenino', 'VIA547127MGRLGL04', '2002-05-15', 0, 'Secretaria'),
-(4, '220004', 'MARGARITA', 'BUENROSTRO', 'FAJES', 'YUCATÁN', 'TEPOZTLAN', 'Buenos Aires', 'Miguel de la Madrid', 24564, 'Femenino', 'FABM770222MMSJNR00', '1995-05-30', 6545.23, 'Obrera'),
-(5, '220005', 'Daniel', 'Martinez', 'Gutierrez', 'ESTADO DE MÉXICO', 'Ecatepec', 'Buenos Aires', 'Indios Verdes', 28457, 'Masculino', 'DAMG022105HCMNLDA9', '2000-09-18', 7860.22, 'Estudiante');
+(4, '220004', 'MARGARITA', 'BUENROSTRO', 'FAJES', 'YUCATÁN', 'TEPOZTLAN', 'Buenos Aires', 'Miguel de la Madrid', 24564, 'Femenino', 'FABM770222MMSJNR00', '1995-05-30', 0, 'Obrera'),
+(5, '220005', 'Daniel', 'Martinez', 'Gutierrez', 'ESTADO DE MÉXICO', 'Ecatepec', 'Buenos Aires', 'Indios Verdes', 28457, 'Masculino', 'DAMG022105HCMNLDA9', '2000-09-18', 0, 'Estudiante'),
+(8, '220006', 'Miguel', 'Alejandre', 'Arreol', 'COLIMA', 'Manzanillo', 'laguna', 'Deportiva', 28886, 'Masculino', 'AEAM0101011HJCLRGA', '2001-01-11', 0, 'PROGRAMADOR');
 
 --
 -- Disparadores `cliente`
@@ -86,6 +87,22 @@ CREATE TRIGGER `Generar_codigo` BEFORE INSERT ON `cliente` FOR EACH ROW BEGIN
 END
 $$
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comprobante`
+--
+
+CREATE TABLE `comprobante` (
+  `idComprobante` int(11) NOT NULL,
+  `origenDeb` int(11) DEFAULT NULL,
+  `destinoDeb` int(11) DEFAULT NULL,
+  `beneficiario` varchar(50) DEFAULT NULL,
+  `concepto` varchar(150) DEFAULT NULL,
+  `monto` decimal(20,6) DEFAULT NULL,
+  `banco` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -132,7 +149,8 @@ INSERT INTO `cuentas` (`noCta`, `codigoCliente`, `pass`) VALUES
 (4, '220001', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2'),
 (5, '220002', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2'),
 (6, '220004', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2'),
-(7, '220003', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2');
+(7, '220003', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2'),
+(8, '220006', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2');
 
 -- --------------------------------------------------------
 
@@ -147,7 +165,7 @@ CREATE TABLE `debito` (
   `expira` date NOT NULL,
   `codeSecurity` int(3) NOT NULL,
   `nip` varchar(4) NOT NULL,
-  `saldoDeb` float DEFAULT NULL
+  `saldoDeb` decimal(20,6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -155,11 +173,58 @@ CREATE TABLE `debito` (
 --
 
 INSERT INTO `debito` (`idTarjeta`, `codigoCliente`, `BIN`, `expira`, `codeSecurity`, `nip`, `saldoDeb`) VALUES
-(1, '220001', '5579070086431923', '2026-11-14', 238, '1234', 6800),
-(2, '220002', '4242535312127878', '2026-11-15', 865, '5623', 3256),
-(3, '220001', '5579070086430123', '2026-07-21', 652, '1234', 1000),
-(4, '220002', '5579090045451816', '2022-11-17', 456, '1234', 5233),
-(5, '220002', '5579070012347894', '2023-05-17', 655, '1239', 500.56);
+(1, '220001', '5579070086431923', '2026-11-14', 238, '1234', '7000.000000'),
+(2, '220002', '4242535312127878', '2026-11-15', 865, '5623', '3256.000000'),
+(3, '220001', '5579070086430123', '2026-07-21', 652, '1234', '5500.000000'),
+(4, '220002', '5579090045451816', '2022-11-17', 456, '1234', '5233.000000'),
+(5, '220002', '5579070012347894', '2023-05-17', 655, '1239', '500.559998'),
+(6, '220006', '5519123412341234', '2025-08-13', 456, '445', '2000.000000');
+
+--
+-- Disparadores `debito`
+--
+DELIMITER $$
+CREATE TRIGGER `ACTUALIZA_DEBITO_BU` BEFORE UPDATE ON `debito` FOR EACH ROW INSERT INTO debitolog
+(idTarAnterior, codigoClienteAnterior, BINAnterior, expiraAnterior, codeAnterior, nipAnterior, saldoAnterior,
+ idTarNuevo, codigoClienteNuevo, BINNuevo, expiraNuevo, codeNuevo, nipNuevo, saldoNuevo, fechaModif)
+ VALUES
+ (OLD.idTarjeta, OLD.codigoCliente, OLD.BIN, OLD.expira, OLD.codeSecurity, OLD.nip, OLD.saldoDeb,
+ NEW.idTarjeta, NEW.codigoCliente, NEW.BIN, NEW.expira, NEW.codeSecurity, NEW.nip, NEW.saldoDeb,
+ NOW())
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `debitolog`
+--
+
+CREATE TABLE `debitolog` (
+  `idTarAnterior` int(11) NOT NULL,
+  `codigoClienteAnterior` varchar(50) NOT NULL,
+  `BINAnterior` varchar(16) NOT NULL,
+  `expiraAnterior` date NOT NULL,
+  `codeAnterior` int(3) NOT NULL,
+  `nipAnterior` varchar(4) NOT NULL,
+  `saldoAnterior` decimal(20,6) NOT NULL,
+  `idTarNuevo` int(11) NOT NULL,
+  `codigoClienteNuevo` varchar(50) NOT NULL,
+  `BINNuevo` varchar(16) NOT NULL,
+  `expiraNuevo` date NOT NULL,
+  `codeNuevo` int(3) NOT NULL,
+  `nipNuevo` varchar(4) NOT NULL,
+  `saldoNuevo` decimal(20,6) NOT NULL,
+  `fechaModif` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `debitolog`
+--
+
+INSERT INTO `debitolog` (`idTarAnterior`, `codigoClienteAnterior`, `BINAnterior`, `expiraAnterior`, `codeAnterior`, `nipAnterior`, `saldoAnterior`, `idTarNuevo`, `codigoClienteNuevo`, `BINNuevo`, `expiraNuevo`, `codeNuevo`, `nipNuevo`, `saldoNuevo`, `fechaModif`) VALUES
+(3, '220001', '5579070086430123', '2026-07-21', 652, '1234', '1000.000000', 3, '220001', '5579070086430123', '2026-07-21', 652, '1234', '5500.000000', '2022-11-21'),
+(1, '220001', '5579070086431923', '2026-11-14', 238, '1234', '6800.000000', 1, '220001', '5579070086431923', '2026-11-14', 238, '1234', '7000.000000', '2022-11-21');
 
 -- --------------------------------------------------------
 
@@ -237,7 +302,14 @@ ALTER TABLE `administrador`
 -- Indices de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`idCliente`);
+  ADD PRIMARY KEY (`idCliente`),
+  ADD UNIQUE KEY `codigoCliente` (`codigoCliente`);
+
+--
+-- Indices de la tabla `comprobante`
+--
+ALTER TABLE `comprobante`
+  ADD PRIMARY KEY (`idComprobante`);
 
 --
 -- Indices de la tabla `credito`
@@ -256,7 +328,9 @@ ALTER TABLE `cuentas`
 --
 ALTER TABLE `debito`
   ADD PRIMARY KEY (`idTarjeta`),
-  ADD UNIQUE KEY `BIN` (`BIN`);
+  ADD UNIQUE KEY `BIN` (`BIN`),
+  ADD KEY `cliente-debito` (`codigoCliente`);
+
 --
 -- Indices de la tabla `ejecutivos`
 --
@@ -289,7 +363,13 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idCliente` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idCliente` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `comprobante`
+--
+ALTER TABLE `comprobante`
+  MODIFY `idComprobante` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `credito`
@@ -301,13 +381,13 @@ ALTER TABLE `credito`
 -- AUTO_INCREMENT de la tabla `cuentas`
 --
 ALTER TABLE `cuentas`
-  MODIFY `noCta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `noCta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `debito`
 --
 ALTER TABLE `debito`
-  MODIFY `idTarjeta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idTarjeta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `ejecutivos`
@@ -330,6 +410,12 @@ ALTER TABLE `transacciones`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `debito`
+--
+ALTER TABLE `debito`
+  ADD CONSTRAINT `cliente-debito` FOREIGN KEY (`codigoCliente`) REFERENCES `cliente` (`codigoCliente`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `transacciones`

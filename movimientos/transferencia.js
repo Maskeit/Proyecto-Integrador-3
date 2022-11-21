@@ -43,9 +43,11 @@ formulario.addEventListener('submit', (e) =>{
       };
 
       var validarMonto = function(e){
-        if(formulario.monto.value = ''){
-        } else{
+        if(formulario.monto.value == ''){
           alert("No ingresaste monto");
+          e.preventDefault(e);
+        } else if(formulario.monto.value > formulario.ctaOrigen.name.saldoDeb){
+          alert("El monto sugerido excede tu saldo actual");
           e.preventDefault(e);
         }
       };
@@ -54,7 +56,7 @@ formulario.addEventListener('submit', (e) =>{
         validarDestino(e);
         validarConcepto(e);
         validarBeneficiario(e);
-        //validarMonto(e);
+        validarMonto(e);
       };
 
       formulario.addEventListener("submit", validar);
