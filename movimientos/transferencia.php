@@ -54,6 +54,5 @@ $resultado->execute();
 $resUpdate=$resultado->fetchAll(PDO::FETCH_ASSOC);
 */
 
-
 require 'transferencia.view.php';
 ?>
