@@ -40,9 +40,10 @@ foreach($datosDeb as $debito){
 
 $idTarjeta = $debito['idTarjeta'];
 
+
 //definiendo valores para enviar al servidor
 $debito = ['saldoDeb'];
-$ctaOrigen = ['codigoCliente'];
+$ctaOrigen = ['ctaOrigen'];
 $ctaDestino = ['ctaDestino'];
 $beneficiario = ['beneficiario'];
 $concepto = ['concepto'];
