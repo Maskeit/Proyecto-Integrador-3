@@ -47,20 +47,7 @@
             </li>
             <li class="nav-item" >
             
-             <a class="nav-link" href="../funciones/cerrarSesion.php">
-                <?php if(isset($_SESSION['adminUser'])){
-                    echo "CERRAR SESION"; //se va mostrar cerrar sesion si es que el ejecutivo tiene una sesion iniciada
-                    } elseif (isset($_SESSION['usuarioEjecutivo'])) {
-                    echo "CERRAR SESION";
-                    } elseif (isset($_SESSION['codigoCliente'])) {
-                    echo "CERRAR SESION";
-                    }
-                    else {
-                         echo ""; //sino no muestra nada  
-                    }
-                  ?>
-
-              </a>
+             <a class="nav-link" href="../funciones/cerrarSesion.php">CERRAR SESION</a>
               </li>
           </ul>
         </div>
@@ -80,7 +67,7 @@
    </style>
 
 <div class="container">
-<h1>Comprobante de envío</h1>
+<h2>Comprobante de envío</h2>
 <div class="alert alert-success" role="alert">
 <?php 
     echo '<br> Transferencia enviada </ br>';
@@ -89,9 +76,10 @@
     echo '<br> CUENTA DESTINO '. $ctaDestino.' </ br>';
     echo '<br> TITULAR '.$beneficiario.' </ br>';
     echo '<br> CONCEPTO '. $concepto .' </ br>';
-    echo '<br> FECHA Y HORA DE OPERACIÓN '.' </ br>';
+    echo '<br> FECHA Y HORA DE OPERACIÓN '.$date .' </ br>';
     echo '<br> BANCO '.$banco.' </ br>';
 ?>
+<a href="../cliente.php">Regresar</a>
 </div>
 
 </div>
