@@ -1,8 +1,6 @@
 <?php
-require 'headerEspecifico.php';
-
-?>
-<link rel="stylesheet" href="../assets/bootstrap/Btrap5/css/features.css">
+use Vtiful\Kernel\Format;
+require 'headerEspecifico.php';?>
 </head>
 
 <style>
@@ -19,123 +17,93 @@ require 'headerEspecifico.php';
           font-size: 3.5rem;
         }
       }
+
+      .container_img{
+        margin-top: 45px;
+      }
 </style>
 
 <body>
-<div class="container">
+<div class="container" >
   <div class="col">
-    <H4 class="mb=5">Cuentas en pesos MXN</H4>
-
+    <h2 class="display-6">Cuenta en pesos <?php echo '$' . number_format($saldoSuma, 2 , '.' , ',' ); ?> MXN  <i class="bi bi-cash-stack"></i></h2><!--Aqui va codigo php para traer el saldo dependiendo la tarjeta del cliente-->
     <div id="accordion">
+      <!-- aqui comienzan las tarjetas de debito -->
       <div class="card">
         <div class="card-header" id="headingOne">
           <h5 class="mb-0">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              CUENTA NO. 456****76
+            CUENTAS UNIVERSITARIAS DE DÉBITO.
             </button>
           </h5>
         </div>
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-          <div class="card-body">
-          <h5 class="container">Saldo actual: <span id="saldo">0</span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
-          </div>
+          <div class="card-body" name="debito">
+          <h5 class="display-7">Saldos actuales:  <i class="bi bi-wallet"></i> <?php echo '<br>'; ?>  <span id="saldo">
+            <?php if(empty($debito)){
+              echo 'No se ha solicitado una tarjeta de debito';
+            }else{
+            foreach($datosDeb as $debito):  
+            echo '$' . number_format($debito['saldoDeb'], 2 , '.' , ',' ) .' <--------------------------------------> **** ' . substr($debito['BIN'], 12) . '</br>';
+            endforeach;
+            }
+            ?>
+            <div class="col"><a href="debito.php"><?php if(empty($debito)){}else{echo 'Ver movimientos.';}?></a></div></span></h5></div>
         </div>
       </div>
-      <!---->  
+        <!-- aqui comienzan las de credito-->   
       <div class="card">
         <div class="card-header" id="headingTwo">
           <h5 class="mb-0">
             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            CUENTA NO. 134*****34
+              CUENTA UNIVERSITARIA DE CRÉDITO.
             </button>
           </h5>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
-          <h5 class="container">Saldo actual: <span id="saldo">0</span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
-          </div>
+          <h5 class="container">Saldo actual: <i class="bi bi-credit-card"></i> <?php echo '<br>'; ?><span id="saldo">
+          <?php if(empty($credito)){
+              echo 'No se ha solicitado una tarjeta de debito';
+            }else{
+            foreach($datosCred as $credito):  
+            echo '$' . number_format($credito['saldoCred'], 2 , '.' , ',' ) .' <--------------------------------------> **** ' . substr($credito['BIN'], 12) . '</br>';
+            endforeach;
+            }
+            ?>
+            <div class="col"><a href="debito.php"><?php if(empty($credito)){}else{echo 'Ver movimientos.';}?></a></div></span></h5></div>
         </div>
       </div>
       <!---->
-      <div class="card">
-        <div class="card-header" id="headingThree">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            CUENTA NO. 123*****56
-            </button>
-          </h5>
-        </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-          <div class="card-body">
-            <h5 class="container">Saldo actual: <span id="saldo">0</span></h5> <!--Aqui va codigo php para traer el saldo dependiendo el cliente-->
-          </div>
-        </div>
-      </div>
-      <!---->
-
     </div>  
-  </div>
-
-  <!--Divisor de cuentas con lo que ofrece el banco-->
-  <div class="b-example-divider"></div>
-
-  <div class="container px-4 py-5" id="hanging-icons">
-    <h2 class="pb-2 border-bottom">Acércate y conoce las cuentas que Unibank tiene para ti.</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-
-      <div class="col d-flex align-items-start">
-        <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
-        </div>
-        <div>
-          <h4>Cuenta Junior</h4>
-          <p>
-            <li>
-              <ul>Sin comision hasta los 18 años.</ul>
-              <ul>Sin monto de apertura.</ul>
-            </li>
-          </p>
+      <!--  -->
+      <div class="container_img">
+        <div class="card mb-3">
+          <img src="assets/img/car2.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Pide tu credito unibank</h5>
+            <p class="card-text">Que esperas para solicitar tu credito Unibank..</p>
+            <p class="card-text">Last updated 3 mins ago</p>
+          </div>
         </div>
       </div>
-
-      <div class="col d-flex align-items-start">
-        <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"/></svg>
-        </div>
-        <div>
-          <h4>Cuenta Universitaria</h4>
-          <p>
-            <li>
-              <ul>Acceso a la Banca Digital sin costo.</ul>
-              <ul>Sin comisión hasta los 31 años.</ul>
-              <ul>Acceso a Mis Metas.</ul>
-            </li>
-          </p>
-        </div>
-      </div>
-
-      <div class="col d-flex align-items-start">
-        <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"/></svg>
-        </div>
-        <div>
-          <h2>SúperNómina de Unicuenta</h2>
-          <p>
-            <li>
-              <ul>Acceso a la Banca Digital sin costo.</ul>
-              <ul>Acceso a Mis Metas y Dinero Creciente.</ul>
-              <ul>Seguros y asistencias sin costos.</ul>
-            </li>
-          </p>
-        </div>
-      </div>
-
+    <div class="d-grid gap-2">
+      <button type="button" class="btn btn-warning">Hacer un momiento</button>
+      
+      <button type="button" class="btn btn-light"><a href="cliente.php">volver</a></button>
+      
+      
     </div>
+      <!--  -->
   </div>
+  <!--Divisor de cuentas con lo que ofrece el banco-->
   <!--HTML DE LA LOGICA DEL MOVIMIENTO-->
-  <!--<h3 class="container">Saldo actual: <span id="saldo">0</span></h3> Aqui va codigo php para traer el saldo dependiendo el cliente-->
+</div>
+
+<div class="containter">
 
 </div>
+
 
 <!--HTML DE LA LOGICA DEL MOVIMIENTO-->
 <?php

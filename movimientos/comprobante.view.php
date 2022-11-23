@@ -20,8 +20,6 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   
-  <link rel="stylesheet" href="../css/estilosLogReg.css">
-  
   <link rel="stylesheet" href="../assets/bootstrap/Btrap5/css/features.css">
   <!--Miguel-->
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -32,7 +30,7 @@
   <header>
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="../index.php">
           <i class="bi bi-cash-coin fa-2x mx-3"></i>Unibank
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -43,13 +41,13 @@
           <div class="mr-auto"></div>
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="./index.php">HOME
+              <a class="nav-link" href="../index.php">HOME
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item" >
             
-             <a class="nav-link" href="./funciones/cerrarSesion.php">
+             <a class="nav-link" href="../funciones/cerrarSesion.php">
                 <?php if(isset($_SESSION['adminUser'])){
                     echo "CERRAR SESION"; //se va mostrar cerrar sesion si es que el ejecutivo tiene una sesion iniciada
                     } elseif (isset($_SESSION['usuarioEjecutivo'])) {
@@ -69,3 +67,42 @@
       </nav>
     </div>
   </header>
+</head>
+<body>
+
+<style>
+    .container{
+        width: 90%;
+        max-width: 500px;
+        margin: auto;
+        margin-top: 20px;
+    }
+   </style>
+
+<div class="container">
+<h1>Comprobante de envío</h1>
+<div class="alert alert-success" role="alert">
+<?php 
+    echo '<br> Transferencia enviada </ br>';
+    echo '<br> IMPORTE $'.$monto.' </ br>';
+    echo '<br> CUENTA ORIGEN '. $codigoCliente.' </ br>';
+    echo '<br> CUENTA DESTINO '. $ctaDestino.' </ br>';
+    echo '<br> TITULAR '.$beneficiario.' </ br>';
+    echo '<br> CONCEPTO '. $concepto .' </ br>';
+    echo '<br> FECHA Y HORA DE OPERACIÓN '.' </ br>';
+    echo '<br> BANCO '.$banco.' </ br>';
+?>
+</div>
+
+</div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    
+</body>
+</html>

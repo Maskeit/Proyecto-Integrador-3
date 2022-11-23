@@ -1,6 +1,5 @@
 <?php
 require 'vistas/headerEspecifico.php';
-//ALGUIEN ESTA TRABAJANDO EN ESTA VISTA DEL EJECUTIVO? CREO QUE ROBERTO LO ESTABA HACIENDO SI NO ME EQUIVOCO  (si, ando trabajando en ella.)
 ?>
     <!--Purchase Whatever You Want-->
     <section class="section-2 container-fluid p-0">
@@ -59,7 +58,7 @@ require 'vistas/headerEspecifico.php';
                 </p>
                 <i style="font-size: 10em; color: black;" class="bi bi-terminal-fill"></i>
                 <div class="pricing">
-                  <a href="./rscEjecutivo/status.php" class="btn btn-dark px-5 py-2 primary-btn mb-5 rounded-pill">Estados</a>
+                  <a href="./estatusPedido/estatusPedido.php" class="btn btn-dark px-5 py-2 primary-btn mb-5 rounded-pill">Estados</a>
                 </div>
               </div>
             </div>

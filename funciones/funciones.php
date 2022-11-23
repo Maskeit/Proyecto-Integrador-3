@@ -1,6 +1,5 @@
 <?php 
 
-
 #FUNCIONES PARA INICIOS Y CIERRES DE SESION
 function comprobar_sesion_ejecutivo(){
     if(isset($_SESSION['usuarioEjecutivo'])){
@@ -45,15 +44,35 @@ die();
 
 }
 
+
+function limpiarDatos($datos){
+    $datos = trim($datos);
+    $datos = stripcslashes($datos);
+    $datos = htmlspecialchars($datos);
+    return $datos;
+}
 #FUNCION PARA CONECTARNOS A LA BASE DE DATOS
+/*
 function conectar_base_datos(){
     try {
-        $conexion = new PDO('mysql:host=localhost;dbname=uni-bank', 'root', '');
+        $conexion = new PDO('mysql:host=localhost;dbname=unibank', 'root', '');
     } catch (PDOException $e) {
         echo "Error:" . $e->getMessage();
     }
 }
+*/
+//esta funcion se utiliza en la paginacion de movimientos que tenga la consulta 
+//de saldos en el perfil del cliente
+function pagina_actual(){
+    return isset($_GET['p']) ? (int)$_GET['p'] : 1;
+}
 
+function obtener_movimiento($movimiento_por_pagina, $conexion){
+    $inicio = (pagina_actual() > 1) ? pagina_actual() * $movimiento_por_pagina - $movimiento_por_pagina: 0 ;  
+    $sentencia = $conexion->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM movimientos LIMIT $inicio, $movimiento_por_pagina"); //falta hacer una tabla con los movimientos creados
+    $sentencia->execute();
+    return $sentencia->fetchAll();
+}
 
 
 ?>
