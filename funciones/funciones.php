@@ -1,5 +1,13 @@
 <?php 
 
+//Method to get the server time
+function getTime(){
+    date_default_timezone_set("America/Mexico_City");
+    $year = date('Y-m-d', time());
+    $hour = date('H:i:s', time());
+    return $year.' '.$hour;//example -> 2021-01-20 21:01:33
+}
+
 #FUNCIONES PARA INICIOS Y CIERRES DE SESION
 function comprobar_sesion_ejecutivo(){
     if(isset($_SESSION['usuarioEjecutivo'])){
