@@ -1,5 +1,5 @@
 <?php
-require '../vistas/header.php';
+require '../vistas/headerEspecifico.php';
 $conexion=mysqli_connect('localhost','root','','unibank');
 ?>
 
