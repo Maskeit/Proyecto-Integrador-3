@@ -81,6 +81,8 @@
 ?>
 <a href="../cliente.php">Regresar</a>
 </div>
+<a href="../cliente.php" class="btn btn-secondary">Volver</a>
+<a href="../consultas.php" class="btn btn-secondary">Ver Cuentas</a>
 
 </div>
 

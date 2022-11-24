@@ -1,9 +1,12 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 <?php session_start();
 include_once '../bd/conexion.php';
 include_once '../funciones/funciones.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
+$errores = ''; //aqui guardaremos todos los errores que tengamos y los mostraremos
 //parametros de sesión
 $codigoCliente = $_SESSION['codigoCliente'];
 $nombre = $_SESSION['nombre'];
@@ -17,7 +20,7 @@ if(
     (!isset($_POST['monto'])) || 
     (!isset($_POST['banco']))
 ){
-    echo 'params error';
+    $errores = 'params error';
     return;
 }
 
@@ -49,7 +52,7 @@ if(
     ($saldoDeb == '') || 
     ($idTarjeta == '')
 ){
-    echo 'internaL server error';
+    echo '<div class="alert alert-success" role="alert">internaL server error</div>';
     return;
 }
 
@@ -69,22 +72,28 @@ if(
     ($desBin == '') || 
     ($saldoActual == '')
 ){
-    echo 'internal server error';
+    echo '<div class="alert alert-danger" role="alert">internal server error</div>';
+    echo '<br>';
+    echo '<div> <a href="transferencia.php" class="btn btn-secondary">Volver</a> </div>';
     return;
 }
 
 //validamos que la cuenta origne y destino no sea la misma
 if($desBin == $orBin){
-    echo 'internal server error';
-    return;
+    echo'<div class="alert alert-danger" role="alert">internal server error</div>';
+    echo '<br>';
+    echo '<div> <a href="transferencia.php" class="btn btn-secondary">Volver</a> </div>';
+    return; 
 }
 
 //validamos el monto permitido
 if(
     ($monto > 8000) || 
     ($monto > $saldoDeb)
-){
-    echo '<li>EL monto no puede superar el limite de tu cuenta ni cantidades mayores a $8000<li>';
+){ 
+    echo '<div class="alert alert-danger" role="alert">El monto no puede superar el limite de tu cuenta ni cantidades mayores a $8000</div>';
+    echo '<br>';
+    echo '<div> <a href="transferencia.php" class="btn btn-secondary">Volver</a> </div>';
     return;
 }
 
@@ -93,7 +102,9 @@ $result = $saldoDeb - $monto;//500 - 400 : $result = $100
 $cargo = $conexion -> prepare("UPDATE debito SET saldoDeb = '$result' WHERE BIN = '$orBin'");//probar con BIN en lugar de codigo de CLiente
 $cargo -> execute();
 if(!$cargo){
-    echo 'cargo no aplicado...';
+    echo '<div class="alert alert-danger" role="alert">cargo no aplicado...</div>';
+    echo '<br>';
+    echo '<div> <a href="transferencia.php" class="btn btn-secondary">Volver</a> </div>';
     return;
 }
 
@@ -102,7 +113,9 @@ $result = $monto + $saldoActual;
 $bonificacion = $conexion -> prepare("UPDATE debito SET saldoDeb = '$result' WHERE BIN = '$desBin'");
 $bonificacion -> execute();
 if(!$bonificacion){
-    echo 'bonificacion no aplicada, contacte al administrador...';
+    echo '<div class="alert alert-danger" role="alert">Bonificacion no aplicada, contacte al administrador...</div>';
+    echo '<br>';
+    echo '<div> <a href="transferencia.php" class="btn btn-secondary">Volver</a> </div>';
     return;
 }
 
@@ -121,7 +134,9 @@ $comprobante = "insert into comprobante values(
 $query = $conexion -> prepare($comprobante);
 $query -> execute();
 if(!$query){
-    echo 'internal server error';
+    echo '<div class="alert alert-danger" role="alert">Internal server error</div>';
+    echo '<br>';
+    echo '<div> <a href="transferencia.php" class="btn btn-secondary">Volver</a> </div>';
     return; 
 }
 
