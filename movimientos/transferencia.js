@@ -30,8 +30,8 @@
         if(formulario.monto.value == ''){
           alert("No ingresaste monto");
           e.preventDefault(e);
-        } else if(formulario.monto.value > formulario.ctaOrigen.name.saldoDeb){
-          alert("El monto sugerido excede tu saldo actual");
+        } else if(formulario.monto.value > 8000){
+          alert("El monto sugerido excede los $8000 permitidos");
           e.preventDefault(e);
         }
       };
