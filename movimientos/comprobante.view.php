@@ -93,6 +93,8 @@
     echo '<br> BANCO '.$banco.' </ br>';
 ?>
 </div>
+<a href="../cliente.php" class="btn btn-secondary">Volver</a>
+<a href="../consultas.php" class="btn btn-secondary">Ver Cuentas</a>
 
 </div>
 

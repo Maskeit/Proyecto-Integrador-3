@@ -88,11 +88,8 @@ require 'headerEspecifico.php';?>
         </div>
       </div>
     <div class="d-grid gap-2">
-      <button type="button" class="btn btn-warning">Hacer un momiento</button>
-      
-      <button type="button" class="btn btn-light"><a href="cliente.php">volver</a></button>
-      
-      
+    <a href="cliente.php" class="btn btn-secondary">Regresar</a>
+    <a href="../movimientos/transferencia.php" class="btn btn-secondary">Hacer una transferencia</a>
     </div>
       <!--  -->
   </div>

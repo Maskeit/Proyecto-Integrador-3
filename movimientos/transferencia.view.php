@@ -117,9 +117,8 @@
       </select>
       <label class="input-group-text" for="inputGroupSelect02">Seleccione Banco</label>
       </div>
-      <button type="button" class="btn btn-outline-secondary"><a style="text-decoration: none;" href="../cliente.php">Regresar</a></button>
-
       <button type="submit" id="btn" name="btn" value="Enviar" class="btn btn-outline-success">Completar</button>
+      <a href="../cliente.php" class="btn btn-secondary">Regresar</a>
 
   </form>
 
