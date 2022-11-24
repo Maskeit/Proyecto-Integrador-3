@@ -87,7 +87,7 @@
                                 <th>Destino</th>
                                 <th>Beneficiario</th>
                                 <th>Concepto</th>                                
-                                <th>Monto</th>  
+                                <th>Monto</th>  <!-- MIRAS BIEN AQUI ESTA LA PARTE DE BANCO PERO EN LAS COLUMNAS DE JAVA NO ESTA  -->
                                 <th>Banco</th>
                                 <th>Fecha</th>
                             </tr>
