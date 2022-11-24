@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2022 a las 23:53:42
+-- Tiempo de generación: 23-11-2022 a las 01:43:56
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -96,13 +96,23 @@ DELIMITER ;
 
 CREATE TABLE `comprobante` (
   `idComprobante` int(11) NOT NULL,
-  `origenDeb` int(11) DEFAULT NULL,
-  `destinoDeb` int(11) DEFAULT NULL,
+  `origenDeb` varchar(500) DEFAULT NULL,
+  `destinoDeb` varchar(500) DEFAULT NULL,
   `beneficiario` varchar(50) DEFAULT NULL,
   `concepto` varchar(150) DEFAULT NULL,
   `monto` decimal(20,6) DEFAULT NULL,
-  `banco` varchar(50) DEFAULT NULL
+  `banco` varchar(50) DEFAULT NULL,
+  `fecha` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `comprobante`
+--
+
+INSERT INTO `comprobante` (`idComprobante`, `origenDeb`, `destinoDeb`, `beneficiario`, `concepto`, `monto`, `banco`, `fecha`) VALUES
+(3, '5579070086431923', '4242535312127878', 'Jose perez', 'Cosas', '500.000000', 'UNIBANK', '2022-11-22 18:14:48'),
+(4, '5579070086431923', '4242535312127878', 'Jose perez', 'Cosas', '500.000000', 'UNIBANK', '2022-11-22 18:15:21'),
+(5, '4242535312127878', '5519123412341234', 'Miguel', 'Servicio Social', '500.000000', 'BBVA', '2022-11-22 18:27:52');
 
 -- --------------------------------------------------------
 
@@ -127,7 +137,8 @@ CREATE TABLE `credito` (
 INSERT INTO `credito` (`idTarjeta`, `codigoCliente`, `BIN`, `expira`, `codeSecurity`, `nip`, `saldoCred`) VALUES
 (1, '220001', '8080787800001111', '2025-10-04', 456, '1234', 15000),
 (2, '220002', '5589000022220012', '2022-11-17', 456, '4563', 9000),
-(3, '220003', '5579078023121889', '2025-11-17', 563, '3542', 18000);
+(3, '220003', '5579078023121889', '2025-11-17', 563, '3542', 18000),
+(4, '220006', '5579040089561200', '2025-11-22', 987, '7531', 20000);
 
 -- --------------------------------------------------------
 
@@ -165,7 +176,7 @@ CREATE TABLE `debito` (
   `expira` date NOT NULL,
   `codeSecurity` int(3) NOT NULL,
   `nip` varchar(4) NOT NULL,
-  `saldoDeb` decimal(20,6) DEFAULT NULL
+  `saldoDeb` decimal(20,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -173,12 +184,12 @@ CREATE TABLE `debito` (
 --
 
 INSERT INTO `debito` (`idTarjeta`, `codigoCliente`, `BIN`, `expira`, `codeSecurity`, `nip`, `saldoDeb`) VALUES
-(1, '220001', '5579070086431923', '2026-11-14', 238, '1234', '7000.000000'),
-(2, '220002', '4242535312127878', '2026-11-15', 865, '5623', '3256.000000'),
-(3, '220001', '5579070086430123', '2026-07-21', 652, '1234', '5500.000000'),
-(4, '220002', '5579090045451816', '2022-11-17', 456, '1234', '5233.000000'),
-(5, '220002', '5579070012347894', '2023-05-17', 655, '1239', '500.559998'),
-(6, '220006', '5519123412341234', '2025-08-13', 456, '445', '2000.000000');
+(1, '220001', '5579070086431923', '2026-11-14', 238, '1234', '4500.00'),
+(2, '220002', '4242535312127878', '2026-11-15', 865, '5623', '9000.00'),
+(3, '220001', '5579070086430123', '2026-07-21', 652, '1234', '6500.00'),
+(4, '220002', '5579090045451816', '2022-11-17', 456, '1234', '5233.00'),
+(5, '220002', '5579070012347894', '2023-05-17', 655, '1239', '500.56'),
+(6, '220006', '5519123412341234', '2025-08-13', 456, '445', '5950.00');
 
 --
 -- Disparadores `debito`
@@ -218,14 +229,6 @@ CREATE TABLE `debitolog` (
   `fechaModif` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `debitolog`
---
-
-INSERT INTO `debitolog` (`idTarAnterior`, `codigoClienteAnterior`, `BINAnterior`, `expiraAnterior`, `codeAnterior`, `nipAnterior`, `saldoAnterior`, `idTarNuevo`, `codigoClienteNuevo`, `BINNuevo`, `expiraNuevo`, `codeNuevo`, `nipNuevo`, `saldoNuevo`, `fechaModif`) VALUES
-(3, '220001', '5579070086430123', '2026-07-21', 652, '1234', '1000.000000', 3, '220001', '5579070086430123', '2026-07-21', 652, '1234', '5500.000000', '2022-11-21'),
-(1, '220001', '5579070086431923', '2026-11-14', 238, '1234', '6800.000000', 1, '220001', '5579070086431923', '2026-11-14', 238, '1234', '7000.000000', '2022-11-21');
-
 -- --------------------------------------------------------
 
 --
@@ -251,42 +254,6 @@ INSERT INTO `ejecutivos` (`idEjecutivo`, `usuarioEjecutivo`, `sucursal`, `pass`)
 (5, 'alonso', 'fie', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2'),
 (6, 'jaimeduende', 'fondeport', 'e83e8535d6f689493e5819bd60aa3e5fdcba940e6d111ab6fb5c34f24f86496bf3726e2bf4ec59d6d2f5a2aeb1e4f103283e7d64e4f49c03b4c4725cb361e773'),
 (7, 'ximena', 'fondeport', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tipo_trans`
---
-
-CREATE TABLE `tipo_trans` (
-  `idType` int(11) NOT NULL,
-  `nombre` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tipo_trans`
---
-
-INSERT INTO `tipo_trans` (`idType`, `nombre`) VALUES
-(1, 'Salida'),
-(2, 'Entrada');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `transacciones`
---
-
-CREATE TABLE `transacciones` (
-  `id` int(11) NOT NULL,
-  `noCta` varchar(50) NOT NULL,
-  `idTarjeta` varchar(50) NOT NULL,
-  `idBanco` int(11) NOT NULL,
-  `monto` decimal(18,6) NOT NULL,
-  `idType` int(11) NOT NULL,
-  `fecha` datetime NOT NULL,
-  `fechaEdicion` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tablas volcadas
@@ -338,18 +305,6 @@ ALTER TABLE `ejecutivos`
   ADD PRIMARY KEY (`idEjecutivo`);
 
 --
--- Indices de la tabla `tipo_trans`
---
-ALTER TABLE `tipo_trans`
-  ADD PRIMARY KEY (`idType`);
-
---
--- Indices de la tabla `transacciones`
---
-ALTER TABLE `transacciones`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -369,13 +324,13 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `comprobante`
 --
 ALTER TABLE `comprobante`
-  MODIFY `idComprobante` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idComprobante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `credito`
 --
 ALTER TABLE `credito`
-  MODIFY `idTarjeta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idTarjeta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `cuentas`
@@ -396,18 +351,6 @@ ALTER TABLE `ejecutivos`
   MODIFY `idEjecutivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT de la tabla `tipo_trans`
---
-ALTER TABLE `tipo_trans`
-  MODIFY `idType` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `transacciones`
---
-ALTER TABLE `transacciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- Restricciones para tablas volcadas
 --
 
@@ -416,12 +359,6 @@ ALTER TABLE `transacciones`
 --
 ALTER TABLE `debito`
   ADD CONSTRAINT `cliente-debito` FOREIGN KEY (`codigoCliente`) REFERENCES `cliente` (`codigoCliente`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `transacciones`
---
-ALTER TABLE `transacciones`
-  ADD CONSTRAINT `tipo-transaccion` FOREIGN KEY (`id`) REFERENCES `tipo_trans` (`idType`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

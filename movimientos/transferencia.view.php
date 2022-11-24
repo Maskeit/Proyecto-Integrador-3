@@ -80,9 +80,9 @@
     <div class="input-group mb-3">
       <label name="ctaOrigen" class="input-group-text" for="inputGroupSelect01">Cuenta Origen</label>
       
-      <select name="ctaOrigen" class="form-select" id="ctaOrigen">
+      <select name="ctaOrigen" class="form-select" id="ctaOrigen"> <!-- tener cuidado con el ctaOrigen -->
         <?php foreach ($datosDeb as $debito):?>
-        <option value="<?php $debito['BIN'] . $debito['saldoDeb'];?>"><?php echo $debito['BIN'];?>: <?php  echo '$' . number_format($debito['saldoDeb'], 2 , '.' , ',' ); ?> </option> <!--Aqui mostramos en forma de "lista" las cuentas que tenga el usuario con la cantidad de dinero que tenga ene sa tarjeta, !!!en realidad tiene que se un selector de tarjetas, no de cuentas-->
+        <option value="<?php echo $debito['BIN'];?>"><?php echo $debito['BIN'];?>: <?php  echo '$' . number_format($debito['saldoDeb'], 2 , '.' , ',' ); ?> </option> <!--Aqui mostramos en forma de "lista" las cuentas que tenga el usuario con la cantidad de dinero que tenga ene sa tarjeta, !!!en realidad tiene que se un selector de tarjetas, no de cuentas-->
         <?php endforeach ?>                    
       </select>
 
@@ -111,9 +111,9 @@
 
       <div class="input-group mb-3">
       <select name="banco" class="form-select" id="inputGroupSelect02">
-        <option value="unibank">UNIBANK</option>
-        <option value="bbva">BBVA</option>
-        <option value="santander">SANTANDER</option>
+        <option value="UNIBANK">UNIBANK</option>
+        <option value="BBVA">BBVA</option>
+        <option value="SANTANDER">SANTANDER</option>
       </select>
       <label class="input-group-text" for="inputGroupSelect02">Seleccione Banco</label>
       </div>
