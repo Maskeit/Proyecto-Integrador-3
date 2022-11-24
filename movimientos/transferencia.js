@@ -1,19 +1,3 @@
-/*const formulario = document.getElementById('formulario');
-const inputs = document.querySelectorAll('#formualario input');
-
-
-const validarFormulario = (e) => {
-    console.log(e.target.name);
-}
-
-inputs.forEach((input)=>{
-    input.addEventListener('keyup', validarFormulario);
-    input.addEventListener('blur', validarFormulario);
-});
-formulario.addEventListener('submit', (e) =>{
-    e.preventDefault(e);  
-});
-*/
 
 (function(){
 
