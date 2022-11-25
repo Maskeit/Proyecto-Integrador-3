@@ -45,27 +45,30 @@
 
     <div class="menu__side" id="menu_side">
 
-        <div class="name__page">
-            <i class="fas fa-university"></i>
-            <h4>Unibank</h4>
-        </div>
+            <a href="../index.php">
+                <div class="name__page">
+                  <i class="fas fa-university"></i>
+                  <h4>Unibank</h4>
+                </div>             
+            </a>
+        
 
         <div class="options__menu">	
 
-            <a href="./cliente.php">
+            <a href="../cliente.php">
                 <div class="option">
-                    <i class="fas fa-home" title="Inicio"></i>
+                <i class="bi bi-person-circle"></i>
                     <h4>Inicio</h4>
                 </div>
             </a>
-            <a href="./movimientos/transferencia.php">
+            <a href="transferencia.php">
                 <div class="option">
                     <i class="fas fa-exchange"></i>
                     <h4>Transferencias rapidas</h4>
                 </div>
             </a>
             
-            <a href="./consultas.php" class="selected">
+            <a href="../consultas.php" class="selected">
                 <div class="option">
                     <i class="fas fa-piggy-bank"></i>
                     <h4>Consulta</h4>

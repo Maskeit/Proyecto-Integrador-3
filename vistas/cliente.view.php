@@ -29,14 +29,16 @@
 
     <div class="menu__side" id="menu_side">
 
-        <div class="name__page">
-            <i class="fas fa-university"></i>
-            <h4>Unibank</h4>
-        </div>
+    <a href="index.php">
+                <div class="name__page">
+                  <i class="fas fa-university"></i>
+                  <h4>Unibank</h4>
+                </div>             
+            </a>
 
         <div class="options__menu">	
 
-            <a href="./cliente.php" class="selected">
+            <a href="index.php" class="selected">
                 <div class="option">
                     <i class="fas fa-home" title="Inicio"></i>
                     <h4>Inicio</h4>

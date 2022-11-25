@@ -20,7 +20,7 @@ if(
     (!isset($_POST['monto'])) || 
     (!isset($_POST['banco']))
 ){
-    $errores = 'params error';
+    echo 'params error';
     return;
 }
 

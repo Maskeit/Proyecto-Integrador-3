@@ -29,17 +29,17 @@
     </header>
 
     <div class="menu__side" id="menu_side">
-
-        <div class="name__page">
-            <i class="fas fa-university"></i>
-            <h4>Unibank</h4>
-        </div>
-
+        <a href="index.php">
+            <div class="name__page">
+                <i class="fas fa-university"></i>
+                <h4>Unibank</h4>
+            </div>
+        </a>
         <div class="options__menu">	
 
             <a href="./cliente.php">
                 <div class="option">
-                    <i class="fas fa-home" title="Inicio"></i>
+                <i class="bi bi-person-circle"></i>
                     <h4>Inicio</h4>
                 </div>
             </a>
@@ -153,8 +153,8 @@
       <button type="button" class="btn btn-light"><a href="cliente.php">volver</a></button>
     </div-->
     <div class="container-btn">
-        <button type="button" class="btn btn-success">Realizar un movimiento</button>
-        <button type="button" class="btn btn-link">Volver</button>
+        <a href="movimientos/transferencia.php" class="btn btn-success">Realizar un momiento</a>
+        <a href="cliente.php" class="btn btn-outline-secondary">Volver</a>
     </div>
     </main>
     
