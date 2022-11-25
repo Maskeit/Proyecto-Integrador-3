@@ -17,6 +17,7 @@ $(document).ready(function() {
             {"data": "beneficiario"},
             {"data": "concepto"},
             {"data": "monto"},
+            {"data": "banco"},
             {"data": "fecha"},
             {"defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btn-sm btnEditar'><i class='material-icons'>edit</i></button><button class='btn btn-danger btn-sm btnBorrar'><i class='material-icons'>delete</i></button></div></div>"}
         ]
@@ -34,7 +35,7 @@ $(document).ready(function() {
         inputGroupSelect02 = $.trim($('#inputGroupSelect02').val());
         fecha = $.trim($('#fecha').val());                    
             $.ajax({
-              url: "bd/estado.php",
+              url: "../bd/estado.php",
               type: "POST",
               datatype:"json",    
               data:  {idComprobante:idComprobante, origenDeb:origenDeb, destinoDeb:destinoDeb, beneficiario:beneficiario, concepto:concepto, monto:monto, inputGroupSelect02:inputGroupSelect02, fecha:fecha},    

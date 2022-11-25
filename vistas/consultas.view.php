@@ -78,7 +78,7 @@
       </label>
       <div class="content">
       <div class="card-body" name="debito">
-          <p><h5 class="display-7">Saldos actuales:  <i class="bi bi-wallet"></i> <?php echo '<br>'; ?>  <span id="saldo">
+          <p><h2 class="display-7">Saldos actuales:  <i class="bi bi-wallet"></i> <?php echo '<br>'; ?>  <span id="saldo">
             <?php if(empty($debito)){
               echo 'No se ha solicitado una tarjeta de debito';
             }else{
@@ -87,7 +87,7 @@
             endforeach;
             }
             ?>
-            <div class="col"><a href="debito.php"><?php if(empty($debito)){}else{echo 'Ver movimientos';}?></a></div></span></h5></div></p>
+            <div class="col"><a href="vistas/historial.php"><?php if(empty($debito)){}else{echo 'Ver movimientos';}?></a></div></span></h2></div></p>
       </div>
     </div>
     <!-- Acordeon Dos -->
