@@ -35,7 +35,7 @@ $conexion=mysqli_connect('localhost','root','','unibank');
 
   <tbody>
     <tr>
-      <th scope="row"></th>
+      <th scope="row"><?php echo $mostrar['id'] ?></th>
       <td><?php echo $mostrar['NoCli'] ?></td>
       <td><?php echo $mostrar['dinero'] ?></td>
       <td><?php echo $mostrar['meses'] ?></td>

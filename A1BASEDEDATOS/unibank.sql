@@ -163,6 +163,30 @@ INSERT INTO `ejecutivos` (`idEjecutivo`, `usuarioEjecutivo`, `sucursal`, `pass`)
 (4, 'mauricio', 'fie', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2'),
 (5, 'alonso', 'fie', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prestamos`
+--
+
+CREATE TABLE `prestamos` (
+  `id` int(11) NOT NULL,
+  `NoCli` int(50) NOT NULL,
+  `dinero` int(20) NOT NULL,
+  `meses` int(3) NOT NULL,
+  `status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `prestamos`
+--
+
+INSERT INTO `prestamos` (`id`, `NoCli`, `dinero`, `meses`, `status`) VALUES
+(5, 220001, 4000, 6, 'Denegado'),
+(6, 220006, 1500, 4, 'Aceptado'),
+(7, 220006, 300, 6, 'Aceptado');
+
+
 --
 -- Índices para tablas volcadas
 --
@@ -203,6 +227,13 @@ ALTER TABLE `debito`
 --
 ALTER TABLE `ejecutivos`
   ADD PRIMARY KEY (`idEjecutivo`);
+
+--
+-- Indices de la tabla `prestamos`
+--
+ALTER TABLE `prestamos`
+  ADD PRIMARY KEY (`id`);
+
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
@@ -217,7 +248,7 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idCliente` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idCliente` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `credito`
@@ -236,11 +267,20 @@ ALTER TABLE `cuentas`
 --
 ALTER TABLE `debito`
   MODIFY `idTarjeta` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `ejecutivos`
 --
 ALTER TABLE `ejecutivos`
-  MODIFY `idEjecutivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idEjecutivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+ALTER TABLE `prestamos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
