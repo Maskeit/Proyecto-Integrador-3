@@ -101,7 +101,7 @@
         <div class="card-body">
           <p><h5 class="container">Saldo actual: <i class="bi bi-credit-card"></i> <?php echo '<br>'; ?><span id="saldo">
           <?php if(empty($credito)){
-              echo 'No se ha solicitado una tarjeta de debito';
+              echo 'No se ha solicitado una tarjeta de crédito';
             }else{
             foreach($datosCred as $credito):  
             echo '$' . number_format($credito['saldoCred'], 2 , '.' , ',' ) .' <--------------------------------------> **** ' . substr($credito['BIN'], 12) . '</br>';
