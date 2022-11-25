@@ -105,7 +105,7 @@
 
         <div class="input-group">
           <span class="input-group-text">Beneficiario:</span>
-          <input type="text" class="form-control" name="beneficiario" id="beneficiario" placeholder="Miguel Alejandre" >
+          <input type="text" class="form-control" name="beneficiario" id="beneficiario" placeholder="Manolo Hernández Loaiza" >
         </div>
         <br>
         <div class="input-group">
