@@ -1,7 +1,7 @@
 <?php
-require '../vistas/headerEspecifico.php';
-
+require '../vistas/headerEjecutivo.php';
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
