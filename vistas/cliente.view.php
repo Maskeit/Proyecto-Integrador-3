@@ -10,7 +10,7 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     fin-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
-    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -29,20 +29,21 @@
 
     <div class="menu__side" id="menu_side">
 
-        <div class="name__page">
-            <i class="fas fa-university"></i>
-            <h4>Unibank</h4>
-        </div>
+    <a href="index.php">
+                <div class="name__page">
+                  <i class="fas fa-university"></i>
+                  <h4>Unibank</h4>
+                </div>             
+            </a>
 
         <div class="options__menu">	
 
-            <a href="./index.php" class="selected">
+            <a href="index.php" class="selected">
                 <div class="option">
                     <i class="fas fa-home" title="Inicio"></i>
                     <h4>Inicio</h4>
                 </div>
             </a>
-
             <a href="./movimientos/transferencia.php">
                 <div class="option">
                     <i class="fas fa-exchange"></i>
@@ -69,15 +70,15 @@
     <main>
     <div class="slider">
       <ul>
-        <li><img src="./assets/pexels-photo-452738.jpeg" alt="" /></li>
-        <li><img src="./assets/pexels-photo-636243.jpeg" alt="" /></li>
-        <li><img src="./assets/pexels-photo-900102.jpeg" alt="" /></li>
-        <li><img src="./assets/pexels-photo-636243.jpeg" alt="" /></li>
+        <li><img src="assets/pexels-photo-452738.jpeg" alt="" /></li>
+        <li><img src="assets/pexels-photo-636243.jpeg" alt="" /></li>
+        <li><img src="assets/pexels-photo-900102.jpeg" alt="" /></li>
+        <li><img src="assets/pexels-photo-636243.jpeg" alt="" /></li>
       </ul>
     </div>
    <div class="informacion">
       <h1>¡Te da la bienvenida Unibank!</h1><br>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam sapiente cumque dicta animi explicabo sequi. Ex amet et, dolor eligendi commodi consectetur quo voluptatibus, cum nemo porro veniam at blanditiis?</p> <br>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis perferendis iure eaque repudiandae optio animi fuga facere sequi praesentium, distinctio, nulla adipisci iusto ea! Vel eius deserunt enim facere aspernatur!</p> <br>
 
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident adipisci beatae impedit quia, deleniti quasi sequi iusto exercitationem nihil nulla, laboriosam dolore corrupti fuga officiis? Odit a mollitia id magnam amet delectus quia blanditiis reprehenderit explicabo eveniet! Rem voluptatum explicabo ipsum quae, dolorum, laudantium doloribus a, illum saepe sapiente accusantium dicta reiciendis? Amet iure porro voluptatum error fugit odit voluptas?</p>  
     </div>
@@ -209,19 +210,20 @@
        </article>
    </div>
     </main>
+    
     <footer class="pie-pagina">
         <div class="grupo-1">
             <div class="box">
                 <figure>
                     <a href="#">
-                        <img src="./assets/unibank.png" alt="Logo de SLee Dw">
+                        <img src="assets/unibank.png" alt="Logo de SLee Dw">
                     </a>
                 </figure>
             </div>
             <div class="box">
                 <h2>SOBRE NOSOTROS</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+                <p>Somos un equipo de desarrolladores de la carreara de ingenieria de software de la Facultad de ingenieria electromecanica de la UdeC</p>
+                <p>Equipo 2 Ing de software 3-D</p>
             </div>
             <div class="box">
                 <h2>SIGUENOS</h2>
@@ -234,7 +236,7 @@
             </div>
         </div>
         <div class="grupo-2">
-            <small>&copy; 2021 <b>SLee Dw</b> - Todos los Derechos Reservados.</small>
+            <small>&copy; 2022 <b>Ing de Software</b> - Todos los Derechos Reservados.</small>
         </div>
     </footer>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>

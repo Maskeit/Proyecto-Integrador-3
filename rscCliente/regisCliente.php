@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		if ($resultado != false) {
 			$errores .= '<li>Datos incorrectos</li>'; //en realidad diria que Ya esta registrado pero por seguridad debe ser asi
 		}
-    else {
+    		else {
 		$statement = $conexion->prepare('SELECT codigoCliente FROM cliente WHERE codigoCliente = :codigoCliente LIMIT 1');//tabla cuentas 
 		$statement->execute(array(':codigoCliente' => $codigoCliente));
 

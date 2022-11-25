@@ -23,6 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			':codigoCliente' => $codigoCliente,
 			':password' => $password
 		));
+
+
+/***********--------------------------------------------------------------------------------------------- */
 	//para encontrar el saldo del cliente
 	$sal = $conexion->prepare("SELECT * FROM cliente WHERE codigoCliente = $codigoCliente");
 	$sal->setFetchMode(PDO::FETCH_ASSOC);
@@ -40,18 +43,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$nombre = $row['nombre'];
 	}
 
+	//para encontrar la tarjeta del cliente
+	$tarjeta = $conexion->prepare("SELECT * FROM debito WHERE codigoCliente = $codigoCliente");
+	$tarjeta->setFetchMode(PDO::FETCH_ASSOC);
+	$tarjeta->execute();
+	
+	while($rowTarjeta = $tarjeta->fetch()){
+		$debitoSaldo = $rowTarjeta['saldoDeb'];
+	}
+
 	$resultado = $statement->fetch();
 	
 	if ($resultado !== false) {
-		$_SESSION['codigoCliente'] = $codigoCliente;
-		$_SESSION['nombre'] = $nombre;
-		$_SESSION['saldo'] = $saldo;
+		$_SESSION['codigoCliente'] = $codigoCliente;//para iniciar sesion con el codigoCliente
+		$_SESSION['nombre'] = $nombre; //para referenciar el nombre del cliente logeado
+		// $_SESSION['saldo'] = $saldo; //. saldo total del cliente dado de alta
+		// $_SESSION['BIN'] = $debitoBIN; // el numero de 16 digitos de la tarjeta del cliente
+		// $_SESSION['saldoDeb'] = $debitoSaldo; //. saldo de la tarjeta de debito del cliente
 		header('Location: ../cliente.php');
 	} else {
 		$errores = '<li>Datos incorrectos</li>';
 	}
 	
-
 }
 
 require 'loginCliente.view.php';
