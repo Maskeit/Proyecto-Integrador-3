@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>UNIBANK</title>
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
@@ -17,6 +16,24 @@
   <!--Miguel-->
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <!--finmiguel-->
+  <style>
+    table{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+  </style>
 </head>
 <body>
  
@@ -119,7 +136,7 @@
             </div>
             <div >
                 <div class="botoncito">
-                    <a href="rscEjecutivo/registroEjecutivo.php" class="btn btn-primary active" aria-current="page">Registrar Ejecutivo</a>
+                    <a href="./rscEjecutivo/registroEjecutivo.php" class="btn btn-primary active" aria-current="page">Registrar Ejecutivo</a>
                 </div>
             </div>
         </div>
@@ -138,19 +155,50 @@
 			<div class="loader" id="loader"></div>
 		</main>
 	</div>
-	<script src="js/ajax2.js"></script>
+	<script src="../js/ajax2.js"></script>
 
+  <!-- //////////////////////////////////////////////////////////////////////////////// --> 
+<?php 
+$conexion=mysqli_connect('localhost','root','','unibank');
+?>
   <h1>Tabla de Validación de Prestamos</h1><br>
-  <table id="tablaValidar" class="tablaValidar">
-				<tr>
-					<th>ID</th>
-					<th>noCta</th>
-					<th>Cantidad</th>
-          <th>Resolución (Aceptar/Denegar)</th>
-				</tr>
-			</table>
+  <form method="POST" action="./amortizacion/respuestasPrestamos/aceptar.php">
+  <table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Numero de cuenta</th>
+      <th scope="col">Monto pedido</th>
+      <th scope="col">Plazo de pago(meses)</th>
+      <th scope="col">Estado</th>
+      <th scope="ccol">Validación</th>
+    </tr>
+  </thead>
+  <?php
+  $sql="SELECT * FROM prestamos ";
+  $result=mysqli_query($conexion,$sql);
+
+  while($mostrar=mysqli_fetch_array($result)){
+
+  ?>
+
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td><?php echo $mostrar['NoCli'] ?></td>
+      <td><?php echo $mostrar['dinero'] ?></td>
+      <td><?php echo $mostrar['meses'] ?></td>
+      <td><?php echo $mostrar['status'] ?></td>
+      <td><a class="btn btn-success" href="./amortizacion/respuestasPrestamos/aceptar.php?id=<?=$mostrar['id']?>" role="button">Aceptar</a>
+      <a class="btn btn-danger" href="./amortizacion/respuestasPrestamos/denegar.php?id=<?=$mostrar['id']?>" role="button">Denegar</a></td><!-- No quiten el texto -->
+    </tr>
+  <?php
+  }
+  ?>
+  </table>
+  
 <?php
-require '/footer.php';
+require './vistas/footer.php';
 ?>
 </body>
 </html>

@@ -36,7 +36,7 @@ require 'vistas/headerEspecifico.php';
             <div class="card card border-success">
               <div class="card-body">
                 <div class="title">
-                  <h5 style="color: black;" class="card-title">TABLAS DE PRESTAMO</h5>
+                  <h5 style="color: black;" class="card-title">GENERAR TABLA DE AMORTIZACION</h5>
                 </div>
                 <p class="card-text">
                   ¿Necesitan un prestamo? <br>
@@ -51,10 +51,25 @@ require 'vistas/headerEspecifico.php';
             <div class="card card border-success">
               <div class="card-body">
                 <div class="title">
+                  <h5 style="color: black;" class="card-title">GENERAR UN NUEVO PRESTAMO</h5>
+                </div>
+                <p class="card-text">
+                  ¿Necesitas un prestamo? <br>
+                  Entra aqui para pedir un prestamo.
+                </p>
+                <i style="font-size: 10em; color: black;" class="bi bi-coin"></i>
+                <div class="pricing">
+                  <a href="./amortizacion/genLoan1.php" class="btn btn-dark px-5 py-2 primary-btn mb-5 rounded-pill">Generar</a>
+                </div>
+              </div>
+            </div>
+            <div class="card card border-success">
+              <div class="card-body">
+                <div class="title">
                   <h5 style="color: black;" class="card-title">ESTATUS DE PEDIDO</h5>
                 </div>
                 <p class="card-text">
-                  En este apartado podrás revisar el estado de perfil de un cliente si hace una consulta.
+                  En este apartado podrás revisar el estado de las peticiones de prestamos y tener un seguimiento de su aprobación o declinación.
                 </p>
                 <i style="font-size: 10em; color: black;" class="bi bi-terminal-fill"></i>
                 <div class="pricing">

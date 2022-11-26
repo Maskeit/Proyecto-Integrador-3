@@ -1,7 +1,7 @@
 <?php
 require '../vistas/headerEjecutivo.php';
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,7 @@ require '../vistas/headerEjecutivo.php';
 	<title>Formulario de Amortización</title>
 </head>
 <body>
-	<form action="tablaAmort.php" method="POST">
+	<form action="../recibir.php" method="POST">
 
 	<h2 class="fw-bolder text-center font-monospace text-black">Nuestros prestamos solo tienen un 5% de comisión anual!</h3>
 
@@ -18,7 +18,7 @@ require '../vistas/headerEjecutivo.php';
 		<div style="background-color: rgba(100, 150, 300, 0.2);" class="p-3 border-top border-start border-end border-dark d-flex justify-content-center" style="max-width: 95%;">
 			<b class="p-3">
 			Numero de cuenta(cliente):
-			<input type="number" class="form-control" name="NoCli" placeholder="Ej. 20181033" required>
+			<input type="number" class="form-control" name="NoCli" placeholder="Ej. 220001" required>
 			</b>
 			<b class="p-3">
 			¿Cuanto dinero desea pedir?
@@ -30,16 +30,15 @@ require '../vistas/headerEjecutivo.php';
 			</b>
 			<b class="p-3">
 			Introduzca su contraseña(Ejecutivo):
-			<input type="password" class="form-control" name="passeje" placeholder="Ej. 1234" required>
+			<input type="password" class="form-control" name="passeje" placeholder="Ej. 12345" required>
 			</b>
 		</div>
 		<div style="background-color: rgba(100, 150, 300, 0.2); " class="mb-4 p-3 border-bottom border-start border-end border-dark d-flex justify-content-center" style="max-width: 95%;">
 			<select name="transtype">
 				<option value="9" selected disabled> Tipo de transferencia</option>
-				<option value="1">Efectivo</option>
-				<option value="2">Transferencia</option>
+				<option value="1">Transferencia</option>
 			</select>
-			<input class="mx-2" type="submit" value="Generar tabla">
+			<input class="mx-2" type="submit" value="Pedir prestamo">
 		</div>
 	</form>
 </body>

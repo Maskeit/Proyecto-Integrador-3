@@ -59,16 +59,7 @@ function limpiarDatos($datos){
     $datos = htmlspecialchars($datos);
     return $datos;
 }
-#FUNCION PARA CONECTARNOS A LA BASE DE DATOS
-/*
-function conectar_base_datos(){
-    try {
-        $conexion = new PDO('mysql:host=localhost;dbname=unibank', 'root', '');
-    } catch (PDOException $e) {
-        echo "Error:" . $e->getMessage();
-    }
-}
-*/
+
 //esta funcion se utiliza en la paginacion de movimientos que tenga la consulta 
 //de saldos en el perfil del cliente
 function pagina_actual(){

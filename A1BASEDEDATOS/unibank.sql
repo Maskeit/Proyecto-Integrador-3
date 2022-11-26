@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2022 a las 01:43:56
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.2
+-- Servidor: localhost
+-- Tiempo de generación: 25-11-2022 a las 20:25:59
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -112,7 +112,9 @@ CREATE TABLE `comprobante` (
 INSERT INTO `comprobante` (`idComprobante`, `origenDeb`, `destinoDeb`, `beneficiario`, `concepto`, `monto`, `banco`, `fecha`) VALUES
 (3, '5579070086431923', '4242535312127878', 'Jose perez', 'Cosas', '500.000000', 'UNIBANK', '2022-11-22 18:14:48'),
 (4, '5579070086431923', '4242535312127878', 'Jose perez', 'Cosas', '500.000000', 'UNIBANK', '2022-11-22 18:15:21'),
-(5, '4242535312127878', '5519123412341234', 'Miguel', 'Servicio Social', '500.000000', 'BBVA', '2022-11-22 18:27:52');
+(5, '4242535312127878', '5519123412341234', 'Miguel', 'Servicio Social', '500.000000', 'BBVA', '2022-11-22 18:27:52'),
+(6, '5579070086430123', '5579090045451816', '500', 'Servicio Social', '550.000000', 'UNIBANK', '2022-11-25 12:24:36'),
+(7, '8695754253429612', '5579070012347894', 'Fabian Zepeda', 'Piezas de motores', '7500.000000', 'BBVA', '2022-11-25 12:31:30');
 
 -- --------------------------------------------------------
 
@@ -186,10 +188,12 @@ CREATE TABLE `debito` (
 INSERT INTO `debito` (`idTarjeta`, `codigoCliente`, `BIN`, `expira`, `codeSecurity`, `nip`, `saldoDeb`) VALUES
 (1, '220001', '5579070086431923', '2026-11-14', 238, '1234', '4500.00'),
 (2, '220002', '4242535312127878', '2026-11-15', 865, '5623', '9000.00'),
-(3, '220001', '5579070086430123', '2026-07-21', 652, '1234', '6500.00'),
-(4, '220002', '5579090045451816', '2022-11-17', 456, '1234', '5233.00'),
-(5, '220002', '5579070012347894', '2023-05-17', 655, '1239', '500.56'),
-(6, '220006', '5519123412341234', '2025-08-13', 456, '445', '5950.00');
+(3, '220001', '5579070086430123', '2026-07-21', 652, '1234', '5950.00'),
+(4, '220002', '5579090045451816', '2022-11-17', 456, '1234', '5783.00'),
+(5, '220002', '5579070012347894', '2023-05-17', 655, '1239', '8000.56'),
+(6, '220006', '5519123412341234', '2025-08-13', 456, '445', '5950.00'),
+(7, '220003', '8695754253429612', '2026-11-19', 852, '1596', '56696.20'),
+(8, '220004', '1596123545781245', '2022-11-11', 963, '4236', '7532.56');
 
 --
 -- Disparadores `debito`
@@ -218,16 +222,26 @@ CREATE TABLE `debitolog` (
   `expiraAnterior` date NOT NULL,
   `codeAnterior` int(3) NOT NULL,
   `nipAnterior` varchar(4) NOT NULL,
-  `saldoAnterior` decimal(20,6) NOT NULL,
+  `saldoAnterior` decimal(20,2) NOT NULL,
   `idTarNuevo` int(11) NOT NULL,
   `codigoClienteNuevo` varchar(50) NOT NULL,
   `BINNuevo` varchar(16) NOT NULL,
   `expiraNuevo` date NOT NULL,
   `codeNuevo` int(3) NOT NULL,
   `nipNuevo` varchar(4) NOT NULL,
-  `saldoNuevo` decimal(20,6) NOT NULL,
+  `saldoNuevo` decimal(20,2) NOT NULL,
   `fechaModif` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `debitolog`
+--
+
+INSERT INTO `debitolog` (`idTarAnterior`, `codigoClienteAnterior`, `BINAnterior`, `expiraAnterior`, `codeAnterior`, `nipAnterior`, `saldoAnterior`, `idTarNuevo`, `codigoClienteNuevo`, `BINNuevo`, `expiraNuevo`, `codeNuevo`, `nipNuevo`, `saldoNuevo`, `fechaModif`) VALUES
+(3, '220001', '5579070086430123', '2026-07-21', 652, '1234', '6500.00', 3, '220001', '5579070086430123', '2026-07-21', 652, '1234', '5950.00', '2022-11-25'),
+(4, '220002', '5579090045451816', '2022-11-17', 456, '1234', '5233.00', 4, '220002', '5579090045451816', '2022-11-17', 456, '1234', '5783.00', '2022-11-25'),
+(7, '220003', '8695754253429612', '2026-11-19', 852, '1596', '64196.20', 7, '220003', '8695754253429612', '2026-11-19', 852, '1596', '56696.20', '2022-11-25'),
+(5, '220002', '5579070012347894', '2023-05-17', 655, '1239', '500.56', 5, '220002', '5579070012347894', '2023-05-17', 655, '1239', '8000.56', '2022-11-25');
 
 -- --------------------------------------------------------
 
@@ -254,6 +268,29 @@ INSERT INTO `ejecutivos` (`idEjecutivo`, `usuarioEjecutivo`, `sucursal`, `pass`)
 (5, 'alonso', 'fie', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2'),
 (6, 'jaimeduende', 'fondeport', 'e83e8535d6f689493e5819bd60aa3e5fdcba940e6d111ab6fb5c34f24f86496bf3726e2bf4ec59d6d2f5a2aeb1e4f103283e7d64e4f49c03b4c4725cb361e773'),
 (7, 'ximena', 'fondeport', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prestamos`
+--
+
+CREATE TABLE `prestamos` (
+  `id` int(11) NOT NULL,
+  `NoCli` int(50) NOT NULL,
+  `dinero` int(20) NOT NULL,
+  `meses` int(3) NOT NULL,
+  `status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `prestamos`
+--
+
+INSERT INTO `prestamos` (`id`, `NoCli`, `dinero`, `meses`, `status`) VALUES
+(5, 220001, 4000, 6, 'Aceptado'),
+(6, 220006, 1500, 4, 'Aceptado'),
+(7, 220006, 300, 6, 'Aceptado');
 
 --
 -- Índices para tablas volcadas
@@ -324,7 +361,7 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `comprobante`
 --
 ALTER TABLE `comprobante`
-  MODIFY `idComprobante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idComprobante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `credito`
@@ -342,7 +379,7 @@ ALTER TABLE `cuentas`
 -- AUTO_INCREMENT de la tabla `debito`
 --
 ALTER TABLE `debito`
-  MODIFY `idTarjeta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idTarjeta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `ejecutivos`

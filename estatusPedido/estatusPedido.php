@@ -1,5 +1,6 @@
 <?php
-require '../vistas/header.php';
+require '../vistas/headerEjecutivo.php';
+$conexion=mysqli_connect('localhost','root','','unibank');
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +14,7 @@ require '../vistas/header.php';
  </head>
 
 <body>
+  <!-- INICIA TABLA -->
   <table class="table table-striped table-hover">
   <thead>
     <tr>
@@ -23,22 +25,25 @@ require '../vistas/header.php';
       <th scope="col">Estado</th>
     </tr>
   </thead>
+  <?php
+  $sql="SELECT * FROM prestamos";
+  $result=mysqli_query($conexion,$sql);
+
+  while($mostrar=mysqli_fetch_array($result)){
+
+  ?>
+
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
+      <th scope="row"><?php echo $mostrar['id'] ?></th>
+      <td><?php echo $mostrar['NoCli'] ?></td>
+      <td><?php echo $mostrar['dinero'] ?></td>
+      <td><?php echo $mostrar['meses'] ?></td>
+      <td><?php echo $mostrar['status'] ?></td>
     </tr>
-    <tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-
+  <?php
+  }
+  ?>
   </table>
 
 
