@@ -78,7 +78,7 @@
       </label>
       <div class="content">
       <div class="card-body" name="debito">
-          <p><h5 class="display-7">Saldos actuales:  <i class="bi bi-wallet"></i> <?php echo '<br>'; ?>  <span id="saldo">
+          <p><h2 class="display-7">Saldos actuales:  <i class="bi bi-wallet"></i> <?php echo '<br>'; ?>  <span id="saldo">
             <?php if(empty($debito)){
               echo 'No se ha solicitado una tarjeta de debito';
             }else{
@@ -87,7 +87,7 @@
             endforeach;
             }
             ?>
-            <div class="col"><a href="debito.php"><?php if(empty($debito)){}else{echo 'Ver movimientos';}?></a></div></span></h5></div></p>
+            <div class="col"><a href="movimientos/historial.php"><?php if(empty($debito)){}else{echo 'Ver movimientos';}?></a></div></span></h2></div></p>
       </div>
     </div>
     <!-- Acordeon Dos -->
@@ -137,21 +137,6 @@
             </li>
         </ul>
     </div>
-    <!--div class="container_img">
-        <div class="card mb-3">
-          <img src="assets/img/car2.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Pide tu credito unibank</h5>
-            <p class="card-text">Que esperas para solicitar tu credito Unibank..</p>
-            <p class="card-text">Last updated 3 mins ago</p>
-          </div>
-        </div>
-    </div-->
-    <!--div class="d-grid gap-2">
-      <button type="button" class="btn btn-warning">Hacer un momiento</button>
-      
-      <button type="button" class="btn btn-light"><a href="cliente.php">volver</a></button>
-    </div-->
     <div class="container-btn">
         <a href="movimientos/transferencia.php" class="btn btn-success">Realizar un momiento</a>
         <a href="cliente.php" class="btn btn-outline-secondary">Volver</a>
