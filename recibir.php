@@ -13,11 +13,9 @@ $dinero=$_POST['dinero'];
 $meses=$_POST['meses'];
 $status="Pendiente";
 //hacemos la sentencia de sql
-$sql="INSERT INTO prestamos VALUES('$NoCli','$dinero','$meses','$status')";
-
+$sql="INSERT INTO prestamos VALUES('','$NoCli','$dinero','$meses','$status')";
 $ejecutar=mysqli_query($con,$sql);
 
-$status="Pendiente";
 
 if(!$ejecutar){
  echo"Hubo Algun Error";

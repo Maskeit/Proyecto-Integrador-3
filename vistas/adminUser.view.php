@@ -136,7 +136,7 @@ tr:nth-child(even) {
             </div>
             <div >
                 <div class="botoncito">
-                    <a href="../rscEjecutivo/registroEjecutivo.php" class="btn btn-primary active" aria-current="page">Registrar Ejecutivo</a>
+                    <a href="./rscEjecutivo/registroEjecutivo.php" class="btn btn-primary active" aria-current="page">Registrar Ejecutivo</a>
                 </div>
             </div>
         </div>
@@ -175,7 +175,7 @@ $conexion=mysqli_connect('localhost','root','','unibank');
     </tr>
   </thead>
   <?php
-  $sql="SELECT * FROM prestamos";
+  $sql="SELECT * FROM prestamos ";
   $result=mysqli_query($conexion,$sql);
 
   while($mostrar=mysqli_fetch_array($result)){
@@ -189,8 +189,8 @@ $conexion=mysqli_connect('localhost','root','','unibank');
       <td><?php echo $mostrar['dinero'] ?></td>
       <td><?php echo $mostrar['meses'] ?></td>
       <td><?php echo $mostrar['status'] ?></td>
-      <td><a class="btn btn-success" href="./amortizacion/respuestasPrestamos/aceptar.php" role="button">Aceptar</a>
-      <a class="btn btn-danger" href="./amortizacion/respuestasPrestamos/denegar.php" role="button">Denegar</a></td><!-- No quiten el texto -->
+      <td><a class="btn btn-success" href="./amortizacion/respuestasPrestamos/aceptar.php?id=<?=$mostrar['id']?>" role="button">Aceptar</a>
+      <a class="btn btn-danger" href="./amortizacion/respuestasPrestamos/denegar.php?id=<?=$mostrar['id']?>" role="button">Denegar</a></td><!-- No quiten el texto -->
     </tr>
   <?php
   }
