@@ -69,7 +69,7 @@ require 'vistas/headerEspecifico.php';
                   <h5 style="color: black;" class="card-title">ESTATUS DE PEDIDO</h5>
                 </div>
                 <p class="card-text">
-                  En este apartado podrás revisar el estado de perfil de un cliente si hace una consulta.
+                  En este apartado podrás revisar el estado de las peticiones de prestamos y tener un seguimiento de su aprobación o declinación.
                 </p>
                 <i style="font-size: 10em; color: black;" class="bi bi-terminal-fill"></i>
                 <div class="pricing">
