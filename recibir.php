@@ -13,12 +13,12 @@ $dinero=$_POST['dinero'];
 $meses=$_POST['meses'];
 $status="Pendiente";
 //hacemos la sentencia de sql
-$sql="INSERT INTO prestamos VALUES('','$NoCli','$dinero','$meses','$status')";
+$sql="INSERT INTO prestamos (NoCli, dinero, meses, status) VALUES('$NoCli','$dinero','$meses','$status')";
 $ejecutar=mysqli_query($con,$sql);
 
 
 if(!$ejecutar){
- echo"Hubo Algun Error";
+ echo"Hubo Algun Error ".$con->error;
 }else{
     echo"Su prestamo ha sido solicitado correctamente! <br>";
     echo"El estado de su prestamo paso a: ".$status."<br>";
