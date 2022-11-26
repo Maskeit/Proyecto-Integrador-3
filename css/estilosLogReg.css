@@ -13,6 +13,7 @@ body {
 	color:#fff;
 }
 
+
 a {
 	text-decoration: none;
 	color:#B8711B;
@@ -68,7 +69,7 @@ a:hover {
 	padding: 15px;
 	text-align: center;
 	width: 48px;
-	max-height: 48px
+	max-height: 48px;
 	font-size: 18px;
 	line-height: 18px;
 	background: #c8c8c8;
@@ -112,7 +113,7 @@ a:hover {
 	padding: 15px;
 	text-align: center;
 	width: 48px;
-	max-height: 48px
+	max-height: 48px;
 	font-size: 18px;
 	line-height: 18px;
 	background: #679863;

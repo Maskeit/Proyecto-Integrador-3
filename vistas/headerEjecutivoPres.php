@@ -13,10 +13,12 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../Style.css" />
+
   <link rel="stylesheet" href="../mobile-style.css">
+
   <link rel="stylesheet" href="../assets/bootstrap/Btrap5/css/bootstrap.min.css">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/estilosLogReg.css">
   
   <link rel="stylesheet" href="../assets/bootstrap/Btrap5/css/features.css">
   <!--Miguel-->
@@ -28,7 +30,7 @@
   <header>
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="../index.php">
           <i class="bi bi-cash-coin fa-2x mx-3"></i>Unibank
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -39,7 +41,7 @@
           <div class="mr-auto"></div>
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="./index.php">HOME
+              <a class="nav-link" href="../ejecutivo.php">HOME
                 <span class="sr-only">(current)</span>
               </a>
             </li>

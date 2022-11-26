@@ -11,8 +11,8 @@ require '../vistas/headerEjecutivo.php';
 </head>
 <body>
 	<form action="tablaAmort.php" method="POST">
-
-	<h2 class="fw-bolder text-center font-monospace text-black">Nuestros prestamos solo tienen un 5% de comisión anual!</h3>
+	<h1 class="fw-bolder text-center font-monospace text-black">Genere una tabla de amortización</h1>
+	<h4 class="fw-bolder text-center font-monospace text-black">Nuestros prestamos solo tienen un 5% de comisión anual!</h4>
 
 		<!-- Cuadro de texto -->
 		<div style="background-color: rgba(100, 150, 300, 0.2);" class="p-3 border-top border-start border-end border-dark d-flex justify-content-center" style="max-width: 95%;">

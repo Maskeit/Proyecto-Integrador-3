@@ -1,4 +1,15 @@
 <?php
+require './vistas/headerEjecutivo.php';
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Formulario de Amortización</title>
+</head>
+<body>
+<?php
 $host ="localhost";
 $user ="root";
 $pass ="";
@@ -25,3 +36,5 @@ if(!$ejecutar){
     echo"<a href='ejecutivo.php'>Volver</a>";
 }
 ?>
+</body>
+</html>

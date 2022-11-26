@@ -305,7 +305,6 @@ header .container .col-md-7 p {
 .section-4 .container h1 {
   font-size: 6vmin;
   padding-top: 14vmin;
-  background-color: red;
 }
 
 .section-4 .team {
@@ -515,4 +514,3 @@ form input[type="submit"]:hover{
 #saldo{
   font-size: 25px;
 }
-

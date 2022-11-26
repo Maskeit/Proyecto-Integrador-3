@@ -124,9 +124,12 @@ tr:nth-child(even) {
         </div>
       </div>
     </section>
+    <?php
+    $conexion=mysqli_connect('localhost','root','','unibank');
+    ?>
 
 <!-- AQUI INICIAN LAS TABLAS DE EJECUTIVOS Y PRESTAMOS -->
-	<div class="contenedor">
+	<!--<div class="contenedor">
         <div class="row">
             <h1>Tabla de Ejecutivos</h1>
             <div >
@@ -155,7 +158,37 @@ tr:nth-child(even) {
 			<div class="loader" id="loader"></div>
 		</main>
 	</div>
-	<script src="../js/ajax2.js"></script>
+	<script src="../js/ajax2.js"></script> -->
+  <h1>Tabla de Validación de Prestamos</h1>
+  <table class="table table-striped table-hover">
+  <div class="botoncito">
+    <a href="./rscEjecutivo/registroEjecutivo.view.php" class="btn btn-primary active" aria-current="page">Registrar Ejecutivo</a>
+  </div><br>
+  <thead>
+    <tr>
+      <th scope="col">ID del Ejecutivo</th>
+      <th scope="col">Usuario del ejecutivo</th>
+      <th scope="col">Sucursal</th>
+    </tr>
+  </thead>
+  <?php
+  $sql="SELECT * FROM ejecutivos";
+  $result=mysqli_query($conexion,$sql);
+
+  while($mostrar=mysqli_fetch_array($result)){
+
+  ?>
+
+  <tbody>
+    <tr>
+      <th scope="row"><?php echo $mostrar['idEjecutivo'] ?></th>
+      <td><?php echo $mostrar['usuarioEjecutivo'] ?></td>
+      <td><?php echo $mostrar['sucursal'] ?></td>
+    </tr>
+  <?php
+  }
+  ?>
+  </table>
 
   <!-- //////////////////////////////////////////////////////////////////////////////// --> 
 <?php 
@@ -175,7 +208,7 @@ $conexion=mysqli_connect('localhost','root','','unibank');
     </tr>
   </thead>
   <?php
-  $sql="SELECT * FROM prestamos ";
+  $sql="SELECT * FROM prestamos "; //NO SE NOS OLVIDE PONER WHERE STATUS PENDIENTE, no lo tiene porque quiero probar
   $result=mysqli_query($conexion,$sql);
 
   while($mostrar=mysqli_fetch_array($result)){
@@ -184,7 +217,7 @@ $conexion=mysqli_connect('localhost','root','','unibank');
 
   <tbody>
     <tr>
-      <th scope="row"></th>
+      <th scope="row"><?php echo $mostrar['id'] ?></th>
       <td><?php echo $mostrar['NoCli'] ?></td>
       <td><?php echo $mostrar['dinero'] ?></td>
       <td><?php echo $mostrar['meses'] ?></td>
@@ -196,7 +229,7 @@ $conexion=mysqli_connect('localhost','root','','unibank');
   }
   ?>
   </table>
-  
+</form>
 <?php
 require './vistas/footer.php';
 ?>

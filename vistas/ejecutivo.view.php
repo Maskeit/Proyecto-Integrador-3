@@ -1,7 +1,9 @@
 <?php
 require 'vistas/headerEspecifico.php';
+
 ?>
     <!--Purchase Whatever You Want-->
+    <link rel="stylesheet" href="./Style.css" />
     <section class="section-2 container-fluid p-0">
       <div class="cover">
         <div class="overlay"></div>
@@ -51,11 +53,11 @@ require 'vistas/headerEspecifico.php';
             <div class="card card border-success">
               <div class="card-body">
                 <div class="title">
-                  <h5 style="color: black;" class="card-title">GENERAR UN NUEVO PRESTAMO</h5>
+                  <h5 style="color: black;" class="card-title">GENERAR / PAGAR UN NUEVO PRESTAMO</h5>
                 </div>
                 <p class="card-text">
-                  ¿Necesitas un prestamo? <br>
-                  Entra aqui para pedir un prestamo.
+                  Un cliente necesita un prestamo? <br>
+                  Entra aqui para pedir o pagar un prestamo.
                 </p>
                 <i style="font-size: 10em; color: black;" class="bi bi-coin"></i>
                 <div class="pricing">
