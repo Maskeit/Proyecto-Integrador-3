@@ -16,7 +16,9 @@ $ejecutar=mysqli_query($con,$sql);
 if(!$ejecutar){
  echo"Hubo Algun Error, no se pudo rechazar el prestamo correctamente";
 }else{
-    echo"El prestamo se ha rechazado correctamente! <br>";
-    echo"<a href='../../adminUser.php'>Volver</a>";
+    echo'<script language="javascript">
+    alert("El prestamo se ha denegado correctamente!");    
+    window.location.href="../../adminUser.php";
+</script>';
 }
 ?>

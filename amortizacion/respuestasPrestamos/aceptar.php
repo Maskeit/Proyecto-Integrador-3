@@ -19,7 +19,11 @@ $ejecutar=mysqli_query($con,$sql);
 if(!$ejecutar){
  echo"Hubo Algun Error, no se pudo aceptar correctamente el prestamo";
 }else{
-    echo" El prestamo se ha aceptado correctamente!, Un usuario ejecutivo continuara con el proceso <br>";
+   echo '<script language="javascript">
+        alert("El prestamo se ha aceptado correctamente!, Un usuario ejecutivo continuara con el proceso.");    
+        window.location.href="../../adminUser.php";
+    </script>';
+    //echo" El prestamo se ha aceptado correctamente!, Un usuario ejecutivo continuara con el proceso <br>";
     //Crear nueva variable, sumar saldo + dinero
 
     /*$obtencion = "SELECT NoCli, dinero FROM prestamos WHERE id = '$id'";
@@ -49,3 +53,5 @@ if(!$ejecutar){
     }*/
 }
 ?>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetAlert.js"></script>

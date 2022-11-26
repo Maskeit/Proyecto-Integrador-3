@@ -26,10 +26,10 @@ if(
 
 //parametros del formulario
 $ctaOrigen =  $_POST['ctaOrigen']; //este es el numero de tarjeta BIN
-$ctaDestino = $_POST['ctaDestino'];
+$ctaDestino = filter_var($_POST['ctaDestino'], FILTER_SANITIZE_STRING);
 $beneficiario = filter_var( $_POST['beneficiario'], FILTER_SANITIZE_STRING);
 $concepto = filter_var($_POST['concepto'], FILTER_SANITIZE_STRING);
-$monto = $_POST['monto'];
+$monto = filter_var($_POST['monto'], FILTER_SANITIZE_STRING);
 $banco = $_POST['banco'];
 
 
