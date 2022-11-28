@@ -45,6 +45,6 @@ $conexion=mysqli_connect('localhost','root','','unibank');
   }
   ?>
   </table>
-
+  <a href="../ejecutivo.php" class="btn btn-secondary">Regresar</a>
 
 </body>

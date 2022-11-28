@@ -106,7 +106,7 @@ require 'header.php';
                   Al realizar prestamos la tasa es de:
                 </p>
                 <div class="pricing">
-                  <h1>¡¡69%!!</h1>
+                  <h1>¡¡15%!!</h1>
                   <p class="card-text">
                   ¡Sin intereses añadidos!
                   </p>
@@ -122,7 +122,7 @@ require 'header.php';
                   Al invertir con nosotros solo recibiera un:
                 </p>
                 <div class="pricing">
-                  <h1>¡¡69%!!</h1>
+                  <h1>¡20%!</h1>
                   <p class="card-text">
                   ¡Sin intereses añadidos!
                   </p>
@@ -138,7 +138,7 @@ require 'header.php';
                   Al invertir con nosotros solo recibiera un:
                 </p>
                 <div class="pricing">
-                  <h1>¡¡69%!!</h1>
+                  <h1>¡20%!</h1>
                   <p class="card-text">
                   ¡Sin intereses añadidos!
                   </p>
