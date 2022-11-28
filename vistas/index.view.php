@@ -229,10 +229,9 @@ require 'header.php';
                 <div class="card-body">
                   <h3 class="card-title">Braulio Roberto </h3>
                   <p class="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure autem recusandae, veniam, illo dolor soluta assumenda
-                    minima quia velit officia sit exercitationem nam ipsa, repellendus aut facilis quasi voluptas!
+                    Programador principiante, me encargue de aspectos visuales y del apartado ejecutivo en su mayoría, además de algunas funcionalidades de prestamo junto a otro compañero en dicho apartado.
                   </p>
-                  <a href="#" class="text-secondary text-decoration-none">Contactame!</a>
+                  <a href="https://github.com/Jamiro-MR" class="text-secondary text-decoration-none">Contactame!</a>
                   <p class="text-black-50">Estudiante de programación</p>                </div>
               </div>
         </div>
