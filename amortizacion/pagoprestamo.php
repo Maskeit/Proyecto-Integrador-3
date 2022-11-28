@@ -19,12 +19,11 @@ $ejecutar=mysqli_query($con,$sql);
 if(!$ejecutar){
  echo"No se pudo procesar el pago";
 }else{
-    echo '<script language="javascript">
+    //Comente el echo porque la alerta no dejaba ver el resto de la información del pago del prestamo
+    /*echo '<script language="javascript">
         alert("El prestamo se ha transferido correctamente!,Se ha añadido la bonificacion a la cuenta");    
         window.location.href="./genLoan1.php";
-    </script>';
-    // echo" El prestamo se ha aceptado correctamente!, Se ha añadido su dinero a su cuenta de debito <br>";
-    //Crear nueva variable, sumar saldo + dinero
+    </script>';*/
 
     $obtencion = "SELECT NoCli, dinero FROM prestamos WHERE id = '$id'";
     $resultado = $con->query($obtencion);
@@ -48,6 +47,7 @@ if(!$ejecutar){
     //$sql="UPDATE debito SET saldoDeb = '$newDinero' WHERE codigoCliente='$ncliente' . idTarjeta = '$idTarjeta' ";
     $sql="UPDATE debito SET saldoDeb='$newDinero' WHERE codigoCliente='$ncliente'" ;
     $ejecutar=mysqli_query($con,$sql);
+    echo "El prestamo se ha transferido correctamente!,Se ha añadido la bonificacion a la cuenta";
     echo "El nuevo saldo de su tarjeta es: ".$newDinero;
     echo "<br>El dinero que pagará el cliente con tasa de interes del 5% es: $".$dineroAPagar;
     echo"<br><a href='./genLoan1.php'>Volver</a>";
