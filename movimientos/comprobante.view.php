@@ -83,7 +83,7 @@
 </div>
 <a href="../cliente.php" class="btn btn-secondary">Volver</a>
 <a href="../consultas.php" class="btn btn-secondary">Ver Cuentas</a>
-
+<button class="btn btn-success" onclick="print()">Imprimir</button>
 </div>
 
 
