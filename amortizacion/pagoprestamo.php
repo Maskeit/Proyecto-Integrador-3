@@ -29,23 +29,23 @@ if(!$ejecutar){
     $ncliente = $prestamo['NoCli'];
     $dineroPres = $prestamo['dinero'];
 
-    $obtencion2 = "SELECT saldoDeb FROM debito WHERE codigoCliente = '$ncliente'";
+    $obtencion2 = "SELECT saldoDeb, idTarjeta FROM debito WHERE codigoCliente = '$ncliente'";
+    $idTarjeta=$con->query($obtencion2);
     $resultado2 = $con->query($obtencion2);
     $saldo = $resultado2->fetch_assoc();
 
     $dineroCl = $saldo['saldoDeb'];
 
-    $newDinero = $dineroCl + $dineroPres;
-    echo "El nuevo saldo de su tarjeta es: ".$newDinero;
+    $tasainteres=$dineroPres*0.05;
 
-    $sql="UPDATE debito SET saldoDeb=$newDinero WHERE id='$id'" ;
-    if($sql)
-    {
-        echo " El prestamo fue exitoso! \n";
-        echo"<a href='./genLoan1.php'>Volver</a>";
-    }
-    else{
-        echo "Hubo un error al actualzar sus datos! ";
-    }
+    $dineroAPagar= $dineroPres + $tasainteres;
+    $newDinero = $dineroCl + $dineroPres;
+
+    //$sql="UPDATE debito SET saldoDeb = '$newDinero' WHERE codigoCliente='$ncliente' . idTarjeta = '$idTarjeta' ";
+    $sql="UPDATE debito SET saldoDeb='$newDinero' WHERE codigoCliente='$ncliente'" ;
+    $ejecutar=mysqli_query($con,$sql);
+    echo "El nuevo saldo de su tarjeta es: ".$newDinero;
+    echo "<br>El dinero que pagará el cliente con tasa de interes del 5% es: $".$dineroAPagar;
+    echo"<br><a href='./genLoan1.php'>Volver</a>";
 }
 ?>

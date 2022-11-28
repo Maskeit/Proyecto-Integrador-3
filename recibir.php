@@ -1,5 +1,5 @@
 <?php
-require './vistas/headerEjecutivo.php';
+require './vistas/headerEspecifico.php';
 ?>
 <!DOCTYPE html>
 <html>

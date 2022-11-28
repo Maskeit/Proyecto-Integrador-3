@@ -208,7 +208,7 @@ $conexion=mysqli_connect('localhost','root','','unibank');
     </tr>
   </thead>
   <?php
-  $sql="SELECT * FROM prestamos "; //NO SE NOS OLVIDE PONER WHERE STATUS PENDIENTE, no lo tiene porque quiero probar
+  $sql="SELECT * FROM prestamos WHERE status='Pendiente'"; //NO SE NOS OLVIDE PONER WHERE STATUS PENDIENTE, no lo tiene porque quiero probar
   $result=mysqli_query($conexion,$sql);
 
   while($mostrar=mysqli_fetch_array($result)){
