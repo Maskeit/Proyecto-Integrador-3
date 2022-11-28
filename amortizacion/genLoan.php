@@ -43,4 +43,7 @@ require '../vistas/headerEjecutivo.php';
 		</div>
 	</form>
 </body>
+<?php
+require '../vistas/footer.php';
+?>
 </html>
