@@ -64,9 +64,11 @@ $datosDes = $resultado -> fetchAll(PDO::FETCH_ASSOC);
 
 $desBin = '';//BIn from database = BIN DESTINO
 $saldoActual = '';
+$codigoClienteDes = '';
 foreach($datosDes as $debitoDes){
     $desBin = $debitoDes['BIN'];
     $saldoActual = $debitoDes['saldoDeb'];
+    $codigoClienteDes=$debitoDes['codigoCliente'];
 }
 if(
     ($desBin == '') || 
@@ -119,11 +121,14 @@ if(!$bonificacion){
     return;
 }
 
+
 //insertamos los datos del comprobante
 $date = getTime();
 $comprobante = "insert into comprobante values(
     0,
+    '$codigoCliente',
     '$orBin',
+    '$codigoClienteDes',
     '$desBin',
     '$beneficiario',
     '$concepto',

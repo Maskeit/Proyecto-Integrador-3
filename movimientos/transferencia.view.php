@@ -72,7 +72,7 @@
                 </div>
             </a>
 
-            <a href="./funciones/cerrarSesion.php">
+            <a href="../funciones/cerrarSesion.php">
                 <div class="option">
                     <i class="fas fa-sign-out"></i>
                     <h4>Cerrar sesion</h4>

@@ -3,15 +3,18 @@ require '../bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
+$codigoCliente = $_SESSION['codigoCliente'];
 
-$consulta = "SELECT * FROM comprobante";
+$consulta = "SELECT * FROM comprobante WHERE codigoClienteOr = $codigoCliente or codigoClienteDes = $codigoCliente";
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 $datos=$resultado->fetchAll(PDO::FETCH_ASSOC);
 
 foreach($datos as $dato){
     $dato['idComprobante'];
+    $dato['codigoClienteOr'];
     $dato['origenDeb'];
+    $dato['codigoClienteDes'];
     $dato['destinoDeb'];
     $dato['beneficiario'];
 	$dato['concepto'];
@@ -19,6 +22,7 @@ foreach($datos as $dato){
     $dato['banco'];
     $dato['fecha'];
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -114,8 +118,8 @@ foreach($datos as $dato){
 				<?php foreach($datos as $dato){?>
 				<tr>
 					<td><?php echo $dato['idComprobante'] ?></td>
-					<td><?php echo $dato['origenDeb'] ?></td>
-					<td><?php echo $dato['destinoDeb'] ?></td>
+					<td><?php echo $dato['codigoClienteOr'] //origenDeb, codigoClienteOr ?></td> 
+					<td><?php echo $dato['destinoDeb'] //destinoDeb, codigoClienteDes?></td>
 					<td><?php echo $dato['beneficiario'] ?></td>
 					<td><?php echo $dato['concepto'] ?></td>
 					<td><?php echo $dato['monto'] ?></td>
