@@ -19,7 +19,11 @@ $ejecutar=mysqli_query($con,$sql);
 if(!$ejecutar){
  echo"No se pudo procesar el pago";
 }else{
-    echo" El prestamo se ha aceptado correctamente!, Se ha añadido su dinero a su cuenta de debito <br>";
+    echo '<script language="javascript">
+        alert("El prestamo se ha transferido correctamente!,Se ha añadido la bonificacion a la cuenta");    
+        window.location.href="./genLoan1.php";
+    </script>';
+    // echo" El prestamo se ha aceptado correctamente!, Se ha añadido su dinero a su cuenta de debito <br>";
     //Crear nueva variable, sumar saldo + dinero
 
     $obtencion = "SELECT NoCli, dinero FROM prestamos WHERE id = '$id'";

@@ -31,9 +31,15 @@ $ejecutar=mysqli_query($con,$sql);
 if(!$ejecutar){
  echo"Hubo Algun Error ".$con->error;
 }else{
+    echo '<script language="javascript">
+        alert("El prestamo se ha solicitado correctamente!.");    
+        window.location.href="estatusPedido/estatusPedido.php";
+    </script>';
+    /*
     echo"Su prestamo ha sido solicitado correctamente! <br>";
     echo"El estado de su prestamo paso a: ".$status."<br>";
     echo"<a href='ejecutivo.php'>Volver</a>";
+    */
 }
 ?>
 </body>
