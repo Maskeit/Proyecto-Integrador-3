@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Aceptación de prestamo</title>
+</head>
+<body>
 <?php
 $host ="localhost";
 $user ="root";
@@ -18,6 +26,7 @@ $ejecutar=mysqli_query($con,$sql);
 
 if(!$ejecutar){
  echo"Hubo Algun Error, no se pudo aceptar correctamente el prestamo";
+ echo"<a href='../../adminUser.php'>Volver</a>";
 }else{
    echo '<script language="javascript">
         alert("El prestamo se ha aceptado correctamente!, Un usuario ejecutivo continuara con el proceso.");    
